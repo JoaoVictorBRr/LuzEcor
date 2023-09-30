@@ -1,0 +1,35 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;800&display=swap');
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+}
+
+body{
+    background-color: #F2F2F2;
+}
+header{
+    margin-top: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+
+}
+.menu{
+    color: #3F3F3F;
+    font-family: Inter;
+    text-decoration: none;
+    transition: 0.2s;
+}
+.menu:hover{
+    transform: scale(1.05);
+}
+.logo_LuzECor{
+    width: 75px;
+    height: 75px;
+}
+.logo_Whats{
+    width: 40px;
+    height: 40px;
+}

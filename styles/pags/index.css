@@ -1,0 +1,169 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;800&display=swap');
+
+
+.banner_01{
+    margin-top: 90px;
+    position: relative;
+    background: linear-gradient(180deg, rgba(46, 28, 255, 0.54) 0%, rgba(46, 28, 255, 0.54) 0.01%, rgba(196, 40, 251, 0.54) 100%);    height: 350px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+   
+}
+.criancaBalao{
+    width: 500px;
+    position: absolute;
+    top: -150px;
+
+}
+.texto_banner_01{
+   font-family: Inter;
+   margin-right: 10rem;
+   color: white;
+   display: flex;
+   flex-direction: column;
+   gap: 50px;
+   align-items: center;
+   justify-content: center;
+   font-size: 20px;
+   
+}
+
+.texto_banner_01 div p{
+    font-size: 35px;
+    font-weight: 400;
+    text-align: center;
+}
+.button_contact{
+    border-radius: 18px;
+    background: linear-gradient(180deg, #70FF98 0%, #4AFF7D 100%);;
+    padding: 20px;
+    color: white;
+    text-decoration: none;
+    transition: 0.2s;
+}
+.button_contact:hover{
+  transform: scale(1.1);
+}
+.banner_02{
+    margin-top: 7rem;
+    display: flex;
+    background-color: #E3E3E3;
+}
+.banner_02 div p{
+    margin-top: 20px;
+    margin-bottom: 10px;
+    text-align: center;
+    font-size: 25px;
+    font-family: Inter;
+}
+
+
+
+.criancaMenina{
+    position: absolute;
+   top: 33rem;
+    right: 0;
+    width: 250px;
+
+}
+
+.div_carrosel_decoracoes{
+
+    padding: 0rem 5rem 2rem 5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+.div_carrosel_decoracoes img{
+    border-radius: 20px;
+    width: 300px;
+    height: 200px;
+}
+
+
+.criancaApontando{
+    width: 450px;
+    position: absolute;
+    top: -100px;
+
+}
+
+.banner_03{
+    margin-top: 120px;
+    position: relative;
+    background: linear-gradient(180deg, rgba(0, 71, 255, 0.54) 0%, rgba(0, 209, 255, 0.54) 100%);
+    height: 350px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.texto_banner_03{
+    font-family: Inter;
+    margin-right: 10rem;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    
+ }
+
+ .texto_banner_03 div p{
+    font-size: 35px;
+    font-weight: 400;
+    text-align: center;
+}
+
+footer{
+    margin: 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 80px;
+}
+.Logo_footer{
+    width: 8rem;
+}
+.iconWhats_footer{
+    width: 60px;
+}
+.iconFacebook_footer{
+    width: 30px;
+}
+.iconInstagram_footer{
+    width: 60px;
+}
+.contato_footer{
+    color: #636363;
+    font-family: Inter;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    
+}
+.contato_footer_numero{
+
+    font-size: 20px;
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    justify-content: left;
+}
+.redes_footer{
+    color: #636363;
+    font-family: Inter;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.redes_footer_icons{
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    justify-content: left;
+}
