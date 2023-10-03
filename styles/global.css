@@ -14,6 +14,8 @@ header{
     align-items: center;
     justify-content: center;
     gap: 30px;
+    font-size: 20px;
+    flex-wrap: wrap;
 
 }
 .menu{
@@ -33,3 +35,58 @@ header{
     width: 40px;
     height: 40px;
 }
+
+footer{
+     margin-top: 30px;
+     padding: 30px;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     flex-wrap: wrap;
+     gap: 80px;
+     background-color: white;
+ }
+ .Logo_footer{
+     width: 8rem;
+ }
+ .iconWhats_footer{
+     width: 40px;
+ }
+ .iconFacebook_footer{
+     width: 20px;
+ }
+ .iconInstagram_footer{
+     width: 40px;
+ }
+ .contato_footer{
+     color: #636363;
+     font-family: Inter;
+     display: flex;
+     flex-direction: column;
+     gap: 20px;
+     font-size: 20px;
+     
+ }
+ .contato_footer_numero{
+ 
+     font-size: 20px;
+     display: flex;
+     gap: 20px;
+     align-items: center;
+     justify-content: left;
+ }
+ .redes_footer{
+     color: #636363;
+     font-family: Inter;
+     display: flex;
+     flex-direction: column;
+     gap: 20px;
+     font-size: 20px;
+ 
+ }
+ .redes_footer_icons{
+     display: flex;
+     gap: 20px;
+     align-items: center;
+     justify-content: left;
+ }
