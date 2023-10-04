@@ -1,0 +1,48 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;800&display=swap');
+
+.banner_01{
+    margin-top: 80px;
+    height: 350px;
+    background: linear-gradient(180deg, rgba(235, 0, 255, 0.54) 0%, rgba(248, 28, 54, 0.54) 100%);
+  
+}
+.main_content_banner_01{
+    font-family: inter;
+    font-size: 40px;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    padding-top: 1%;
+    align-items: center;
+    margin-right: 30%;
+    gap: 50px;
+}
+.text_banner_01{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+   gap: 25px;
+}
+
+.criancaMenina{
+    margin-right: 60px;
+    width: 350px;
+    position: absolute;
+    right: 0;
+    top: 59px;
+}
+.button{
+    text-decoration: none;
+    color: white;
+    border: white solid 4px;
+    border-radius: 15px;
+    padding: 15px;
+    transition: 0.5s;
+}
+.button:hover{
+   
+    background-color: white;
+    color: black;
+
+}
