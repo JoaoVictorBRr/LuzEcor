@@ -27,7 +27,7 @@
 <header>
     <a href="/">  <img class="logo_LuzECor" src="./ImagensSite-LuzeCor/Luz e cor.png" alt="Logo"> </a> 
     <a class="menu" href="">DECORAÇÕES</a>
-    <a class="menu" href="">PARCERIA</a>
+    <a class="menu" href="/parceria.php">PARCERIA</a>
     <a class="menu" href="/contato.php">CONTATO</a>
     <a href="">  <img class="logo_Whats" src="./ImagensSite-LuzeCor/Fotos/Whats.png" alt="LogoWhats" > </a> 
 </header>

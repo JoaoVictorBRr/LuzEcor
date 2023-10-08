@@ -2,9 +2,8 @@
 
 .banner_01{
     margin-top: 80px;
-    height: 350px;
+    height: 400px;
     background: linear-gradient(180deg, rgba(235, 0, 255, 0.54) 0%, rgba(248, 28, 54, 0.54) 100%);
-  
 }
 .main_content_banner_01{
     font-family: inter;
@@ -30,8 +29,18 @@
     width: 350px;
     position: absolute;
     right: 0;
-    top: 59px;
+    top: 108px;
 }
+.buttons_redesSocias{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 20px;
+}
+.imgRedeSocial{
+    width: 50px;
+}
+
 .button{
     text-decoration: none;
     color: white;
@@ -39,10 +48,123 @@
     border-radius: 15px;
     padding: 15px;
     transition: 0.5s;
+    display: flex;
+    align-items: center;
+    gap: 20px;
 }
 .button:hover{
-   
-    background-color: white;
     color: black;
+    filter: brightness(.0);	
+}
 
+@media screen and (max-width: 1312px) {
+    .main_content_banner_01{
+        align-items: flex-start;
+        margin-left: 80px;
+     
+    }
+    .banner_01{
+        height: 440px;
+    }
+    .buttons_redesSocias{
+        flex-direction: column;
+    }
+    .button{
+        align-items: center;
+        justify-content: center;
+        width: 450px;
+        height: 80px;
+    }
+    .text_banner_01{
+
+        font-size: 30px;
+        text-align: left;
+        justify-content: flex-start;
+        align-items: flex-start;
+    }
+    .text_banner_01 div p{
+        font-size: 40px;
+    }
+    .criancaMenina{
+        top: 148px;
+    }
+}
+@media screen and (max-width: 1084px){
+    .main_content_banner_01{
+        align-items: center;
+        margin: 0;
+    }
+    .banner_01{
+        height: 460px;
+    }
+    .text_banner_01{
+        text-align: center;
+        font-size: 30px;
+        text-align: center;
+        justify-content: center;
+        align-items: center;
+    }
+    .button{
+        align-items: center;
+        justify-content: center;
+    
+    }
+    .criancaMenina{
+        display: none;
+    }
+}
+@media screen and (max-width: 610px){
+    .banner_01{
+        height: 500px;
+    }
+}
+@media screen and (max-width: 460px){
+    .imgRedeSocial{
+        width: 45px;
+    }
+    .button{
+        align-items: center;
+        justify-content: center;
+        width: 350px;
+        height: 70px;
+        font-size: 30px;
+    }
+    .text_banner_01 div p{
+        font-size: 30px;
+    }
+}
+@media screen and (max-width: 358px){
+    .text_banner_01 h1{
+        font-size: 35px;
+    }
+    .banner_01{
+        height: 400px;
+    }
+    .text_banner_01 div p{
+        font-size: 25px;
+    }
+    .imgRedeSocial{
+        width: 40px;
+    }
+    .button{
+        align-items: center;
+        justify-content: center;
+        width: 300px;
+        height: 70px;
+        font-size: 25px;
+    }
+    
+}
+@media screen and (max-width: 308px){
+    .imgRedeSocial{
+        width: 34px;
+    }
+    .button{
+        align-items: center;
+        justify-content: center;
+        width: 250px;
+        height: 60px;
+        font-size: 20px;
+    }
+   
 }
