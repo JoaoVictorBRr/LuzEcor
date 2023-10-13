@@ -1,14 +1,17 @@
 <?php 
 
     require "./src/conection.php";
+    require "./src/Model/decoracao.php";
+    require "./src/Model/parceria.php";
+    require "./src/repository/repositorioDecoracao.php";
+    require "./src/repository/repositorioParceria.php";
 
-    $sql1 = "SELECT file_path, highlighted  FROM decoracoes";
-    $statement = $pdo->query($sql1);
-    $Decoracoes =  $statement->fetchAll(mode: PDO::FETCH_ASSOC);
+    $parceriaRepositorio = new parceriaRepositorio($pdo);
+    $decoracaoRepositorio = new DecoracaoRepositorio($pdo);
+    $dadosDecoracao = $decoracaoRepositorio->listaDecoracao();
+    $dadosParceria = $parceriaRepositorio->listaParceria(); 
 
-    $sql2 = "SELECT file_path FROM parcerias";
-    $statement2 = $pdo->query($sql2);
-    $Parcerias = $statement2->fetchAll(mode: PDO::FETCH_ASSOC); 
+   
 
 
 ?>
@@ -55,12 +58,12 @@
              <div class="div_carrosel_decoracoes">
             
         
-              <?php foreach ($Decoracoes as $DecoracaoImg): 
-                if($DecoracaoImg['highlighted'] == 0){
+              <?php foreach ($dadosDecoracao as $decoracao): 
+                if($decoracao->getHighlighted() == 0){
                     continue;
                 }
                  ?>  
-                 <a href=""> <img src="<?php echo "./ImagensSite-LuzeCor/Fotos_decoracoes/" . $DecoracaoImg['file_path'] ?>" alt="imgDecoracao"> </a>
+                 <a href=""> <img src="<?php echo "./ImagensSite-LuzeCor/Fotos_decoracoes/" . $decoracao->getFilePath() ?>" alt="imgDecoracao"> </a>
               <?php endforeach;?>
 
              </div>
@@ -89,7 +92,7 @@
         <h2>Buffets Parceiros</h2>
         <div>
             <?php 
-                 foreach($Parcerias as $parceiro):
+                 foreach($dadosParceria as $parceiro):
                 $i = 0;
                 if($i == 3)
                 {
@@ -100,7 +103,7 @@
                     $i += 1;
                 }
             ?>
-                <img class="imgParceria" src="<?php echo "./ImagensSite-LuzeCor/Fotos/Buffet/" . $parceiro["file_path"]?>" alt="<?php $parceiro["file_path"]?>">
+                <img class="imgParceria" src="<?php echo "./ImagensSite-LuzeCor/Fotos/Buffet/" . $parceiro->getFilePath()?>" alt="<?php $parceiro->getFilePath()?>">
             <?php endforeach;?>
         </div>
         <a class="saibaMais" href="">SAIBA MAIS!</a>

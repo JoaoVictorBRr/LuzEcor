@@ -1,3 +1,16 @@
+<?php
+
+    require "./src/conection.php";
+    require "./src/Model/parceria.php";
+    require "./src/repository/repositorioParceria.php";
+
+    $parceriaRepositorio = new parceriaRepositorio($pdo);
+    $dadosParceria = $parceriaRepositorio->listaParceria(); 
+
+?>
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,6 +18,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="./styles/global.css">
+    <link rel="stylesheet" href="./styles/pags/parceria.css">
 </head>
 <body>
 <header>
@@ -16,6 +30,27 @@
 </header>
 
 
+<h1>Buffets parceiros</h1>
+
+<section class="container_parceiros">
+    <?php foreach ($dadosParceria as $parceria): ?>
+        <div class="parceriro_div">
+        
+                <img class="imgParcerio" src="<?php echo "./ImagensSite-LuzeCor/Fotos/Buffet/" . $parceria->getFilePath() ?>" alt="<?php $parceria->getFilePath()?>">
+                <div class="parceriro_content">
+                    <div>
+                        <p>Nome: <?php echo $parceria->getNome() ?></p>
+                        <p>Local: <?php echo $parceria->getLocalizacao() ?></p>
+                        <p>Celular: <?php echo $parceria->getCelular() ?></p>
+                        <p>Horário: <?php echo $parceria->getHorario() ?></p>
+                    </div>
+                    <a class="button_contact" href="">Entrar em contato</a>
+                </div>
+               
+        
+        </div>
+    <?php endforeach; ?>
+</section>
 <footer>
 
     <a href="">  <img class="Logo_footer"   src="./ImagensSite-LuzeCor/Luz e cor.png" alt="Logo"> </a>
@@ -29,8 +64,8 @@
     <div class="redes_footer">
         <h3>Redes sociais</h3>
         <div class="redes_footer_icons">
-        <a href=""> <img class="iconFacebook_footer" src="./ImagensSite-LuzeCor/Fotos/FAce.png" alt=""></a>
-        <a href=""> <img class="iconInstagram_footer" src="./ImagensSite-LuzeCor/Fotos/Insta.png" alt=""></a>
+        <a href=""> <img class="iconFacebook_footer" src="./ImagensSite-LuzeCor/Fotos/FAce.png" alt="iconFacebook_footer"></a>
+        <a href=""> <img class="iconInstagram_footer" src="./ImagensSite-LuzeCor/Fotos/Insta.png" alt="iconInstagram_footer"></a>
         </div>
     </div>
 </footer>

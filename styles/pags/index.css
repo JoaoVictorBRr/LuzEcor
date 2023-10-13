@@ -7,17 +7,16 @@
 .main_content_banner_01{
   
     margin-top: 90px;
-    position: relative;
+    justify-content: center;
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
-   
+    gap: 35%;
 
 }
 .criancaBalao{
     width: 500px;
     position: absolute;
-    top: -150px;
+    top: 70px;
 
 }
 .texto_banner_01{
@@ -167,6 +166,36 @@
 .saibaMais:hover{
     transform: scale(1.1);
 }
+@media screen and (max-width: 1275px){
+    
+    .main_content_banner_01{
+        justify-content: space-between;
+    }
+    .texto_banner_01{
+        margin-right: 50px;
+        align-items: flex-end;
+       
+    }
+    .texto_banner_01 h2{
+        text-align: right;
+        font-size: 30px;
+     }
+    .texto_banner_01 div p{
+        text-align: right;
+    }
+    .criancaBalao{
+
+    }
+    .banner_03{
+        justify-content: center;
+    }
+    .texto_banner_03{
+        margin-right: 0;
+    }
+    .criancaApontandoCima{
+        display: none;
+    }
+} 
 
 @media screen and (max-width: 1269px) {
     .banner_02{
@@ -194,23 +223,12 @@
         display: none;
    }
 }
-@media screen and (max-width: 1275px){
-    .main_content_banner_01{
-        justify-content: center;
+@media screen and (max-width: 1016px){
+    .texto_banner_01 h2{
+        font-size: 28px;
     }
-    .texto_banner_01{
-        margin-right: 0px;
+    .texto_banner_01 div p{
+        font-size: 25px;
     }
-    .criancaBalao{
-        display: none;
-    }
-    .banner_03{
-        justify-content: center;
-    }
-    .texto_banner_03{
-        margin-right: 0;
-    }
-    .criancaApontandoCima{
-        display: none;
-    }
+    
 } 
