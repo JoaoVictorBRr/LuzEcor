@@ -10,10 +10,8 @@
     $decoracaoRepositorio = new DecoracaoRepositorio($pdo);
     $dadosDecoracao = $decoracaoRepositorio->listaDecoracao();
     $dadosParceria = $parceriaRepositorio->listaParceria(); 
-
-   
-
-
+    $maximoDeFotosParcerios = 0;
+    $maximoDeFotosDecoracao = 0;
 ?>
 
 
@@ -22,14 +20,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Luz e Cor - Home</title>
     <link rel="stylesheet" href="./styles/global.css">
     <link rel="stylesheet" href="./styles/pags/index.css">
+    <link rel="shortcut icon" href="./ImagensSite-LuzeCor/Luz e cor.png" type="image/x-icon" />
 </head>
 <body>
 <header>
     <a href="/">  <img class="logo_LuzECor" src="./ImagensSite-LuzeCor/Luz e cor.png" alt="Logo"> </a> 
-    <a class="menu" href="">DECORAÇÕES</a>
+    <a class="menu" href="/">HOME</a>
+    <a class="menu" href="/decoracoes.php">DECORAÇÕES</a>
     <a class="menu" href="/parceria.php">PARCERIA</a>
     <a class="menu" href="/contato.php">CONTATO</a>
     <a href="">  <img class="logo_Whats" src="./ImagensSite-LuzeCor/Fotos/Whats.png" alt="LogoWhats" > </a> 
@@ -59,9 +59,23 @@
             
         
               <?php foreach ($dadosDecoracao as $decoracao): 
+           
+                
                 if($decoracao->getHighlighted() == 0){
                     continue;
+                }else{
+                    if($maximoDeFotosDecoracao == 3)
+                    {
+                       break;
+                    }
+                    else
+                    {
+                        $maximoDeFotosDecoracao += 1;
+                    }
                 }
+
+
+                
                  ?>  
                  <a href=""> <img src="<?php echo "./ImagensSite-LuzeCor/Fotos_decoracoes/" . $decoracao->getFilePath() ?>" alt="imgDecoracao"> </a>
               <?php endforeach;?>
@@ -93,15 +107,16 @@
         <div>
             <?php 
                  foreach($dadosParceria as $parceiro):
-                $i = 0;
-                if($i == 3)
-                {
-                   break;
-                }
-                else
-                {
-                    $i += 1;
-                }
+
+                    if($maximoDeFotosParcerios == 3)
+                    {
+                       break;
+                    }
+                    else
+                    {
+                        $maximoDeFotosParcerios +=  1;
+                    }
+              
             ?>
                 <img class="imgParceria" src="<?php echo "./ImagensSite-LuzeCor/Fotos/Buffet/" . $parceiro->getFilePath()?>" alt="<?php $parceiro->getFilePath()?>">
             <?php endforeach;?>

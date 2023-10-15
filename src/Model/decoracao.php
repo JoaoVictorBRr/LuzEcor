@@ -28,6 +28,10 @@ class Decoracao
     {
         return $this->title;
     }
+    public function getSummary(): string
+    {
+        return $this->summary;
+    }
  
     public function getFilePath(): string
     {

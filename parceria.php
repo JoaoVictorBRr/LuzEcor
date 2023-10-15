@@ -12,18 +12,20 @@
 
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Luz e Cor - Parceria</title>
     <link rel="stylesheet" href="./styles/global.css">
     <link rel="stylesheet" href="./styles/pags/parceria.css">
+    <link rel="shortcut icon" href="./ImagensSite-LuzeCor/Luz e cor.png" type="image/x-icon" />
 </head>
 <body>
 <header>
     <a href="/">  <img class="logo_LuzECor" src="./ImagensSite-LuzeCor/Luz e cor.png" alt="Logo"> </a>
-    <a class="menu" href="">DECORAÇÕES</a>
+    <a class="menu" href="/">HOME</a>
+    <a class="menu" href="/decoracoes.php">DECORAÇÕES</a>
     <a class="menu" href="/parceria.php">PARCERIA</a>
     <a class="menu" href="/contato.php">CONTATO</a>
     <a href="">  <img class="logo_Whats" src="./ImagensSite-LuzeCor/Fotos/Whats.png" alt="LogoWhats" > </a>

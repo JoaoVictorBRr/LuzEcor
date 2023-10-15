@@ -1,0 +1,147 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;800&display=swap');
+
+.banner_01{
+    background: linear-gradient(180deg, rgba(86, 133, 254, 0.54) 0%, rgba(6, 30, 244, 0.54) 100%);    height: 360px;
+}
+.main_content_banner_01{
+  
+    margin-top: 90px;
+    display: flex;
+    flex-direction: row;
+    gap: 35%;
+
+}
+.duasCriancas{
+    width: 500px;
+    position: absolute;
+    top: 70px;
+    right: 0;
+
+}
+.texto_banner_01{
+   font-family: Inter;
+   color: white;
+   display: flex;
+   flex-direction: column;
+   gap: 50px;
+   align-items: center;
+   justify-content: center;
+   font-size: 25px;
+   margin-top: 25px;
+   margin-left: 30px; 
+}
+
+.texto_banner_01 div p{
+    font-size: 30px;
+    font-weight: 400;
+    text-align: center;
+}
+.arrowDown{
+    width: 310px;
+    display: flex;
+    margin: 0 auto;
+    margin-top: 10px;
+    
+}
+.destacados_container{
+    margin-top: 100px;
+}
+.todas_container{
+    margin-top: 50px;
+}
+.titulos_categorias{
+    margin-left: 35px;
+    font-family: inter;
+    color: #3F3F3F;
+}
+.categorias_content{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 25px;
+    margin: 20px;
+}
+.cardDecoracao{
+    cursor: pointer;
+    width: 300px;
+    border-radius: 33px;
+    background: #D6D6D6;
+    box-shadow: 7px 9px 13px 1px rgba(0, 0, 0, 0.25);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 30px;
+    transition: 0.2s;
+}
+.cardDecoracao:hover{
+    transform: scale(1.05);
+}
+.ancorDecoracao{
+    text-decoration: none;
+}
+.imagemDecoracao{
+    width: 250px;
+    height: 190px;
+    border-radius: 20px;
+}
+.cardTextContent{
+    color: #3F3F3F;
+    font-family: inter;
+    margin-top: 20px;
+}
+.card-title-decoracao{
+    font-size: 20px;
+    margin-bottom: 10px;
+    
+}
+.banner_02{
+    background: linear-gradient(180deg, rgba(255, 1, 169, 0.54) 0%, rgba(48, 0, 239, 0.54) 100%);
+    height: 360px;
+    position: relative;
+}
+.main_content_banner_02{
+  
+    margin-top: 120px;
+    justify-content: space-between;
+    display: flex;
+    flex-direction: row;
+    gap: 35%;
+
+}
+.criancaMeninaApontando{
+    width: 450px;
+    position: absolute;
+    top: -70px;
+
+
+}
+.texto_banner_02{
+   margin-top: 10px;
+   font-family: Inter;
+   margin-right: 10rem;
+   color: white;
+   display: flex;
+   flex-direction: column;
+   gap: 50px;
+   align-items: center;
+   justify-content: center;
+   font-size: 25px;
+ 
+}
+
+.texto_banner_02 div p{
+    font-size: 30px;
+    font-weight: 400;
+    text-align: center;
+}
+.button_contact{
+    border-radius: 18px;
+    background: linear-gradient(180deg, #70FF98 0%, #4AFF7D 100%);;
+    padding: 20px;
+    color: white;
+    text-decoration: none;
+    transition: 0.2s;
+}
+.button_contact:hover{
+  transform: scale(1.1);
+}

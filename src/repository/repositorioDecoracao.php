@@ -8,7 +8,7 @@ class DecoracaoRepositorio
         $this->pdo = $pdo;
     }
     public function listaDecoracao(): array{
-        $sql = "SELECT * FROM decoracoes";
+        $sql = "SELECT * FROM decoracoes ORDER BY data_update";
         $statement = $this->pdo->query($sql);
         $decoracoes =  $statement->fetchAll(PDO::FETCH_ASSOC);
 
@@ -23,7 +23,7 @@ class DecoracaoRepositorio
             );
         },  $decoracoes);
         return $dadosDecoracao;
-
     }
+    
    
 }
