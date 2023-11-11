@@ -82,13 +82,17 @@
 
              </div>
     </div>
-    <img class="criancaMenina" src="./ImagensSite-LuzeCor/Fotos/Criança1_Nuvem.png" align="right" alt="">
+
+    <div>
+    <img class="criancaMenina" src="./ImagensSite-LuzeCor/Fotos/Criança1_Nuvem.png" align="right" alt="imagem_criana">
+    </div>
 </section>
 
 <section class="banner_03">
     <div>
         <img class="criancaApontandoCima" src="./ImagensSite-LuzeCor/Fotos/Criança2_Nuvem.png" alt="Criança2_Nuvem">
     </div>
+    
     <div class="texto_banner_03">
         <div>
         <p>Na Luz e Cor nós  fazemos mais do</p>

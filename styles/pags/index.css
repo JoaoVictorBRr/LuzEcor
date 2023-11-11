@@ -3,6 +3,7 @@
 .banner_01{
     background: linear-gradient(180deg, rgba(46, 28, 255, 0.54) 0%, rgba(46, 28, 255, 0.54) 0.01%, rgba(196, 40, 251, 0.54) 100%);    height: 350px;
     height: 360px;
+
 }
 .main_content_banner_01{
   
@@ -45,6 +46,8 @@
     color: white;
     text-decoration: none;
     transition: 0.2s;
+    text-align: center;
+    font-size: 25px;
 }
 .button_contact:hover{
   transform: scale(1.1);
@@ -52,7 +55,9 @@
 .banner_02{
     margin-top: 7rem;
     display: flex;
+    justify-content: center;
     background-color: #E3E3E3;
+    gap: 50px;
 }
 .banner_02 div p{
     margin-top: 20px;
@@ -60,25 +65,21 @@
     text-align: center;
     font-size: 25px;
     font-family: Inter;
+
 }
-
-
 
 .criancaMenina{
     position: absolute;
     top: 33rem;
-    right: 0;
     width: 250px;
-    margin-right: 40px;
 }
 
 .div_carrosel_decoracoes{
-    padding: 0rem 5rem 2rem 5rem;
+    margin-bottom: 2rem;
     display: flex;
     justify-content: center;
-    align-items: center;
     gap: 20px;
-
+    flex-wrap: wrap;
 }
 .div_carrosel_decoracoes img{
     border-radius: 20px;
@@ -101,7 +102,8 @@
     height: 350px;
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: center;
+    gap: 35%;
 }
 
 .texto_banner_03{
@@ -127,10 +129,12 @@
 .banner_04{
     display: flex;
     margin-top: 10px;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
+    gap: 10rem;
     padding: 40px;
     flex-wrap: wrap;
+    position: relative;
 }
 .content_parceiros{
     font-family: Inter;
@@ -166,6 +170,42 @@
 .saibaMais:hover{
     transform: scale(1.1);
 }
+@media screen and (max-width: 1471px){
+    .criancaMenino{
+        width: 350px;
+    }  
+    .banner_04{
+        gap: 20px;
+    }
+}
+@media screen and (max-width: 1434px){
+
+    .banner_02{
+      
+        justify-content: left;
+        gap: 10%;
+    }
+    .div_carrosel_decoracoes{
+        margin-left: 40px;
+    }
+    
+    .criancaMenina{
+        position: absolute;
+        top: 33rem;
+        width: 250px;
+    }
+
+}
+@media screen and (max-width: 1299px){
+
+    .div_carrosel_decoracoes{
+        margin-left: 20px;
+    }
+    .criancaMenino{
+        width: 300px;
+    }  
+
+}
 @media screen and (max-width: 1275px){
     
     .main_content_banner_01{
@@ -183,21 +223,28 @@
     .texto_banner_01 div p{
         text-align: right;
     }
+    .banner_02{
+        
+        gap: 6rem;
+    }
     .banner_03{
         justify-content: center;
     }
     .texto_banner_03{
         margin-right: 0;
+        align-items: end;
     }
-    .criancaApontandoCima{
-        display: none;
+    .texto_banner_03 div p{
+        text-align: end;
     }
+   
 } 
 
 @media screen and (max-width: 1269px) {
     .banner_02{
         align-items: center;
         justify-content: center;
+        gap: 0;
     }
     .div_carrosel_decoracoes{
         flex-wrap: wrap;
@@ -227,5 +274,105 @@
     .texto_banner_01 div p{
         font-size: 25px;
     }
+    .criancaBalao{
+        width: 450px;
+        top: 100px;
     
+    }
+    .criancaApontandoCima{
+        width: 400px;
+        top: -80px;
+    }
+    .texto_banner_03 div p{
+       
+       font-size: 25px;
+        
+    }
 } 
+@media screen and (max-width: 871px){
+    
+    .criancaBalao{
+        display: none;
+    
+    }
+    .criancaApontandoCima{
+        display: none;
+    }
+    .main_content_banner_01{
+        justify-content: center;
+        gap: 0;
+    
+       
+    }
+    .texto_banner_01{
+       align-items: center;
+       justify-content: center;
+        margin-left: 80px;
+    }
+    
+    .texto_banner_01 div p{
+       
+        text-align: center;
+        
+    }
+    .texto_banner_01 h2{
+        text-align: center;
+        align-items: center;
+     }
+     .texto_banner_03{
+      justify-content: center;
+      align-items: center;
+     }
+     .texto_banner_03 div p{
+        text-align: center;
+    }
+    .banner_03{
+        gap: 0;
+    }
+} 
+@media screen and (max-width: 530px){
+    .texto_banner_01 div{
+        width: 400px;
+        
+    }
+    .texto_banner_01 div p{
+        font-size: 20px;
+        
+    }
+    .button_contact{
+        padding: 20px;
+        font-size: 22px;
+
+    }
+}
+@media screen and (max-width: 418px){
+    .texto_banner_01 div{
+        width: 315px;
+
+    }
+    .texto_banner_01 div p{
+        font-size: 20px;
+        
+    }
+    .button_contact{
+        padding: 20px;
+        font-size: 16px;
+
+    }
+    
+}
+@media screen and (max-width: 335px){
+    .texto_banner_01 div{
+        width: 270px;
+  
+    }
+    .texto_banner_01 h2{
+        font-size: 20px;
+    }
+    .button_contact{
+        padding: 19px;
+        font-size: 14px;
+
+    }
+    
+}

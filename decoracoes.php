@@ -33,7 +33,7 @@
 
 <section class="banner_01">
     <div class="main_content_banner_01"> 
-        <img class="duasCriancas" src="./ImagensSite-LuzeCor/Fotos/Criança6_Nuvem.png" alt="Criança3_Nuvem">
+      
         <div class="texto_banner_01">
             <h2>Celebre como um verdadeiro herói ou princesa! </h2>
             <div>
@@ -43,10 +43,10 @@
             <h2>Veja as festas mágicas que já criamos!</h2>
 
         </div>
-        
+        <img class="duasCriancas" src="./ImagensSite-LuzeCor/Fotos/Criança6_Nuvem.png" alt="Criança3_Nuvem">
     </div>
-    <img src="./ImagensSite-LuzeCor/Fotos/arrowDown.gif" alt="arrowDown" class="arrowDown">
 </section>
+
 
 <section class="destacados_container">
     <h2 class="titulos_categorias">Destacados</h2>
@@ -95,7 +95,8 @@
         <div class="texto_banner_02">
             <h2>Ficou encantado(a) com o que viu? 😍</h2>
             <div>
-            <p> Por que não entrar em contato agora e começar a</p>
+            <p> Por que não entrar em contato</p>
+            <p> agora e começar a</p>
             <p>planejar a festa dos sonhos?</p>
             </div>
             <a class="button_contact" href=""><strong>ENTRE EM CONTATO AGORA!</strong></a>
