@@ -32,12 +32,16 @@
     <a class="menu" href="/decoracoes.php">DECORAÇÕES</a>
     <a class="menu" href="/parceria.php">PARCERIA</a>
     <a class="menu" href="/contato.php">CONTATO</a>
-    <a href="">  <img class="logo_Whats" src="./ImagensSite-LuzeCor/Fotos/Whats.png" alt="LogoWhats" > </a> 
+    <a href="https://wa.me/5519996017447?text=Olá,%20gostaria%20de%20uma%20festa!!">  <img class="logo_Whats" src="./ImagensSite-LuzeCor/Fotos/Whats.png" alt="LogoWhats" > </a> 
 </header>
+
+<div class="botao_whatsapp">
+        <a href="https://wa.me/5519996017447?text=Olá,%20gostaria%20de%20uma%20festa!!"><img src="./ImagensSite-LuzeCor/WhatsApp-Logo.png" alt="WhatsApp Logo"></a>
+</div>
 
 <section class="banner_01">
     <div class="main_content_banner_01"> 
-        <div>
+        <div class="criancaBalao_div">
             <img class="criancaBalao" src="./ImagensSite-LuzeCor/Fotos/Criança3_Nuvem.png" alt="Criança3_Nuvem">
         </div>
         <div class="texto_banner_01">
@@ -47,7 +51,7 @@
             <p>decorações de festa infantil mais</p>
             <p> mágicas e memoráveis.</p>
             </div>
-            <a class="button_contact" href=""><strong>ENTRE EM CONTATO AGORA!</strong></a>
+            <a class="button_contact" href="/contato.php"><strong>ENTRE EM CONTATO AGORA!</strong></a>
         </div>
     </div>
 </section>
@@ -81,6 +85,7 @@
               <?php endforeach;?>
 
              </div>
+             <a class="button_veja-mais" href="decoracoes.php"><p>Veja mais!! </p></a>
     </div>
 
     <div>
@@ -101,7 +106,7 @@
         <p>celebração com <strong>alegria, cor e magia.</strong></p>
         </div>
     
-        <a class="button_contact" href=""><strong>ENTRE EM CONTATO AGORA!</strong></a>
+        <a class="button_contact" href="/contato.php"><strong>ENTRE EM CONTATO AGORA!</strong></a>
     </div>
 </section>
 
@@ -125,7 +130,7 @@
                 <img class="imgParceria" src="<?php echo "./ImagensSite-LuzeCor/Fotos/Buffet/" . $parceiro->getFilePath()?>" alt="<?php $parceiro->getFilePath()?>">
             <?php endforeach;?>
         </div>
-        <a class="saibaMais" href="">SAIBA MAIS!</a>
+        <a class="saibaMais" href="parceria.php">SAIBA MAIS!</a>
     </div>
     <img class="criancaMenino" src="./ImagensSite-LuzeCor/Fotos/Criança5_Nuvem.png" alt="">
     
@@ -135,19 +140,19 @@
 
 <footer>
 
-<a href="">  <img class="Logo_footer"   src="./ImagensSite-LuzeCor/Luz e cor.png" alt="Logo"> </a>
+<a href="./index.php">  <img class="Logo_footer"   src="./ImagensSite-LuzeCor/Luz e cor.png" alt="Logo"> </a>
 <div class="contato_footer">
 <h3>Contato</h3> 
 <div class="contato_footer_numero">
-<a href="">  <img class="iconWhats_footer" src="./ImagensSite-LuzeCor/Fotos/Whats.png" alt="LogoWhats" > </a> 
+<a href="https://wa.me/5519996017447?text=Olá,%20gostaria%20de%20uma%20festa!!">  <img class="iconWhats_footer" src="./ImagensSite-LuzeCor/Fotos/Whats.png" alt="LogoWhats" > </a> 
 <p><strong>(19) 99601-7447</strong></p>
 </div>
 </div>
 <div class="redes_footer">
     <h3>Redes sociais</h3> 
     <div class="redes_footer_icons">
-    <a href=""> <img class="iconFacebook_footer" src="./ImagensSite-LuzeCor/Fotos/FAce.png" alt=""></a>
-    <a href=""> <img class="iconInstagram_footer" src="./ImagensSite-LuzeCor/Fotos/Insta.png" alt=""></a>
+    <a href="https://www.facebook.com/luzecorfestas"> <img class="iconFacebook_footer" src="./ImagensSite-LuzeCor/Fotos/FAce.png" alt=""></a>
+    <a href="https://www.instagram.com/luz_e_cor_festas/"> <img class="iconInstagram_footer" src="./ImagensSite-LuzeCor/Fotos/Insta.png" alt=""></a>
     </div>
 </div>
 </footer>

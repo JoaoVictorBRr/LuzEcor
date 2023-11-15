@@ -57,6 +57,16 @@
     filter: brightness(.0);	
 }
 
+.botao_whatsapp a img{
+    width: 110px;
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    margin-right: 30px;
+    margin-bottom: 40px;
+    z-index: 999
+}
+
 @media screen and (max-width: 1312px) {
     .main_content_banner_01{
         align-items: flex-start;

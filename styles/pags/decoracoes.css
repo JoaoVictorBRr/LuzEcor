@@ -51,7 +51,7 @@
  
 }
 .titulos_categorias{
-
+    margin-left: 50px;
     font-family: inter;
     color: #3F3F3F;
 }
@@ -65,7 +65,7 @@
 }
 .cardDecoracao{
     cursor: pointer;
-    width: 300px;
+    width: 250px;
     border-radius: 33px;
     background: #D6D6D6;
     box-shadow: 7px 9px 13px 1px rgba(0, 0, 0, 0.25);
@@ -83,8 +83,8 @@
     text-decoration: none;
 }
 .imagemDecoracao{
-    width: 250px;
-    height: 190px;
+    width: 220px;
+    height: 150px;
     border-radius: 20px;
 }
 .cardTextContent{
@@ -148,6 +148,15 @@
 .button_contact:hover{
   transform: scale(1.1);
 }
+.botao_whatsapp a img{
+    width: 110px;
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    margin-right: 30px;
+    margin-bottom: 40px;
+    z-index: 999
+}
 @media screen and (max-width: 1439px){
     .texto_banner_01{
         font-size: 20px;
@@ -192,6 +201,13 @@
         font-size: 25px;
       
     }
+    .imagemDecoracao{
+        width: 200px;
+        height: 150px;
+    }
+   .cardDecoracao{
+    width: 250px;
+   }
   
 }
 @media screen and (max-width: 861px){
@@ -265,7 +281,7 @@
 }
 @media screen and (max-width: 598px){
     
-    .criancaMeninaApontando{
+    .criancaMeninaApontando_div{
        display: none;
     
     
@@ -273,7 +289,8 @@
     .texto_banner_02{
         text-align: center;
        align-items: center;
-       
+       margin-top: 50px;
+       margin-right: 0;
     }
     .texto_banner_02 div p{
        text-align: center;
@@ -286,11 +303,20 @@
     }
   
 }
-
+@media screen and (max-width: 563px){
+    .imagemDecoracao{
+        width: 150px;
+        height: 100px;
+    }
+   .cardDecoracao{
+    width: 200px;
+   }
+}
 @media screen and (max-width: 493px){
    
     .texto_banner_01{
         margin-top: 50px;
+        margin-left: 0;
         font-size: 15px;
        
     }
@@ -299,4 +325,22 @@
      
     }
   
+}
+@media screen and (max-width: 461px){
+   .titulos_categorias{
+    margin: 0;
+    
+   }
+   .todas_container{
+    justify-content: center;
+    align-items: center;
+   }
+   .destacados_container{
+    justify-content: center;
+    align-items: center;
+   }
+   .categorias_content{
+    justify-content: center;
+    align-items: center;
+   }
 }

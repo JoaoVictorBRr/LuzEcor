@@ -58,10 +58,12 @@
     justify-content: center;
     background-color: #E3E3E3;
     gap: 50px;
+    
 }
+
 .banner_02 div p{
     margin-top: 20px;
-    margin-bottom: 10px;
+    margin-bottom: 25px;
     text-align: center;
     font-size: 25px;
     font-family: Inter;
@@ -70,7 +72,7 @@
 
 .criancaMenina{
     position: absolute;
-    top: 33rem;
+    top: 40rem;
     width: 250px;
 }
 
@@ -151,6 +153,9 @@
     display: flex;
     gap: 20px;
 }
+.content_parceiros h2{
+    text-align: center;
+}
 .imgParceria{
     width:250px;
     height: 250px;
@@ -162,6 +167,7 @@
 .saibaMais{
     padding: 20px 100px 20px 100px;
     text-decoration: none;
+    text-align: center;
     color: white;
     border-radius: 18px;
     background: linear-gradient(180deg, #874FFF 0%, #4A72FF 100%);
@@ -169,6 +175,33 @@
 }
 .saibaMais:hover{
     transform: scale(1.1);
+}
+.button_veja-mais{
+    text-decoration: none;
+    color: white;
+    font-family: Inter;
+
+}
+
+.button_veja-mais p{
+    background: linear-gradient(180deg, #874FFF 0%, #4A72FF 100%);
+    margin: 0 auto;
+    width: 200px;
+    padding: 20px 0px 20px 0px;
+    border-radius: 18px;
+    transition: 0.5s;
+}
+.button_veja-mais P:hover{
+    transform: scale(1.1);
+}
+.botao_whatsapp a img{
+    width: 110px;
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    margin-right: 30px;
+    margin-bottom: 40px;
+    z-index: 999
 }
 @media screen and (max-width: 1471px){
     .criancaMenino{
@@ -207,6 +240,10 @@
 
 }
 @media screen and (max-width: 1275px){
+
+    .content_parceiros{
+        margin-left: 0px;
+    }
     
     .main_content_banner_01{
         justify-content: space-between;
@@ -257,11 +294,18 @@
     justify-content: center;
    }
 
+   
+
    .content_parceiros div{
     display: flex;
     flex-wrap: wrap;
     align-items: center;
     justify-content: center;
+    
+   }
+   .content_parceiros div h2{
+     text-align: center;
+    
    }
    .criancaMenino{
         display: none;
@@ -277,7 +321,6 @@
     .criancaBalao{
         width: 450px;
         top: 100px;
-    
     }
     .criancaApontandoCima{
         width: 400px;
@@ -292,22 +335,27 @@
 @media screen and (max-width: 871px){
     
     .criancaBalao{
-        display: none;
+       
+    display: none;
     
+    }
+    .criancaBalao_div{
+        display: none;
     }
     .criancaApontandoCima{
         display: none;
     }
     .main_content_banner_01{
         justify-content: center;
-        gap: 0;
+        
     
        
     }
     .texto_banner_01{
        align-items: center;
        justify-content: center;
-        margin-left: 80px;
+       margin: 0;
+       margin-top: 20px;
     }
     
     .texto_banner_01 div p{
@@ -345,6 +393,11 @@
 
     }
 }
+@media screen and (max-width: 424px){
+    .texto_banner_03 div p{
+        font-size: 20px;
+    }
+}
 @media screen and (max-width: 418px){
     .texto_banner_01 div{
         width: 315px;
@@ -365,6 +418,9 @@
     .texto_banner_01 div{
         width: 270px;
   
+    }
+    .texto_banner_03 div p{
+        font-size: 18px;
     }
     .texto_banner_01 h2{
         font-size: 20px;

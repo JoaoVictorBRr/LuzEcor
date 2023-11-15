@@ -62,3 +62,12 @@ h1{
 .button_contact:hover{
   transform: scale(1.1);
 }
+.botao_whatsapp a img{
+    width: 110px;
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    margin-right: 30px;
+    margin-bottom: 40px;
+    z-index: 999
+}
