@@ -22,6 +22,7 @@ h1{
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-wrap: wrap;
     gap: 30px;
     background: white;
     padding: 20px;
@@ -71,3 +72,41 @@ h1{
     margin-bottom: 40px;
     z-index: 999
 }
+@media screen and (max-width: 1242px){
+   .imgParcerio{
+    width: 350px;
+    height: 250px;
+   }
+}
+@media screen and (max-width: 1094px){
+   
+    .map{
+        width: 700px;
+    }
+ }
+
+ @media screen and (max-width: 752px){
+   
+    .map{
+        width: 600px;
+    }
+ }
+ @media screen and (max-width: 715px){
+   
+    .map{
+        width: 350px;
+    }
+ }
+ @media screen and (max-width: 419px){
+   
+    .imgParcerio{
+        width: 250px;
+        height: 150px;
+       }
+       .map{
+        width: 250px;
+    }
+    .parceriro_content div p{
+        font-size: 20px;
+    }
+ }

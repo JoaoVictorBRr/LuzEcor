@@ -45,6 +45,53 @@
     <img class="criancaMenina" src="./ImagensSite-LuzeCor/Fotos/Criança4.png" align="right" alt="">
 </section>
 
+<h3 class="text_comments">Veja o que os clientes falam sobre nós!!!</h3>
+
+<section class="card_container">
+
+        <div class="card_Content">
+
+            <div class="people_card">
+                <img  src="./ImagensSite-LuzeCor/Fotos/pessoas/1.png " alt="">
+                <h3>Julia</h3>
+            </div>
+            <div>
+                <img  class="estrelas" src="./ImagensSite-LuzeCor/Fotos/Estrelas/4.png" alt="">
+            </div>
+            <div class="description">
+                <p>Gostei muito da decoração que a empresa fez para o aniversário da minha filha, as crianças também adoraram. No próximo aniversário dela, já sei com quem falar.</p>
+            </div>
+        </div>
+
+
+            <div class="card_Content">
+
+                <div class="people_card">
+                <img  src="./ImagensSite-LuzeCor/Fotos/pessoas/2.png " alt="">
+                <h3>Ricardo</h3>
+                </div>
+                <div>
+                <img  class="estrelas" src="./ImagensSite-LuzeCor/Fotos/Estrelas/4.png" alt="">
+                </div>
+                <div class="description">
+                    <p>Estava procurando alguém para fazer a decoração da festa do meu casamento. Entrei em contato com a empresa, e eles garantiram que conseguiriam fazer. A decoração ficou incrível, a empresa está de parabéns!</p>
+                </div>
+            </div>
+            <div class="card_Content">
+
+                <div class="people_card">
+                    <img  src="./ImagensSite-LuzeCor/Fotos/pessoas/3.png " alt="">
+                    <h3>Simone</h3>
+                </div>
+                <div>
+                    <img  class="estrelas" src="./ImagensSite-LuzeCor/Fotos/Estrelas/5.png" alt="">
+                </div>
+                <div class="description">
+                    <p>O atendimento foi excelente, e a decoração ficou incrível! Fiquei apaixonada pela decoração do Batman que ela fez para o meu filho. Super recomendo que entrem em contato com a empresa!</p>
+                </div>
+            </div>
+</section>
+
 <footer>
 
     <a href="./index.php">  <img class="Logo_footer"   src="./ImagensSite-LuzeCor/Luz e cor.png" alt="Logo"> </a>
@@ -63,5 +110,7 @@
         </div>
     </div>
 </footer>
+
+
 </body>
 </html>
