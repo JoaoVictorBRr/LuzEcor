@@ -4,7 +4,11 @@
     require "./src/Model/parceria.php";
     require "./src/repository/repositorioParceria.php";
 
+    require "./pag-admin/src-admin/Model-admin/informacao.php";
+    require "./pag-admin/src-admin/repository-admin/repositorioInformacao.php";
+
     $parceriaRepositorio = new parceriaRepositorio($pdo);
+    $informacaoRepositorio = new InformacaoRepositorio($pdo);
     $dadosParceria = $parceriaRepositorio->listaParceria(); 
 
 ?>
@@ -61,21 +65,21 @@
 </section>
 <footer>
 
-    <a href="./index.php">  <img class="Logo_footer"   src="./ImagensSite-LuzeCor/Luz e cor.png" alt="Logo"> </a>
-    <div class="contato_footer">
-    <h3>Contato</h3>
-    <div class="contato_footer_numero">
-    <a href="https://wa.me/5519996017447?text=Olá,%20gostaria%20de%20uma%20festa!!">  <img class="iconWhats_footer" src="./ImagensSite-LuzeCor/Fotos/Whats.png" alt="LogoWhats" > </a>
-    <p><strong>(19) 99601-7447</strong></p>
+<a href="./index.php">  <img class="Logo_footer"   src="./ImagensSite-LuzeCor/Luz e cor.png" alt="Logo"> </a>
+<div class="contato_footer">
+<h3>Contato</h3> 
+<div class="contato_footer_numero">
+<a href="https://wa.me/<?php echo $informacaoRepositorio->getTelefone()?>?text=Olá,%20gostaria%20de%20uma%20festa!!">  <img class="iconWhats_footer" src="./ImagensSite-LuzeCor/Fotos/Whats.png" alt="LogoWhats" > </a> 
+<p><strong><?php echo $informacaoRepositorio->getTelefone()?></strong></p>
+</div>
+</div>
+<div class="redes_footer">
+    <h3>Redes sociais</h3> 
+    <div class="redes_footer_icons">
+    <a href="<?php echo $informacaoRepositorio->getFacebook() ?>"> <img class="iconFacebook_footer" src="./ImagensSite-LuzeCor/Fotos/FAce.png" alt=""></a>
+    <a href="<?php echo $informacaoRepositorio->getInstagram() ?>"> <img class="iconInstagram_footer" src="./ImagensSite-LuzeCor/Fotos/Insta.png" alt=""></a>
     </div>
-    </div>
-    <div class="redes_footer">
-        <h3>Redes sociais</h3>
-        <div class="redes_footer_icons">
-        <a href="https://www.facebook.com/luzecorfestas"> <img class="iconFacebook_footer" src="./ImagensSite-LuzeCor/Fotos/FAce.png" alt="iconFacebook_footer"></a>
-        <a href="https://www.instagram.com/luz_e_cor_festas/"> <img class="iconInstagram_footer" src="./ImagensSite-LuzeCor/Fotos/Insta.png" alt="iconInstagram_footer"></a>
-        </div>
-    </div>
+</div>
 </footer>
 </body>
 </html>

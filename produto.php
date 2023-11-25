@@ -2,6 +2,9 @@
 
     require "./src/conection.php";
 
+    require "./pag-admin/src-admin/Model-admin/informacao.php";
+    require "./pag-admin/src-admin/repository-admin/repositorioInformacao.php";
+
     require "./src/Model/decoracao.php";
     require "./src/Model/imagem.php";
     require "./src/Model/comentario.php";
@@ -13,6 +16,8 @@
     $id = $_GET['id'];
 
    
+
+    $informacaoRepositorio = new InformacaoRepositorio($pdo);
 
     $PodutoRepositorio = new DecoracaoRepositorio($pdo);
 
@@ -182,15 +187,15 @@
 <div class="contato_footer">
 <h3>Contato</h3> 
 <div class="contato_footer_numero">
-<a href="https://wa.me/5519996017447?text=Olá,%20gostaria%20de%20uma%20festa!!">  <img class="iconWhats_footer" src="./ImagensSite-LuzeCor/Fotos/Whats.png" alt="LogoWhats" > </a> 
-<p><strong>(19) 99601-7447</strong></p>
+<a href="https://wa.me/<?php echo $informacaoRepositorio->getTelefone()?>?text=Olá,%20gostaria%20de%20uma%20festa!!">  <img class="iconWhats_footer" src="./ImagensSite-LuzeCor/Fotos/Whats.png" alt="LogoWhats" > </a> 
+<p><strong><?php echo $informacaoRepositorio->getTelefone()?></strong></p>
 </div>
 </div>
 <div class="redes_footer">
     <h3>Redes sociais</h3> 
     <div class="redes_footer_icons">
-    <a href="https://www.facebook.com/luzecorfestas"> <img class="iconFacebook_footer" src="./ImagensSite-LuzeCor/Fotos/FAce.png" alt=""></a>
-    <a href="https://www.instagram.com/luz_e_cor_festas/"> <img class="iconInstagram_footer" src="./ImagensSite-LuzeCor/Fotos/Insta.png" alt=""></a>
+    <a href="<?php echo $informacaoRepositorio->getFacebook() ?>"> <img class="iconFacebook_footer" src="./ImagensSite-LuzeCor/Fotos/FAce.png" alt=""></a>
+    <a href="<?php echo $informacaoRepositorio->getInstagram() ?>"> <img class="iconInstagram_footer" src="./ImagensSite-LuzeCor/Fotos/Insta.png" alt=""></a>
     </div>
 </div>
 </footer>
