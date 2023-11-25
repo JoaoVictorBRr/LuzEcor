@@ -61,7 +61,7 @@
             continue;
         }
         ?>
-        <a class="ancorDecoracao" href="">   
+        <a class="ancorDecoracao" href="<?php echo "./produto.php?id=" . $decoracaoDestacada->getId() ?>">   
             <div class="cardDecoracao" >
                 <img src=" <?php echo "./ImagensSite-LuzeCor/Fotos_decoracoes/" . $decoracaoDestacada->getFilePath() ?>" class="imagemDecoracao" alt="<?php echo $decoracaoDestacada->getFilePath() ?>">
                 <div class="cardTextContent">
@@ -78,7 +78,7 @@
     <h2 class="titulos_categorias">Todas</h2>
     <div class="categorias_content">
     <?php foreach($dadosDecoracao as $decoracaoDestacada):?>
-        <a class="ancorDecoracao" href="">   
+        <a class="ancorDecoracao" href="<?php echo "./produto.php?id=" . $decoracaoDestacada->getId() ?>">   
             <div class="cardDecoracao" >
                 <img src=" <?php echo "./ImagensSite-LuzeCor/Fotos_decoracoes/" . $decoracaoDestacada->getFilePath() ?>" class="imagemDecoracao" alt="<?php echo $decoracaoDestacada->getFilePath() ?>">
                 <div class="cardTextContent">
