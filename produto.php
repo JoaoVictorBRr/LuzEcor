@@ -21,6 +21,31 @@
 
     $comentarioRepositorio = new ComentarioRepositorio($pdo);
     $dadosComentario = $comentarioRepositorio->listaComentario($id); 
+    
+
+   
+
+    if(isset($_POST['cadastro'])){
+
+    $numeroAleatorio = rand(1, 5);
+    $foto = "Monstro" . $numeroAleatorio . ".png";
+
+    $decoracao = new Comentario(
+        null,
+        $_POST['nome'], 
+        $_POST['comentario'] , 
+        $foto,
+        $id, 
+        null
+
+    );
+
+    $comentarioRepositorio->salvarComentario($decoracao);
+
+    header("Location: produto.php?id=" . $id);
+
+}
+   
 
 ?>
 
@@ -71,18 +96,66 @@
 
 </section>
 
-<section class="comentarios_container">
 
-        <?php foreach ($dadosComentario as $comentario): ?>
-        
-            <div>
-                <img src="" alt="">
-                <p> <?php echo $comentario->getNome() ?>  </p>
-                <p> <?php echo $comentario->getComentario() ?>  </p>
-            </div>
+
+<section class="comentarios_container" >
+
+        <div class="comentarios_div">
+            <?php 
+              if(!$dadosComentario){
+                echo "<h3>Sem comentários</h3>";
+              }
+              else{
+                echo "<h3>Comentários</h3>";
+              }
+            ?>
             
-        <?php endforeach;?>
+            <?php foreach ($dadosComentario as $comentario): 
+                
+            $dataCometario = $comentario->getDataUpdate();
+            $dataFormatada = DateTime::createFromFormat('Y-m-d H:i:s', $dataCometario)->format('d/m/Y H:i');
 
+            ?>
+
+                <div class="comentario">  
+                    <div class="comentario_content">
+
+                        <div>
+                            <img class="foto_pessoa" src="<?php echo "./ImagensSite-LuzeCor/Fotos/monstros/" . $comentario->getFoto() ?>" alt="">
+                            <p><?php echo $comentario->getNome() ?></p>
+                        </div>
+
+                        <div>
+                            <p><?php echo $dataFormatada ?></p>
+                        </div>
+                        
+                 </div>
+                    <p>Comentario: <?php echo $comentario->getComentario() ?>  </p>
+
+                </div>
+                
+            <?php endforeach;?>
+        </div>  
+        
+        <form method="POST">
+                <h3>Adcionar comentário</h3>
+                <div>
+                    <label for="nome">Nome: </label>
+                    <input name="nome" id="nome" type="text">
+                </div>
+
+                <div>
+                    <label for="comentario">Comentário: </label>
+                    <textarea width="100px" height="100px" name="comentario" id="comentario" type="text"> </textarea>
+                </div>
+
+                <div>
+                    <input name="cadastro" class="button_submit" type="submit" value="Enviar">
+                </div>
+
+        </form>
+
+  
 </section>
 
 <section class="banner_02">
@@ -102,11 +175,6 @@
     </div>
 </section>
 
-<form action="">
-
-  
-
-</form>
 
 <footer>
 

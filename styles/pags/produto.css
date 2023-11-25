@@ -100,6 +100,104 @@
     margin-bottom: 40px;
     z-index: 999
 }
+.comentarios_container{
+   display: flex;
+   justify-content: center;
+   gap: 5%;
+   align-items: normal;
+  
+}
+
+.comentarios_div{
+    display: flex;
+    margin-left: 5%;
+    gap: 10px;
+    flex-direction: column;
+}
+
+h3{
+    font-family: Inter;
+    margin-top: 60px;
+   
+}
+
+.comentario p{
+    font-family: Inter;
+   }
+   
+.comentario{
+    background-color: #dcdcdc;
+    margin-top: 20px;
+    padding: 30px;
+    width: 100%;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.comentario_content{
+    display: flex;
+    justify-content: space-between;
+
+    gap: 10px;
+}
+
+.comentario_content div{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.foto_pessoa{
+    width: 60px;
+    border-radius: 100%;
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+form div{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+label{
+    font-family: Inter;
+}
+textarea{
+    font-family: Inter;
+    font-size: 15px;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+#nome{
+    border-radius: 10px;
+    width: 250px;
+    height: 30px;
+    border: 0px white solid;
+    padding: 20px;
+    font-size: 15px;
+    font-family: Inter;
+}
+.button_submit{
+    background-color: #4AFF7D;
+    text-align: center;
+    transition: 0.2s;
+    padding: 20px;
+    border: 0px white solid;
+    border-radius: 10px;
+    font-size: 15px;
+
+}
+
+.button_submit:hover{
+   cursor: pointer;
+    transform: scale(1.1);
+}
 
 @media screen and (max-width: 1154px){
    

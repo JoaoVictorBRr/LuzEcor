@@ -4,14 +4,14 @@
 
 class Comentario
 {
-    private int $id;
+    private ?int $id;
     private string $nome;
     private string $comentario;
     private string $foto;
     private int $produto_id;
-    private string $data_update; 
+    private ?string $data_update; 
 
-    public function __construct(int $id, string $nome, string $comentario, string $foto, int $produto_id, string $data_update){
+    public function __construct(?int $id, string $nome, string $comentario, string $foto, int $produto_id, ?string $data_update){
         $this->id = $id;
         $this->nome = $nome;
         $this->comentario = $comentario;
