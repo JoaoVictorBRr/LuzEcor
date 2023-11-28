@@ -1,15 +1,18 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;800&display=swap');
 
+
+
 body{
+    
     height: 100vh;
     background: rgb(175, 175, 175);
+ 
 }
 
-    section{
+section{
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 40vh;
   
 }
 .categorias{
@@ -28,7 +31,7 @@ body{
     transform: scale(1.1);
 }
 form{
-    margin-top: 320px;
+    margin-top: 50px;
     display: flex;   
     flex-direction: column;
     gap: 30px;
@@ -44,6 +47,21 @@ form{
     color: #3F3F3F;
     gap: 5px;
     
+}
+.input_foto{
+    font-family: Inter;
+    color: #3F3F3F; 
+}
+.input_foto_adicionadas{
+    font-family: Inter;
+    color: #3F3F3F; 
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+.inputs_favoritar{
+    font-family: Inter;
+    color: #3F3F3F;
 }
 .button{
     display: flex;

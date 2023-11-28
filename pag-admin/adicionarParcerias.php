@@ -1,36 +1,3 @@
-<?php
-
-require __DIR__ . "../../src/conection.php";
-require __DIR__ . "/src-admin/Model-admin/informacao.php";
-require __DIR__ . "/src-admin/repository-admin/repositorioInformacao.php";
-
-$informacaoRepositorio = new InformacaoRepositorio($pdo);
-
-if(isset($_POST['cadastro'])){
-
-    $informacao = new InformacaoEmpresa(
-        null,
-        $_POST['Telefone'], 
-        $_POST['Instagram'], 
-        $_POST['Facebook'], 
-        null
-
-    );
-
-    
-    $informacaoRepositorio->salvarInformacoes($informacao);
-
-  
-
-    header("Location: ./adicionarInformacao.php");
-
-
-}
-  
-
-?>
-
-
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -62,24 +29,36 @@ if(isset($_POST['cadastro'])){
         <form method="POST">
             <h2>EDITAR INFORMAÇÕES DE CONTATO</h2>
 
-        <?php 
-        
-       
-        ?>
-
             <div class="inputs">
-                <label for="Telefone">Telefone: </label>
-                <input class="input-item" name="Telefone" type="number" value="<?php echo $informacaoRepositorio->getTelefone() ?>">
+                <label for="Nome">Nome: </label>
+                <input class="input-item" name="Nome" type="text">
             </div>
 
             <div class="inputs">
-                <label for="Instagram">Instagram: </label>
-                <input class="input-item" name="Instagram" type="text" value="<?php echo $informacaoRepositorio->getInstagram() ?>">
+                <label for="Local">Local: </label>
+                <input class="input-item" name="Local" type="text">
             </div>
 
             <div class="inputs">
-                <label for="Facebook">Facebook: </label>
-                <input class="input-item" name="Facebook" type="text" value="<?php echo $informacaoRepositorio->getFacebook() ?>">
+                <label for="horario">Horário Aberto: </label>
+                <input class="input-item" name="horario" type="text">
+            </div>
+
+            <div class="inputs">
+                <label for="Whatsapp">Whatsapp: </label>
+                <input class="input-item" name="Whatsapp" type="number">
+            </div>
+
+            <div class="input_foto">
+                <label for="foto">Adicionar foto: </label>
+                <input class="input-item" name="foto" type="file">
+            </div>
+
+            <div class="input_foto_adicionadas">
+            <p>Fotos Adicionadas: </p>
+                <ul>
+                    <li>nomeFoto.png</li>
+                </ul>
             </div>
                
         <div class="button">
@@ -87,11 +66,10 @@ if(isset($_POST['cadastro'])){
         </div> 
 
         </form>
-        
+       
 
     </section>
 
-   
 
 </body>
 </html>
