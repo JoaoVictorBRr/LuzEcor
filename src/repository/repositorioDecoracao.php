@@ -7,6 +7,7 @@ class DecoracaoRepositorio
     public function __construct(PDO $pdo){
         $this->pdo = $pdo;
     }
+
     public function listaDecoracao(): array
     {
         $sql = "SELECT * FROM decoracoes ORDER BY data_update";
@@ -43,4 +44,29 @@ class DecoracaoRepositorio
 
         return $decoracao['summary'];
     }
+
+    public function getFoto($idImage): string
+    {
+        $sql = "SELECT * FROM imagens WHERE id = $idImage";
+        $statement = $this->pdo->query($sql);
+        $imagem  =  $statement->fetch(PDO::FETCH_ASSOC);
+
+        return $imagem['arquivo'];
+    }
+
+    public function salvarDecoracoes(Decoracao $decoracao): int
+    {
+        $sql = "INSERT INTO decoracoes (title, summary, highlighted, data_update, file_path) VALUES (?, ?, ?, NOW(), ?)";
+        $statement = $this->pdo->prepare($sql);
+       
+        $statement->bindValue(1, $decoracao->getTitle());
+        $statement->bindValue(2, $decoracao->getSummary());
+        $statement->bindValue(3, $decoracao->getHighlighted());
+        $statement->bindValue(4, $decoracao->getFilePath());
+        $statement->execute();
+
+        $ultimoIdInserido = (int) $this->pdo->lastInsertId();
+        return $ultimoIdInserido;
+    } 
+
 }

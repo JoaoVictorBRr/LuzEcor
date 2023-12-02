@@ -93,7 +93,7 @@
         <div class="imagensProduto_container">
         
             <?php foreach ($dadosImagem as $imagem): ?>  
-            <img class="imagem_produto" src="<?php echo "./ImagensSite-LuzeCor/Fotos_decoracoes/" . $imagem->getArquivo() ?>" alt="imagemDecoracao">
+            <img class="imagem_produto" src="<?php echo "./pag-admin/imagensBanco/" . $imagem->getArquivo() ?>" alt="imagemDecoracao">
             <?php endforeach;?>
     
         </div>

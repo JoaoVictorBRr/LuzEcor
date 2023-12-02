@@ -92,7 +92,7 @@
 
                 
                  ?>  
-                 <a href=""> <img src="<?php echo "./ImagensSite-LuzeCor/Fotos_decoracoes/" . $decoracao->getFilePath() ?>" alt="imgDecoracao"> </a>
+                 <a href="<?php echo "./produto.php?id=" . $decoracao->getId() ?>"> <img src="<?php echo "./pag-admin/imagensBanco/" . $decoracao->getFilePath() ?>" alt="imgDecoracao"> </a>
               <?php endforeach;?>
 
              </div>

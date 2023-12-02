@@ -9,12 +9,7 @@ body{
  
 }
 
-section{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  
-}
+
 .categorias{
     display: flex;
     gap: 35px;
@@ -32,12 +27,9 @@ section{
     transform: scale(1.1);
 }
 .form{
-    margin-top: 250px;
+    width: 300px;
     margin: 0 auto;
-    width: 500px;
-    display: flex;   
-    flex-direction: column;
-    gap: 30px;
+    margin-top: 100px;
     background-color: rgb(219, 219, 219);
     padding: 45px;
     border-radius: 20px;

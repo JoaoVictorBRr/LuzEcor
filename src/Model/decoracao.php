@@ -4,14 +4,14 @@
 
 class Decoracao
 {
-    private int $id;
+    private ?int $id;
     private string $title;
     private string $summary;
-    private string $file_path;
+    private ?string $file_path;
     private int $highlighted;
-    private string $data_update; 
+    private ?string $data_update; 
 
-    public function __construct(int $id, string $title, string $summary, string $file_path, int $highlighted, string $data_update){
+    public function __construct(?int $id, string $title, string $summary, ?string $file_path, int $highlighted, ?string $data_update){
         $this->id = $id;
         $this->title = $title;
         $this->summary = $summary;

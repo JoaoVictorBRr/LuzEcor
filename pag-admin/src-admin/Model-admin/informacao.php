@@ -3,12 +3,12 @@
 class InformacaoEmpresa
 {
     private ?int $id;
-    private string $Tel;
+    private int $Tel;
     private string $Insta;
     private string $Face;
     private ?string $data_update; 
 
-    public function __construct(?int $id, string $Tel, string $Insta, string $Face, ?string $data_update){
+    public function __construct(?int $id, int $Tel, string $Insta, string $Face, ?string $data_update){
         $this->id = $id;
         $this->Tel = $Tel;
         $this->Insta = $Insta;
@@ -20,7 +20,7 @@ class InformacaoEmpresa
     {
         return $this->id;
     }
-    public function getTel(): string
+    public function getTel(): int
     {
         return $this->Tel;
     }

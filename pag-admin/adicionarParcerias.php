@@ -17,12 +17,11 @@
                     <a href="./adicionarInformacao.php"> <strong>Informações de contato</strong></a>
                     <a href="./adicionarDecoracoes.php"><strong>Adicionar Decorações</strong></a>
                     <a href="./adicionarParcerias.php"><strong>Parcerias</strong></a>
-                    <a href="./verDecoracoes.php"><strong>Ver decorações</strong></a>
-                    <a href="./verParcerias.php"><strong>Ver Parcerias</strong></a>
+
         </div>
     </header>
     
-    <section>
+    <section class="form">
 
        
 
@@ -30,26 +29,31 @@
             <h2>EDITAR INFORMAÇÕES DE CONTATO</h2>
 
             <div class="inputs">
+                <br>
                 <label for="Nome">Nome: </label>
                 <input class="input-item" name="Nome" type="text">
             </div>
 
             <div class="inputs">
+            <br>
                 <label for="Local">Local: </label>
                 <input class="input-item" name="Local" type="text">
             </div>
 
             <div class="inputs">
+            <br>
                 <label for="horario">Horário Aberto: </label>
                 <input class="input-item" name="horario" type="text">
             </div>
 
             <div class="inputs">
+            <br>
                 <label for="Whatsapp">Whatsapp: </label>
                 <input class="input-item" name="Whatsapp" type="number">
             </div>
 
             <div class="input_foto">
+            <br>
                 <label for="foto">Adicionar foto: </label>
                 <input class="input-item" name="foto" type="file">
             </div>

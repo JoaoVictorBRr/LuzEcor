@@ -23,8 +23,6 @@ if(isset($_POST['cadastro'])){
   
 
     header("Location: ./adicionarInformacao.php");
-
-
 }
   
 
@@ -50,12 +48,11 @@ if(isset($_POST['cadastro'])){
                     <a href="./adicionarInformacao.php"> <strong>Informações de contato</strong></a>
                     <a href="./adicionarDecoracoes.php"><strong>Adicionar Decorações</strong></a>
                     <a href="./adicionarParcerias.php"><strong>Parcerias</strong></a>
-                    <a href="./verDecoracoes.php"><strong>Ver decorações</strong></a>
-                    <a href="./verParcerias.php"><strong>Ver Parcerias</strong></a>
+
         </div>
     </header>
     
-    <section>
+    <section class="form">
 
        
 
@@ -68,16 +65,19 @@ if(isset($_POST['cadastro'])){
         ?>
 
             <div class="inputs">
+                <br>
                 <label for="Telefone">Telefone: </label>
                 <input class="input-item" name="Telefone" type="number" value="<?php echo $informacaoRepositorio->getTelefone() ?>">
             </div>
 
             <div class="inputs">
+                <br>
                 <label for="Instagram">Instagram: </label>
                 <input class="input-item" name="Instagram" type="text" value="<?php echo $informacaoRepositorio->getInstagram() ?>">
             </div>
 
             <div class="inputs">
+                <br>
                 <label for="Facebook">Facebook: </label>
                 <input class="input-item" name="Facebook" type="text" value="<?php echo $informacaoRepositorio->getFacebook() ?>">
             </div>
