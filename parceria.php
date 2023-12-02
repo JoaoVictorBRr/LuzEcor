@@ -46,7 +46,7 @@
     <?php foreach ($dadosParceria as $parceria): ?>
         <div class="parceriro_div">
         
-                <img class="imgParcerio" src="<?php echo "./ImagensSite-LuzeCor/Fotos/Buffet/" . $parceria->getFilePath() ?>" alt="<?php $parceria->getFilePath()?>">
+                <img class="imgParcerio" src="<?php echo "./pag-admin/imagensBancoParceria/" . $parceria->getFilePath() ?>" alt="<?php $parceria->getFilePath()?>">
                 <div class="parceriro_content">
                     <div>
                         <p>Nome: <?php echo $parceria->getNome() ?></p>

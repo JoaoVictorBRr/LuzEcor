@@ -1,3 +1,37 @@
+<?php
+
+require __DIR__ . "../../src/conection.php";
+
+require __DIR__ . "/src-admin/Model-admin/parceria.php";
+require __DIR__ . "/src-admin/repository-admin/repositorioParceria.php";
+
+    $userRepositorio = new parceriaRepositorio($pdo);
+
+    if(isset($_POST['cadastro'])){
+
+        if($_FILES['foto']['name']){
+            $parcerio = new Parceria(
+                null,
+                $_POST['Nome'],
+                $_POST['Local'],
+                $_POST['horario'],
+                $_FILES['foto']['name'],
+                intval($_POST['Whatsapp'])
+            );
+        }
+    
+        $arquivo = $_FILES['foto'];
+
+        $caminho_destino = str_replace('\\', '/', __DIR__ . './imagensBancoParceria/');
+        move_uploaded_file($_FILES['foto']['tmp_name'], $caminho_destino . $arquivo['name']);
+        $userRepositorio->salvarDecoracoes($parcerio);
+
+    header("Location: ./adicionarParcerias.php");
+    }
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -25,7 +59,7 @@
 
        
 
-        <form method="POST">
+        <form method="POST" enctype="multipart/form-data">
             <h2>EDITAR INFORMAÇÕES DE CONTATO</h2>
 
             <div class="inputs">
@@ -59,11 +93,7 @@
             </div>
 
             <div class="input_foto_adicionadas">
-            <p>Fotos Adicionadas: </p>
-                <ul>
-                    <li>nomeFoto.png</li>
-                </ul>
-            </div>
+        
                
         <div class="button">
             <input class="button-item" class="button" name="cadastro" type="submit" value="Atualizar">
