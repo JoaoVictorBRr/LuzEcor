@@ -16,7 +16,6 @@ header{
     gap: 30px;
     font-size: 20px;
     flex-wrap: wrap;
-
 }
 .menu{
     color: #3F3F3F;
@@ -26,6 +25,9 @@ header{
 }
 .menu:hover{
     transform: scale(1.05);
+}
+.menu-lateral-container{
+    display: none;
 }
 .logo_LuzECor{
     width: 75px;
@@ -93,4 +95,41 @@ footer{
      gap: 20px;
      align-items: center;
      justify-content: left;
+ }
+
+
+
+@media screen and (max-width: 1000px){
+
+    header{
+       display: none;
+    }
+
+    .menu-lateral-container{
+        display: flex;
+        justify-content: space-between;
+  
+    }
+    .menu-lateral-itens{
+        right: 0;
+
+        background-color: #d2d2d2;
+
+        height: 100%;
+        padding: 40px 0 40px;
+        
+       
+       width: 0;
+
+        position: fixed;
+        overflow: hidden;
+        z-index: 1;
+    }
+    .menu-lateral-container ul{
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+       
+    }
+    
  }

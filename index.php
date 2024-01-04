@@ -34,6 +34,7 @@
     <link rel="stylesheet" href="./styles/global.css">
     <link rel="stylesheet" href="./styles/pags/index.css">
     <link rel="shortcut icon" href="./ImagensSite-LuzeCor/Luz e cor.png" type="image/x-icon" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 </head>
 <body>
 <header>
@@ -43,7 +44,65 @@
     <a class="menu" href="/parceria.php">PARCERIA</a>
     <a class="menu" href="/contato.php">CONTATO</a>
     <a href="https://wa.me/5519996017447?text=Olá,%20gostaria%20de%20uma%20festa!!">  <img class="logo_Whats" src="./ImagensSite-LuzeCor/Fotos/Whats.png" alt="LogoWhats" > </a> 
+    <script src="script.js"></script>
 </header>
+
+
+<nav class="menu-lateral-container" >
+
+    <a href="/">  <img class="logo_LuzECor" src="./ImagensSite-LuzeCor/Luz e cor.png" alt="Logo"> </a> 
+
+    <div class="btn-lateral">
+            <i class="bi bi-list" onclick="abrirMenu()"></i>
+    </div>
+
+    <div class="menu-lateral-itens" id="menu-lateral">
+
+        <ul>
+
+            <li class="item-menu">
+                 <i class="bi bi-list" onclick="fecharMenu()"></i>
+            </li>
+
+            <li class="item-menu">
+                <a class="menu" href="/"></a>
+                <span class="icon"><i class="bi bi-house"></i></span>
+                <span class="txt-link">HOME</span>
+            </li>
+
+            <li class="item-menu">
+                <a class="menu" href="/decoracoes.php"></a>
+                <span class="icon"><i class="bi bi-balloon-heart"></i></span>
+                <span class="txt-link">DECORAÇÕES</span>
+            </li>
+
+            <li class="item-menu">
+                <a class="menu" href="/parceria.php"></a>
+                <span class="icon"><i class="bi bi-people-fill"></i></span>
+                <span class="txt-link">PARCERIA</span>
+            </li>
+
+            <li class="item-menu">
+                <a class="menu" href="/contato.php"></a>
+                <span class="icon"><i class="bi bi-envelope"></i></span>
+                <span class="txt-link">CONTATO</span>
+            </li>
+
+            <li class="item-menu">
+                <a href="https://wa.me/5519996017447?text=Olá,%20gostaria%20de%20uma%20festa!!"> </a> 
+                <span class="icon"><i class="bi bi-whatsapp"></i></span>
+                <span class="txt-link">WHATSAPP</span>
+            </li>
+        </ul>
+
+    </div>
+  
+
+   
+  
+    
+
+</nav>
 
 <div class="botao_whatsapp">
         <a href="https://wa.me/5519996017447?text=Olá,%20gostaria%20de%20uma%20festa!!"><img src="./ImagensSite-LuzeCor/WhatsApp-Logo.png" alt="WhatsApp Logo"></a>
@@ -138,7 +197,7 @@
                     }
               
             ?>
-                <img class="imgParceria" src="<?php echo "./ImagensSite-LuzeCor/Fotos/Buffet/" . $parceiro->getFilePath()?>" alt="<?php $parceiro->getFilePath()?>">
+                <img class="imgParceria" src="<?php echo "./pag-admin/imagensBancoParceria/" . $parceiro->getFilePath()?>" alt="<?php $parceiro->getFilePath()?>">
             <?php endforeach;?>
         </div>
         <a class="saibaMais" href="parceria.php">SAIBA MAIS!</a>

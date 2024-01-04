@@ -1,3 +1,0 @@
-O site está sendo executado com o comando php -S localhost:8080
-
-É necessario ter o banco de dados instalado para funcionar
