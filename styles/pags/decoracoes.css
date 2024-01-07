@@ -154,7 +154,7 @@
     right: 0;
     bottom: 0;
     margin-right: 30px;
-    margin-bottom: 40px;
+    margin-bottom: 160px;
     z-index: 999
 }
 @media screen and (max-width: 1439px){
@@ -165,6 +165,13 @@
         width: 400px;
        top: -60px;
     }
+}
+@media screen and (max-width: 1321px){
+
+    .texto_banner_02{
+        font-size: 20px;
+    }
+
 }
 @media screen and (max-width: 1154px){
     .texto_banner_01{
@@ -232,10 +239,6 @@
         font-size: 20px;
     
     }
-  
-}
-
-@media screen and (max-width: 861px){
     .duasCriancas{
         display: none;
     }
@@ -259,7 +262,17 @@
     }
   
 }
+@media screen and (max-width: 836px){
 
+    .cardDecoracao {
+        width: 200px;
+    }
+    .imagemDecoracao{
+        width: 140px;
+        height: 100px;
+    }
+
+}
 @media screen and (max-width: 680px){
    
     .texto_banner_02{

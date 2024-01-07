@@ -1,5 +1,6 @@
 function abrirMenu() {
   const nav = document.getElementById("menu-lateral");
+  nav.style.transition = "0.2s";
   nav.style.width = "250px";
 }
 

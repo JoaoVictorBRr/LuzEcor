@@ -1,5 +1,17 @@
 <?php
 
+session_start();
+
+if(!isset($_SESSION['login'])){  
+    include('login.php');
+    exit;
+ }else if(isset($_GET['logout'])){
+    unset($_SESSION['login']);
+    session_destroy();
+    header('Location: login.php');
+ }
+
+
 require __DIR__ . "../../src/conection.php";
 require __DIR__ . "/src-admin/Model-admin/informacao.php";
 require __DIR__ . "/src-admin/repository-admin/repositorioInformacao.php";
@@ -34,7 +46,7 @@ if(isset($_POST['cadastro'])){
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../styles/global.css">
+    <link rel="stylesheet" href="./styles-admin/global.css">
     <link rel="stylesheet" href="./styles-admin/adicionarAdmin.css">
 
     <link rel="shortcut icon" href="../ImagensSite-LuzeCor/Luz e cor.png" type="image/x-icon" />
@@ -45,9 +57,12 @@ if(isset($_POST['cadastro'])){
     
     <header>
         <div class="categorias">
-                    <a href="./adicionarInformacao.php"> <strong>Informações de contato</strong></a>
+                    <a href="./adicionarInformacao.php"><strong>Informações de contato</strong></a>
                     <a href="./adicionarDecoracoes.php"><strong>Adicionar Decorações</strong></a>
-                    <a href="./adicionarParcerias.php"><strong>Parcerias</strong></a>
+                    <a href="./adicionarParcerias.php"><strong>Adicionar Parcerias</strong></a>
+                    <a href="./verDecoracoes.php"><strong>Editar Decoraçoes</strong></a>
+                    <a href="./verParcerias.php"><strong>Editar Parcerias</strong></a>
+                    <a href="?logout"><strong>LogOut</strong></a>
 
         </div>
     </header>

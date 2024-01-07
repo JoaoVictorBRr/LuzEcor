@@ -17,15 +17,18 @@
 
 <!DOCTYPE html>
 <html lang="pt-br">
+    
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="./ImagensSite-LuzeCor/Luz e cor.png" type="image/x-icon" />
     <link rel="stylesheet" href="./styles/pags/decoracoes.css">
     <link rel="stylesheet" href="./styles/global.css">
-    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <script src="script.js"></script>
     <title>Luz e Cor - Decoracoes</title>
 </head>
+
 <body>
 
 <header>
@@ -36,6 +39,64 @@
     <a class="menu" href="/contato.php">CONTATO</a>
     <a href="https://wa.me/5519996017447?text=Olá,%20gostaria%20de%20uma%20festa!!">  <img class="logo_Whats" src="./ImagensSite-LuzeCor/Fotos/Whats.png" alt="LogoWhats" > </a> 
 </header>
+
+<nav class="menu-lateral-container" >
+
+    <div class="menu-botao">
+        <a href="/">  <img class="logo_LuzECor" src="./ImagensSite-LuzeCor/Luz e cor.png" alt="Logo"> </a> 
+
+        <div class="btn-lateral">
+                <i class="btn-lateral bi bi-list" onclick="abrirMenu()"></i>
+        </div>
+    </div>
+
+    <div class="menu-lateral-itens" id="menu-lateral">
+
+        <ul>
+
+            <div class="item-menu">
+                 <i class="bi bi-arrow-left" onclick="fecharMenu()"></i>
+            </div>
+
+            <div class="item-menu">
+                <a class="menu" href="/">
+                <span class="icon"><i class="bi bi-house"></i></span>
+                <span class="txt-link">HOME</span>
+                </a>
+            </div>
+
+            <div class="item-menu">
+                <a class="menu" href="/decoracoes.php">
+                <span class="icon"><i class="bi bi-balloon-heart"></i></span>
+                <span class="txt-link">DECORAÇÕES</span>
+                </a>
+            </div>
+
+            <div class="item-menu">
+                <a class="menu" href="/parceria.php">
+                <span class="icon"><i class="bi bi-people-fill"></i></span>
+                <span class="txt-link">PARCERIA</span>
+                </a>
+            </div>
+
+            <div class="item-menu">
+                <a class="menu" href="/contato.php">
+                <span class="icon"><i class="bi bi-envelope"></i></span>
+                <span class="txt-link">CONTATO</span>
+                </a>
+            </div>
+
+            <div class="item-menu">
+                <a class="menu" href="https://wa.me/5519996017447?text=Olá,%20gostaria%20de%20uma%20festa!!">
+                <span class="icon"><i class="bi bi-whatsapp"></i></span>
+                <span class="txt-link">WHATSAPP</span>
+                </a> 
+            </div>
+        </ul>
+
+    </div>
+
+</nav>
 
 <div class="botao_whatsapp">
         <a href="https://wa.me/5519996017447?text=Olá,%20gostaria%20de%20uma%20festa!!"><img src="./ImagensSite-LuzeCor/WhatsApp-Logo.png" alt="WhatsApp Logo"></a>
@@ -120,7 +181,6 @@
 
 
 <footer>
-
     <a href="./index.php">  <img class="Logo_footer"   src="./ImagensSite-LuzeCor/Luz e cor.png" alt="Logo"> </a>
     <div class="contato_footer">
     <h3>Contato</h3> 
@@ -132,8 +192,8 @@
     <div class="redes_footer">
         <h3>Redes sociais</h3> 
         <div class="redes_footer_icons">
-        <a href="<?php echo $informacaoRepositorio->getFacebook() ?>"> <img class="iconFacebook_footer" src="./ImagensSite-LuzeCor/Fotos/FAce.png" alt=""></a>
-        <a href="<?php echo $informacaoRepositorio->getInstagram() ?>"> <img class="iconInstagram_footer" src="./ImagensSite-LuzeCor/Fotos/Insta.png" alt=""></a>
+            <a href="<?php echo $informacaoRepositorio->getFacebook() ?>"> <img class="iconFacebook_footer" src="./ImagensSite-LuzeCor/Fotos/FAce.png" alt=""></a>
+            <a href="<?php echo $informacaoRepositorio->getInstagram() ?>"> <img class="iconInstagram_footer" src="./ImagensSite-LuzeCor/Fotos/Insta.png" alt=""></a>
         </div>
     </div>
 </footer>

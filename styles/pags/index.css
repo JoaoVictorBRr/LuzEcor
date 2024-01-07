@@ -15,9 +15,9 @@
 
 }
 .criancaBalao{
-    width: 500px;
+    width: 450px;
     position: absolute;
-    top: 70px;
+    top: 95px;
 
 }
 .texto_banner_01{
@@ -78,6 +78,7 @@
 
 .div_carrosel_decoracoes{
     margin-bottom: 2rem;
+    margin-right: 20px;
     display: flex;
     justify-content: center;
     gap: 20px;
@@ -191,6 +192,7 @@
     border-radius: 18px;
     transition: 0.5s;
 }
+
 .button_veja-mais P:hover{
     transform: scale(1.1);
 }
@@ -200,9 +202,10 @@
     right: 0;
     bottom: 0;
     margin-right: 30px;
-    margin-bottom: 40px;
+    margin-bottom: 150px;
     z-index: 999
 }
+
 @media screen and (max-width: 1471px){
     .criancaMenino{
         width: 350px;
@@ -312,6 +315,7 @@
    }
 }
 @media screen and (max-width: 1016px){
+
     .texto_banner_01 h2{
         font-size: 28px;
     }
@@ -320,7 +324,7 @@
     }
     .criancaBalao{
         width: 450px;
-        top: 100px;
+        top: 160px;
     }
     .criancaApontandoCima{
         width: 400px;
@@ -379,6 +383,13 @@
     }
 } 
 @media screen and (max-width: 530px){
+    h2{
+        font-size: 30px;
+    }
+    .imgParceria{
+        width: 180px;
+        height: 180px;
+    }
     .texto_banner_01 div{
         width: 400px;
         
@@ -390,8 +401,15 @@
     .button_contact{
         padding: 20px;
         font-size: 22px;
-
     }
+    .saibaMais{
+        padding: 20px;
+    }
+    .div_carrosel_decoracoes a img{
+        width: 200px;
+        height: 150px;
+    }
+    
 }
 @media screen and (max-width: 424px){
     .texto_banner_03 div p{
@@ -419,6 +437,10 @@
         width: 270px;
   
     }
+    .texto_banner_01 div p{
+        font-size: 16px;
+     
+    }
     .texto_banner_03 div p{
         font-size: 18px;
     }
@@ -432,3 +454,4 @@
     }
     
 }
+

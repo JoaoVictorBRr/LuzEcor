@@ -7,14 +7,13 @@ require __DIR__ . "/src-admin/repository-admin/repositorioUser.php";
 
 $usuarioRepositorio = new UsuarioRepositorio($pdo);
 
-if(isset($_POST['cadastro'])){
-
-    
+if(isset($_POST['cadastro'])){ 
     if($usuarioRepositorio->getUsuario() == $_POST['user'] && $usuarioRepositorio->getSenha() == $_POST['senha'] ){
-        header("Location: ./adicionarInformacao.php");
+       $_SESSION['login'] = true;
+       header('Location: adicionarDecoracoes.php');
+    }else{
+        echo "<script>alert('Senha ou usário errado, tente novamente');</script>";
     }
-  
-    
 }
   
 ?>
@@ -24,7 +23,7 @@ if(isset($_POST['cadastro'])){
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../styles/global.css">
+    <link rel="stylesheet" href="./styles-admin/global.css">
     <link rel="stylesheet" href="./styles-admin/login.css">
 
     <link rel="shortcut icon" href="../ImagensSite-LuzeCor/Luz e cor.png" type="image/x-icon" />
@@ -34,9 +33,9 @@ if(isset($_POST['cadastro'])){
 
     <section class="form">
 
-        <form method="POST">
+        <form method="POST" id="form">
             <h2>Login</h2>
-
+            <br>
             <div class="inputs">
                 <label for="user">Usuário: </label>
                 <input class="input-item" name="user" type="text">
@@ -49,7 +48,7 @@ if(isset($_POST['cadastro'])){
             </div>
             
         <div class="button">
-            <input class="button-item" class="button" name="cadastro" type="submit" value="Entrar">
+            <input id="entrar" class="button-item" class="button" name="cadastro" type="submit" value="Entrar">
         </div> 
         </form>
 

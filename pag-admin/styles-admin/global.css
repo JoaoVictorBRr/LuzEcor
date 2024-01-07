@@ -9,15 +9,13 @@ body{
     background-color: #F2F2F2;
 }
 header{
-    
+    margin-top: 20px;
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 30px;
     font-size: 20px;
     flex-wrap: wrap;
-    background-color: white;
-    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 .menu{
     color: #3F3F3F;
@@ -98,70 +96,6 @@ footer{
 
 
 
-@media screen and (max-width: 1000px){
-    nav{
-        background-color: white;
-        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-    }
-
-    header{
-        display: none;  
-    }
-
-    span, i {
-        font-family: inter;
-        font-size: 20px;
-    }
-    ul{
-        display: flex;
-        flex-direction: column;
-    }
-    .item-menu{
-        margin-top: 20px;
-    }
-    .btn-lateral{
-        font-size: 35px;
-    }
-    .logo_LuzECor{
-        width: 100px;
-        height: 100px;
-    }
-    .menu-lateral-container{
-        display: flex;
-        justify-content: space-between;       
-    }
-    .menu-botao{
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        width: 100%;
-        margin: 20px;
-    }
-    
-
-    .menu-lateral-itens{
-        right: 0;
-
-        background-color: #ffffff;
-        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-
-        height: 100%;
-        padding: 40px 0 40px;
-        
-        width: 0;
-
-        position: fixed;
-        overflow: hidden;
-        z-index: 1;
-    }
-    .menu-lateral-container ul{
-        display: flex;
-        flex-direction: column;
-        gap: 20px;
-       
-    }
-    
- }
 
  @media screen and (max-width: 632px){
 
