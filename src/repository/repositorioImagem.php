@@ -52,6 +52,7 @@ class ImagemRepositorio
 
         $statement->execute();
     }
+
     
 
 }

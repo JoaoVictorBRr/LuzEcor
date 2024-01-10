@@ -20,7 +20,7 @@ require __DIR__ . "../../src/repository/repositorioDecoracao.php";
 require __DIR__ . "../../src/model/imagem.php";
 require __DIR__ . "../../src/repository/repositorioImagem.php";
 
-$decoracaoRepositorio = new decoracaoRepositorio($pdo);
+$decoracaoRepositorio = new DecoracaoRepositorio($pdo);
 $imagemRepositorio = new ImagemRepositorio($pdo);
 
 if(isset($_POST['cadastro'])){
@@ -39,7 +39,13 @@ if(isset($_POST['cadastro'])){
 
     $lastId = $decoracaoRepositorio->salvarDecoracoes($decoracao);
 
-    for($i = 0; $i < 10; $i += 1){
+    $contagemImagens = 0;
+
+    while($_FILES['foto'. $contagemImagens]['name']){
+       $contagemImagens += 1;
+    }
+
+    for($i = 0; $i < 10; $contagemImagens += 1){
 
 
         if($_FILES['foto'. $i]['name']){
@@ -109,7 +115,6 @@ if(isset($_POST['cadastro'])){
         <form method="POST" enctype="multipart/form-data">
 
             <div class="input_foto">
-                <p>Limite até 10 fotos</p>
                 <br>
                 <label for="foto">Adicionar foto: </label>
                 <input id="foto" class="input-item" name="foto0" type="file">
@@ -143,7 +148,7 @@ if(isset($_POST['cadastro'])){
                 </div>
                
         <div class="button">
-            <input class="button-item" class="button" name="cadastro" type="submit" value="Atualizar">
+            <input class="button-item" class="button" name="cadastro" type="submit" value="Adicionar">
         </div> 
 
         </form>

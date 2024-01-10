@@ -29,7 +29,7 @@ class DecoracaoRepositorio
     
     public function getTitle($id): string
     {
-        $sql = "SELECT * FROM decoracoes WHERE id = $id";
+        $sql = "SELECT title FROM decoracoes WHERE id = $id";
         $statement = $this->pdo->query($sql);
         $decoracao  =  $statement->fetch(PDO::FETCH_ASSOC);
 
@@ -38,7 +38,7 @@ class DecoracaoRepositorio
 
     public function getDescription($id): string
     {
-        $sql = "SELECT * FROM decoracoes WHERE id = $id";
+        $sql = "SELECT summary FROM decoracoes WHERE id = $id";
         $statement = $this->pdo->query($sql);
         $decoracao  =  $statement->fetch(PDO::FETCH_ASSOC);
 
@@ -54,6 +54,15 @@ class DecoracaoRepositorio
         return $imagem['arquivo'];
     }
 
+    public function getFavorito($id): int
+    {
+        $sql = "SELECT highlighted FROM decoracoes WHERE id = $id";
+        $statement = $this->pdo->query($sql);
+        $favorito  =  $statement->fetch(PDO::FETCH_ASSOC);
+
+        return $favorito['highlighted'];
+    }
+
     public function salvarDecoracoes(Decoracao $decoracao): int
     {
         $sql = "INSERT INTO decoracoes (title, summary, highlighted, data_update, file_path) VALUES (?, ?, ?, NOW(), ?)";
@@ -67,6 +76,32 @@ class DecoracaoRepositorio
 
         $ultimoIdInserido = (int) $this->pdo->lastInsertId();
         return $ultimoIdInserido;
+    }
+
+    public function salvarImagem(Decoracao $decoracao): int
+    {
+        $sql = "INSERT INTO decoracoes (data_update, file_path) VALUES (NOW(), ?)";
+        $statement = $this->pdo->prepare($sql);
+       
+        $statement->bindValue(1, $decoracao->getFilePath());
+        $statement->execute();
+
+        $ultimoIdInserido = (int) $this->pdo->lastInsertId();
+        return $ultimoIdInserido;
+    }
+
+    public function atualiarDecoracoes(Decoracao $decoracao, $id)
+    {
+        $sql = "UPDATE decoracoes SET title=?, summary=?, highlighted=?, data_update=NOW(), file_path=? WHERE id=$id";
+
+        $statement = $this->pdo->prepare($sql);
+       
+        $statement->bindValue(1, $decoracao->getTitle());
+        $statement->bindValue(2, $decoracao->getSummary());
+        $statement->bindValue(3, $decoracao->getHighlighted());
+        $statement->bindValue(4, $decoracao->getFilePath());
+        $statement->execute();
+        
     } 
 
 }

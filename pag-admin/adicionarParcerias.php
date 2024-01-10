@@ -111,7 +111,7 @@ require __DIR__ . "/src-admin/repository-admin/repositorioParceria.php";
         
                
         <div class="button">
-            <input class="button-item" class="button" name="cadastro" type="submit" value="Atualizar">
+            <input class="button-item" class="button" name="cadastro" type="submit" value="Adicionar">
         </div> 
 
         </form>

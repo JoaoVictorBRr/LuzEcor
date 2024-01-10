@@ -11,8 +11,6 @@ if(!isset($_SESSION['login'])){
     header('Location: login.php');
  }
 
-
-
     require __DIR__ . "../../src/conection.php";
     require __DIR__ . "../../src/Model/decoracao.php";
     require __DIR__ . "../../src/repository/repositorioDecoracao.php";
@@ -59,7 +57,7 @@ if(!isset($_SESSION['login'])){
     <section class="destacados_container">
     <div class="categorias_content">
         <?php foreach($dadosDecoracao as $decoracaoDestacada): ?>
-            <a class="ancorDecoracao" href="<?php echo "./produto.php?id=" . $decoracaoDestacada->getId() ?>">   
+            <a class="ancorDecoracao" href="<?php echo "./EditarProduto.php?id=" . $decoracaoDestacada->getId() ?>">   
                 <div class="cardDecoracao" >
                     <img src=" <?php echo "./imagensBanco/" . $decoracaoDestacada->getFilePath() ?>" class="imagemDecoracao" alt="<?php echo $decoracaoDestacada->getFilePath() ?>">
                     <div class="cardTextContent">

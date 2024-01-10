@@ -98,7 +98,7 @@ if(isset($_POST['cadastro'])){
             </div>
                
         <div class="button">
-            <input class="button-item" class="button" name="cadastro" type="submit" value="Atualizar">
+            <input class="button-item" class="button" name="cadastro" type="submit" value="Adicionar">
         </div> 
 
         </form>
