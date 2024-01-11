@@ -34,7 +34,7 @@ if(!isset($_SESSION['login'])){
      $fav = ($_POST['favoritar'] == "Sim") ? 1 : 0;
      $imagens = [];
 
-     $img = ($_FILES['foto0']['name']) ? $_FILES['foto0']['name'] : $decoracaoRepositorio->getFoto($id);
+     $img = ($_FILES['foto0']['name']) ? $_FILES['foto0']['name'] : $decoracaoRepositorio->getFotoCapa($id);
      $decoracao = new Decoracao(
          null,
          $_POST['Tema'], 
@@ -46,7 +46,7 @@ if(!isset($_SESSION['login'])){
  
      $decoracaoRepositorio->atualiarDecoracoes($decoracao, $id);
 
-     $contagemImagens = 0;
+     $contagemImagens = 1;
 
      while($_FILES['foto'. $contagemImagens]['name']){
         $contagemImagens += 1;
@@ -120,11 +120,17 @@ if(!isset($_SESSION['login'])){
 
         <form method="POST" enctype="multipart/form-data">
 
+        <div class="input_capa">
+
+                <label for="foto">Adicionar capa: </label>
+                <input id="foto" class="input-item" name="foto0" type="file" >
+
+            </div>
+
             <div class="input_foto">
 
-                <label for="foto">Adicionar foto: </label>
-                <input id="foto" class="input-item" name="foto0" type="file" >
-                
+                <label for="foto">Adicionar fotos: </label>
+                <input id="foto" class="input-item" name="foto1" type="file" >
 
             </div>
 
@@ -168,14 +174,25 @@ if(!isset($_SESSION['login'])){
         </form>
 
         <br>
-                <br>
+
+           
+                <p>Foto de capa: </p>
+              
+
+                <form action="excluirCapa.php" method="POST">
+                    <p> <?php echo  $decoracaoRepositorio->getFotoCapa($id); ?></p>
+                    <input type="hidden" name="id" value="<?php echo  $id ?>">
+                    <button type="submit">X</button>
+                </form>
+
                 <p>Fotos adicionadas: </p>
-                <br>
+
+
                 <?php foreach($listaImagem as $imagem):?>
          
-                <form action="excluirFoto.php">
+                <form action="excluirFoto.php" method="POST">
                     <p> <?php echo $imagem->getArquivo(); ?></p>
-                    <input type="hidden" name="id" value="<?php echo $id ?>">
+                    <input type="hidden" name="id" value="<?php echo $imagem->getId() ?>">
 
                     <button type="submit">X</button>
                 </form>

@@ -54,6 +54,15 @@ class DecoracaoRepositorio
         return $imagem['arquivo'];
     }
 
+    public function getFotoCapa($idDecoracao): ?string
+    {
+        $sql = "SELECT file_path FROM decoracoes WHERE id = $idDecoracao";
+        $statement = $this->pdo->query($sql);
+        $imagem  =  $statement->fetch(PDO::FETCH_ASSOC);
+
+        return $imagem['file_path'];
+    }
+
     public function getFavorito($id): int
     {
         $sql = "SELECT highlighted FROM decoracoes WHERE id = $id";
@@ -103,5 +112,16 @@ class DecoracaoRepositorio
         $statement->execute();
         
     } 
+
+    public function deletar(int $id)
+    {
+        $sql = "UPDATE decoracoes SET file_path = NULL WHERE id = ?";
+        $statement = $this->pdo->prepare($sql);
+       
+        $statement->bindValue(1, $id);
+
+        $statement->execute();
+    }
+
 
 }

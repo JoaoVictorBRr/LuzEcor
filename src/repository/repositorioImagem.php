@@ -43,16 +43,38 @@ class ImagemRepositorio
         return $dadosImagem;
     }
 
-    public function salvarImagem(Imagem $imagem, $id)
+    public function salvarImagem(Imagem $imagem, int $id)
     {
-        $sql = "INSERT INTO imagens (produto, arquivo, data_update) VALUES ($id, ?, NOW())";
+        $sql = "INSERT INTO imagens (produto, arquivo, data_update) VALUES (?, ?, NOW())";
         $statement = $this->pdo->prepare($sql);
        
-        $statement->bindValue(1, $imagem->getArquivo());
+        $statement->bindValue(1, $id);
+        $statement->bindValue(2, $imagem->getArquivo());
 
         $statement->execute();
     }
 
+    public function deletar(int $id)
+    {
+        $sql = "DELETE FROM imagens WHERE id = ?";
+        $statement = $this->pdo->prepare($sql);
+       
+        $statement->bindValue(1, $id);
+
+        $statement->execute();
+    }
+
+    public function idProduto($idImagem): int
+    {
+        $sql = "SELECT produto FROM imagens WHERE id = $idImagem";
+        $statement = $this->pdo->query($sql);
+        $idProduto = $statement->fetch(PDO::FETCH_ASSOC);
+
+        return $idProduto['produto'];
+
+
+
+    }
     
 
 }

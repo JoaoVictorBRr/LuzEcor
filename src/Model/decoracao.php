@@ -33,7 +33,7 @@ class Decoracao
         return $this->summary;
     }
  
-    public function getFilePath(): string
+    public function getFilePath(): ?string
     {
         return $this->file_path;
     }

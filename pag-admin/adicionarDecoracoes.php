@@ -39,13 +39,13 @@ if(isset($_POST['cadastro'])){
 
     $lastId = $decoracaoRepositorio->salvarDecoracoes($decoracao);
 
-    $contagemImagens = 0;
+    $contagemImagens = 1;
 
     while($_FILES['foto'. $contagemImagens]['name']){
        $contagemImagens += 1;
     }
 
-    for($i = 0; $i < 10; $contagemImagens += 1){
+    for($i = 0; $i < $contagemImagens; $i += 1){
 
 
         if($_FILES['foto'. $i]['name']){
@@ -114,10 +114,17 @@ if(isset($_POST['cadastro'])){
 
         <form method="POST" enctype="multipart/form-data">
 
+        <div class="input_capa">
+                <br>
+                <label for="foto">Adicionar capa: </label>
+                <input id="foto" class="input-item" name="foto0" type="file">
+         
+            </div>
+
             <div class="input_foto">
                 <br>
                 <label for="foto">Adicionar foto: </label>
-                <input id="foto" class="input-item" name="foto0" type="file">
+                <input id="foto" class="input-item" name="foto1" type="file">
          
             </div>
 

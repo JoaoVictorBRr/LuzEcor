@@ -60,6 +60,7 @@ if(!isset($_SESSION['login'])){
             <a class="ancorDecoracao" href="<?php echo "./EditarProduto.php?id=" . $decoracaoDestacada->getId() ?>">   
                 <div class="cardDecoracao" >
                     <img src=" <?php echo "./imagensBanco/" . $decoracaoDestacada->getFilePath() ?>" class="imagemDecoracao" alt="<?php echo $decoracaoDestacada->getFilePath() ?>">
+                   
                     <div class="cardTextContent">
                         <h5 class="card-title-decoracao"><?php echo $decoracaoDestacada->getTitle() ?></h5>
                         <p class="card-text-decoracao"><?php echo $decoracaoDestacada->getSummary() ?></p>
