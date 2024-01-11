@@ -32,38 +32,43 @@ if(isset($_POST['cadastro'])){
         null,
         $_POST['Tema'], 
         $_POST['Descricao'], 
-        $_FILES['foto'. 0]['name'],
+        $_FILES['capa']['name'],
         $fav, 
         null
     );
 
     $lastId = $decoracaoRepositorio->salvarDecoracoes($decoracao);
 
-    $contagemImagens = 1;
+    $contagemImagens = 0;
 
-    while($_FILES['foto'. $contagemImagens]['name']){
-       $contagemImagens += 1;
+    while($_FILES['foto-'. $contagemImagens]['name']){
+       $contagemImagens += 0;
     }
 
     for($i = 0; $i < $contagemImagens; $i += 1){
 
 
-        if($_FILES['foto'. $i]['name']){
+        if($_FILES['foto-'. $i]['name'])
+        {
             $imagem = new Imagem(
                 null,
                 null,
-                $_FILES['foto'. $i]['name'],
+                $_FILES['foto-'. $i]['name'],
                 null
             );
-        }else{
+
+            $arquivo = $_FILES['foto-'. $i];
+
+            $caminho_destino = str_replace('\\', '/', __DIR__ . './imagensBanco/');
+            move_uploaded_file($_FILES['foto-'. $i]['tmp_name'], $caminho_destino . $arquivo['name']);
+            $imagemRepositorio->salvarImagem($imagem, $lastId);
+        }
+        else
+        {
             continue;
         }
     
-        $arquivo = $_FILES['foto'. $i];
-
-        $caminho_destino = str_replace('\\', '/', __DIR__ . './imagensBanco/');
-       move_uploaded_file($_FILES['foto'. $i]['tmp_name'], $caminho_destino . $arquivo['name']);
-        $imagemRepositorio->salvarImagem($imagem, $lastId);
+      
     }   
        
   
@@ -110,28 +115,29 @@ if(isset($_POST['cadastro'])){
     <h2>EDITAR INFORMAÇÕES DE CONTATO</h2>
 
     <button onclick="AddImg()" id="addImg">Adicionar Mais Fotos</button>
+    
 
 
         <form method="POST" enctype="multipart/form-data">
 
-        <div class="input_capa">
-                <br>
-                <label for="foto">Adicionar capa: </label>
-                <input id="foto" class="input-item" name="foto0" type="file">
-         
-            </div>
+        <div class="input_capa">  
 
-            <div class="input_foto">
-                <br>
-                <label for="foto">Adicionar foto: </label>
-                <input id="foto" class="input-item" name="foto1" type="file">
-         
-            </div>
+            <label for="capa">Adicionar capa: </label>
+            <input id="capa" class="input-item" name="capa" type="file" required>
+            <br>
+<br>
+        </div>
+
+        <div class="input_foto">
+   
+            <label for="foto-0">Adicionar foto: </label>
+            <input id="foto-0" class="input-item" name="foto-0" type="file">
+        </div>
 
             <div class="inputs">
             <br>
                 <label for="Tema">Tema: </label>
-                <input class="input-item" name="Tema" type="text">
+                <input class="input-item" name="Tema" type="text" required>
             </div>
 
             <div class="inputs">

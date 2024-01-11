@@ -34,7 +34,7 @@ if(!isset($_SESSION['login'])){
      $fav = ($_POST['favoritar'] == "Sim") ? 1 : 0;
      $imagens = [];
 
-     $img = ($_FILES['foto0']['name']) ? $_FILES['foto0']['name'] : $decoracaoRepositorio->getFotoCapa($id);
+     $img = ($_FILES['capa']['name']) ? $_FILES['capa']['name'] : $decoracaoRepositorio->getFotoCapa($id);
      $decoracao = new Decoracao(
          null,
          $_POST['Tema'], 
@@ -46,29 +46,29 @@ if(!isset($_SESSION['login'])){
  
      $decoracaoRepositorio->atualiarDecoracoes($decoracao, $id);
 
-     $contagemImagens = 1;
+     $contagemImagens = 0;
 
-     while($_FILES['foto'. $contagemImagens]['name']){
+     while($_FILES['foto-'. $contagemImagens]['name']){
         $contagemImagens += 1;
      }
  
      for($i = 0; $i < $contagemImagens; $i += 1){
  
-         if($_FILES['foto'. $i]['name']){
+         if($_FILES['foto-'. $i]['name']){
              $imagem = new Imagem(
                  null,
                  null,
-                 $_FILES['foto'. $i]['name'],
+                 $_FILES['foto-'. $i]['name'],
                  null
              );
          }else{
              continue;
          }
      
-         $arquivo = $_FILES['foto'. $i];
+         $arquivo = $_FILES['foto-'. $i];
  
          $caminho_destino = str_replace('\\', '/', __DIR__ . './imagensBanco/');
-         move_uploaded_file($_FILES['foto'. $i]['tmp_name'], $caminho_destino . $arquivo['name']);
+         move_uploaded_file($_FILES['foto-'. $i]['tmp_name'], $caminho_destino . $arquivo['name']);
          
          $imagemRepositorio->salvarImagem($imagem, $id);
      }   
@@ -122,15 +122,15 @@ if(!isset($_SESSION['login'])){
 
         <div class="input_capa">
 
-                <label for="foto">Adicionar capa: </label>
-                <input id="foto" class="input-item" name="foto0" type="file" >
+                <label for="capa">Adicionar capa: </label>
+                <input id="capa" class="input-item" name="capa" type="file" >
 
             </div>
 
             <div class="input_foto">
 
-                <label for="foto">Adicionar fotos: </label>
-                <input id="foto" class="input-item" name="foto1" type="file" >
+                <label for="foto-0">Adicionar fotos: </label>
+                <input id="foto-0" class="input-item" name="foto-0" type="file" >
 
             </div>
 

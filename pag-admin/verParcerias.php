@@ -5,11 +5,11 @@ session_start();
 if(!isset($_SESSION['login'])){  
     include('login.php');
     exit;
- }else if(isset($_GET['logout'])){
+}else if(isset($_GET['logout'])){
     unset($_SESSION['login']);
     session_destroy();
     header('Location: login.php');
- }
+}
 
 ?>
 
@@ -38,10 +38,9 @@ if(!isset($_SESSION['login'])){
                     <a href="?logout"><strong>LogOut</strong></a>
         </div>
     </header>
-    <br>
-    <br>
-    <br>
-    <section><h1>Estamos trabalhando...</h1></section>
+    
+    
+
 
 
 </body>
