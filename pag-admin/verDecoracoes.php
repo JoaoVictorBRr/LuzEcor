@@ -36,7 +36,7 @@ if(!isset($_SESSION['login'])){
     <link rel="stylesheet" href="./styles-admin/adicionarAdmin.css">
     <link rel="stylesheet" href="./styles-admin/verDecoracoes.css">
     <link rel="shortcut icon" href="../ImagensSite-LuzeCor/Luz e cor.png" type="image/x-icon" />
-    <title>Iformações de contato - Admin</title>
+    <title>Ver Decorações - Admin</title>
 </head>
 <body>
 

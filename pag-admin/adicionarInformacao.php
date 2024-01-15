@@ -50,7 +50,7 @@ if(isset($_POST['cadastro'])){
     <link rel="stylesheet" href="./styles-admin/adicionarAdmin.css">
 
     <link rel="shortcut icon" href="../ImagensSite-LuzeCor/Luz e cor.png" type="image/x-icon" />
-    <title>Iformações de contato - Admin</title>
+    <title>Editar Informações de contato - Admin</title>
 </head>
 <body>
 

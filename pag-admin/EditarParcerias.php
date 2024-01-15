@@ -12,12 +12,13 @@ if(!isset($_SESSION['login'])){
  }
 
 
-require __DIR__ . "../../src/conection.php";
+    require __DIR__ . "../../src/conection.php";
 
-require __DIR__ . "../../src/Model/parceria.php";
-require __DIR__ . "../../src/repository/repositorioParceria.php";
+    require __DIR__ . "../../src/Model/parceria.php";
+    require __DIR__ . "../../src/repository/repositorioParceria.php";
 
-    $userRepositorio = new parceriaRepositorio($pdo);
+    $parceriaRepositorio = new parceriaRepositorio($pdo);
+    $id = $_GET['id'];
 
     if(isset($_POST['cadastro'])){
 
@@ -37,7 +38,7 @@ require __DIR__ . "../../src/repository/repositorioParceria.php";
 
         $caminho_destino = str_replace('\\', '/', __DIR__ . './imagensBancoParceria/');
         move_uploaded_file($_FILES['foto']['tmp_name'], $caminho_destino . $arquivo['name']);
-        $userRepositorio->salvarDecoracoes($parcerio);
+        $parceriaRepositorio->salvarDecoracoes($parcerio);
 
     header("Location: ./adicionarParcerias.php");
     }
@@ -54,7 +55,7 @@ require __DIR__ . "../../src/repository/repositorioParceria.php";
     <link rel="stylesheet" href="./styles-admin/adicionarAdmin.css">
 
     <link rel="shortcut icon" href="../ImagensSite-LuzeCor/Luz e cor.png" type="image/x-icon" />
-    <title>Adicionar Parcerias - Admin</title>
+    <title>Editar Parcerias - Admin</title>
 </head>
 <body>
 
@@ -76,44 +77,38 @@ require __DIR__ . "../../src/repository/repositorioParceria.php";
        
 
         <form method="POST" enctype="multipart/form-data">
-            <h2>ADICIONAR PARCERIAS</h2>
+            <h2>EDITAR PARCERIAS</h2>
 
             <div class="inputs">
                 <br>
                 <label for="Nome">Nome: </label>
-                <input class="input-item" name="Nome" type="text">
+                <input class="input-item" name="Nome" type="text" value="<?php echo $parceriaRepositorio->getNome($id) ?>">
             </div>
 
             <div class="inputs">
             <br>
                 <label for="Local">Local: </label>
-                <input class="input-item" name="Local" type="text">
+                <input class="input-item" name="Local" type="text" value="<?php echo $parceriaRepositorio->getLocal($id) ?>">
             </div>
 
             <div class="inputs">
             <br>
                 <label for="horario">Horário Aberto: </label>
-                <input class="input-item" name="horario" type="text">
+                <input class="input-item" name="horario" type="text" value="<?php echo $parceriaRepositorio->getHorario($id) ?>">
             </div>
 
             <div class="inputs">
             <br>
                 <label for="Whatsapp">Whatsapp: </label>
-                <input class="input-item" name="Whatsapp" type="number">
-            </div>
-
-            <div class="input_foto">
-            <br>
-                <label for="foto">Adicionar foto: </label>
-                <input class="input-item" name="foto" type="file">
+                <input class="input-item" name="Whatsapp" type="number" value="<?php echo $parceriaRepositorio->getCelular($id) ?>">
             </div>
 
             <div class="input_foto_adicionadas">
         
                
-        <div class="button">
-            <input class="button-item" class="button" name="cadastro" type="submit" value="Adicionar">
-        </div> 
+            <div class="button">
+                <input class="button-item" class="button" name="cadastro" type="submit" value="Atualizar">
+            </div> 
 
         </form>
        

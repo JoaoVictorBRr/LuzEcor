@@ -2,15 +2,15 @@
 
 class Parceria
 {
-    private int $id;
+    private ?int $id;
     private string $nome;
     private string $localizacao;
     private string $horario;
     private string $celular;
     private string $file_path;
-    private string $data_update;
+    private ?string $data_update;
 
-    public function __construct(int $id, string $nome, string $localizacao, string $horario, string $celular, string $file_path,string $data_update){
+    public function __construct(?int $id, string $nome, string $localizacao, string $horario, string $celular, string $file_path, ?string $data_update){
         $this->id = $id;
         $this->nome = $nome;
         $this->localizacao = $localizacao;

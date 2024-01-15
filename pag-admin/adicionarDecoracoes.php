@@ -95,7 +95,7 @@ if(isset($_POST['cadastro'])){
     <script src="./script/adicionarFoto.js" defer></script>
 
     <link rel="shortcut icon" href="../ImagensSite-LuzeCor/Luz e cor.png" type="image/x-icon" />
-    <title>Iformações de contato - Admin</title>
+    <title>Adicionar Decorações - Admin</title>
 </head>
 <body>
 
@@ -112,7 +112,7 @@ if(isset($_POST['cadastro'])){
     </header>
     
     <section class="form">
-    <h2>EDITAR INFORMAÇÕES DE CONTATO</h2>
+    <h2>ADICIONAR DECORAÇÕES</h2>
 
     <button onclick="AddImg()" id="addImg">Adicionar Mais Fotos</button>
     

@@ -94,7 +94,7 @@ if(!isset($_SESSION['login'])){
     <script src="./script/adicionarFoto.js" defer></script>
 
     <link rel="shortcut icon" href="../ImagensSite-LuzeCor/Luz e cor.png" type="image/x-icon" />
-    <title>Iformações de contato - Admin</title>
+    <title>Editar Produto - Admin</title>
 </head>
 <body>
 
@@ -111,7 +111,11 @@ if(!isset($_SESSION['login'])){
     </header>
     
     <section class="form">
-    <h2>EDITAR INFORMAÇÕES DE CONTATO</h2>
+    <h2>EDITAR PRODUTO</h2>
+
+    <form action="excluirProduto.php?id=<?php echo $id; ?>" method="POST">
+        <button type="submit" name="excluirProduto">X</button>
+    </form>
 
     <button onclick="AddImg()" id="addImg">Adicionar Mais Fotos</button>
 

@@ -27,7 +27,7 @@ if(isset($_POST['cadastro'])){
     <link rel="stylesheet" href="./styles-admin/login.css">
 
     <link rel="shortcut icon" href="../ImagensSite-LuzeCor/Luz e cor.png" type="image/x-icon" />
-    <title>Iformações de contato - Admin</title>
+    <title>Login - Admin</title>
 </head>
 <body>
 

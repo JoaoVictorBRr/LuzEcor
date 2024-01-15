@@ -115,9 +115,20 @@ class DecoracaoRepositorio
 
     public function deletar(int $id)
     {
+        //Atualiza o arquivo para valor nulo
         $sql = "UPDATE decoracoes SET file_path = NULL WHERE id = ?";
         $statement = $this->pdo->prepare($sql);
        
+        $statement->bindValue(1, $id);
+
+        $statement->execute();
+    }
+
+    public function deletarProduto(int $id)
+    {
+        $sql = "DELETE FROM decoracoes WHERE id = ?";
+        $statement = $this->pdo->prepare($sql);
+
         $statement->bindValue(1, $id);
 
         $statement->execute();
