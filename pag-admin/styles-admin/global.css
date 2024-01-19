@@ -6,7 +6,10 @@
 }
 
 body{
-    background-color: #F2F2F2;
+    
+    height: 100%;
+
+ 
 }
 header{
     margin-top: 20px;
@@ -17,82 +20,261 @@ header{
     font-size: 20px;
     flex-wrap: wrap;
 }
-.menu{
-    color: #3F3F3F;
-    font-family: Inter;
-    text-decoration: none;
-    transition: 0.2s;
-}
-.menu:hover{
-    transform: scale(1.05);
-}
-.menu-lateral-container{
-    display: none;
-}
-.logo_LuzECor{
-    width: 100px;
-    height: 100px;
-}
-.logo_Whats{
-    width: 40px;
-    height: 40px;
+
+.separadorMenu{
+    color: #ee3563;
 }
 
-footer{
-    bottom: 0;
-    width: 100%;
-     margin-top: 30px;
-     padding: 30px;
-     display: flex;
-     align-items: center;
-     justify-content: center;
-     flex-wrap: wrap;
-     gap: 80px;
-     background-color: white;
- }
- .Logo_footer{
-     width: 8rem;
- }
- .iconWhats_footer{
-     width: 40px;
- }
- .iconFacebook_footer{
-     width: 20px;
- }
- .iconInstagram_footer{
-     width: 40px;
- }
- .contato_footer{
-     color: #636363;
-     font-family: Inter;
-     display: flex;
-     flex-direction: column;
-     gap: 20px;
-     font-size: 20px;
-     
- }
- .contato_footer_numero{
-     font-size: 20px;
-     display: flex;
-     gap: 20px;
-     align-items: center;
-     justify-content: left;
- }
- .redes_footer{
-     color: #636363;
-     font-family: Inter;
-     display: flex;
-     flex-direction: column;
-     gap: 20px;
-     font-size: 20px;
- 
- }
- .redes_footer_icons{
-     display: flex;
-     gap: 20px;
-     align-items: center;
-     justify-content: left;
- }
+
+.categorias{
+    display: flex;
+    gap: 35px;
+    margin-bottom: 40px;
+    
+}
+.categorias a{
+    text-decoration: none;
+    font-family: Inter;
+    color: #ee3563;
+    transition: 0.2s;
+}
+.categorias a:hover{
+    transform: scale(1.1);
+}
+
+
+section{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+.custom-radio {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+  
+  .btn-radio {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    width: 16px;
+    height: 16px;
+    border: 2px solid #ee3563; /* Cor da borda padrão */
+    border-radius: 50%;
+    outline: none;
+    margin-right: 8px; /* Espaçamento entre o input e o texto */
+    cursor: pointer;
+  }
+  
+  .btn-radio:checked {
+    background-color: #ee3563; /* Cor de fundo quando selecionado */
+  }
+  
+  .label-radio {
+    cursor: pointer;
+  }
+.form{
+    margin-top: 250px;
+    margin: 0 auto;
+    width: 500px;
+    display: flex;   
+    flex-direction: column;
+    gap: 30px;
+    background-color: rgb(219, 219, 219);
+    padding: 45px;
+    border-radius: 20px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+    margin-bottom: 25px;
+}
+
+#addImg{
+    border-radius: 10px;
+    border:none;
+    background-color:  white;
+    padding: 10px;
+    font-size: 18px;
+    transition: 0.2s;
+    color: #ee3563;
+    cursor: pointer;
+}
+#addImg:hover{
+    border-radius: 10px;
+    border: 0 solid white;
+    background-color:  #ee3563;
+    padding: 10px;
+    font-size: 18px;
+    transition: 0.2s;
+    color: white;
+    transform: scale(1.1);
+}
+.labels
+{
+    background-color: #ee3563;
+    color: white;
+    width: 100px;
+    height: 40px;
+    border-radius: 10px;
+    border-bottom-right-radius: 0px;
+    border-top-right-radius: 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.inputs_container{
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.arquivo{
+   color: #ee3563;
+}
+.removeBtn{
+    background-color: #ee3563;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    transition: 0.2s;
+    cursor: pointer;
+}
+.removeBtn:hover{
+    background-color: white;
+    color:  #ee3563;
+    
+}
+
+.inputs{
+
+    display: flex;
+    border-radius: 15px;
+    align-items: center;
+    font-family: Inter;
+    
+}
+.label-arquivo{
+    color: #ee3563;
+    
+}
+.arquivos{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+.input_capa{
+    font-family: Inter;
+    color: #3F3F3F; 
+    
+    
+}
+
+.input_foto{
+    font-family: Inter;
+    color: #3F3F3F; 
+   
+}
+.input_foto_adicionadas{
+    font-family: Inter;
+    color: #3F3F3F; 
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+.inputs_favoritar{
+    font-family: Inter;
+    color: #3F3F3F;
+    display: flex;
+    background-color: rgb(255, 255, 255);
+    gap: 15px;
+    width: 322px;
+
+    margin-bottom: 50px;
+
+    border-bottom-right-radius: 10px;
+    border-top-right-radius: 10px;
+
+    border-bottom-left-radius: 10px;
+    border-top-left-radius: 10px;
+}
+.inputs_favoritar p{
+    background-color: #ee3563;
+    color: white;
+    width: 100px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-bottom-left-radius: 10px;
+    border-top-left-radius: 10px;
+   
+}
+.inputs_favoritar div{
+    display: flex;
+    align-items: center;
+}
+.button{
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+.button input{
+    width: 200px;
+}
+
+h2{
+    font-family: Inter;
+    color: #ee3563;
+    text-align: center;
+}
+.input-item{
+    height: 39px;
+    border-radius: 10px;
+    border-top-left-radius: 0px;
+    border-bottom-left-radius: 0px;
+    border: 0 solid white;
+
+    padding: 20px;
+    font-size: 15px;
+    text-decoration: none;
+    border: none;
+    outline: 0;
+
+}
+.excluirProduto{
+    border-radius: 10px;
+    border: none;
+    background-color: white;
+    padding: 18px;
+    font-size: 18px;
+    transition: 0.2s;
+    color: #ee3563;
+    cursor: pointer;
+}
+.excluirProduto:hover{
+    transform: scale(1.1);
+    cursor: pointer;
+    color: white;
+    background-color:  #ee3563;
+    
+}
+.button-item{
+    border-radius: 10px;
+    border: none;
+    background-color:  #df7a93;
+    padding: 20px;
+    font-size: 20px;
+    transition: 0.2s;
+    color: white;
+    cursor: pointer;
+}
+
+.button-item:hover{
+    transform: scale(1.1);
+    background-color:  #ee3563;
+}
 
 
 

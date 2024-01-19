@@ -85,4 +85,42 @@ class parceriaRepositorio
 
         return $parceria['file_path'];
     }
-}
+
+    public function atualizarFoto(string $nomeArquivo, int $id){
+
+        $sql = "UPDATE parcerias SET file_path = ? WHERE id = ?";
+        $statement = $this->pdo->prepare($sql);
+
+        $statement->bindValue(1, $nomeArquivo);
+        $statement->bindValue(2, $id);
+
+        $statement->execute();
+   }
+
+   public function atualizarParceria(Parceria $parcerio ,int $id){
+    $sql = "UPDATE parcerias SET nome = ?, localizacao = ?, horario = ?, celular = ?, file_path = ? WHERE id = ?";
+    $statement = $this->pdo->prepare($sql);
+
+    $statement->bindValue(1, $parcerio->getNome());
+    $statement->bindValue(2, $parcerio->getLocalizacao());
+    $statement->bindValue(3, $parcerio->getHorario());
+    $statement->bindValue(4, $parcerio->getCelular());
+    $statement->bindValue(5, $parcerio->getFilePath());
+    $statement->bindValue(6, $id);
+
+    $statement->execute();
+   }
+
+   public function deletarParceria(int $id){
+    
+    $sql = "DELETE FROM parcerias WHERE id = ?";
+
+    $statement = $this->pdo->prepare($sql);
+
+    $statement->bindValue(1, $id);
+
+    $statement->execute();
+
+
+   }
+} 

@@ -1,0 +1,21 @@
+
+.foto-parceria-container{
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+    margin-bottom: 30px;
+    gap: 20px;
+    align-items: center;
+}
+.input-foto-parceria{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.label-arquivo{
+    font-family: Inter;
+}
+.fotoParceria{
+    width: 100px;
+    border-radius: 20px;
+}

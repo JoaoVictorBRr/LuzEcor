@@ -2,14 +2,6 @@
 
 
 
-body{
-    
-    height: 100vh;
-    background: rgb(175, 175, 175);
- 
-}
-
-
 .categorias{
     display: flex;
     gap: 35px;

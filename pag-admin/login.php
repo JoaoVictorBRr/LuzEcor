@@ -1,21 +1,8 @@
 <?php
 
-require __DIR__ . "../../src/conection.php";
+include __DIR__ . "/LogicaPhp/login.php";
 
-require __DIR__ . "/src-admin/Model-admin/usuario.php";
-require __DIR__ . "/src-admin/repository-admin/repositorioUser.php";
 
-$usuarioRepositorio = new UsuarioRepositorio($pdo);
-
-if(isset($_POST['cadastro'])){ 
-    if($usuarioRepositorio->getUsuario() == $_POST['user'] && $usuarioRepositorio->getSenha() == $_POST['senha'] ){
-       $_SESSION['login'] = true;
-       header('Location: adicionarDecoracoes.php');
-    }else{
-        echo "<script>alert('Senha ou usário errado, tente novamente');</script>";
-    }
-}
-  
 ?>
 
 <!DOCTYPE html>
@@ -25,6 +12,7 @@ if(isset($_POST['cadastro'])){
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./styles-admin/global.css">
     <link rel="stylesheet" href="./styles-admin/login.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 
     <link rel="shortcut icon" href="../ImagensSite-LuzeCor/Luz e cor.png" type="image/x-icon" />
     <title>Login - Admin</title>

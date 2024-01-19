@@ -12,35 +12,8 @@ if(!isset($_SESSION['login'])){
  }
 
 
-require __DIR__ . "../../src/conection.php";
 
-require __DIR__ . "../../src/Model/parceria.php";
-require __DIR__ . "../../src/repository/repositorioParceria.php";
-
-    $userRepositorio = new parceriaRepositorio($pdo);
-
-    if(isset($_POST['cadastro'])){
-
-        if($_FILES['foto']['name']){
-            $parcerio = new Parceria(
-                null,
-                $_POST['Nome'],
-                $_POST['Local'],
-                $_POST['horario'],
-                intval($_POST['Whatsapp']),
-                $_FILES['foto']['name'],
-                null
-            );
-        }
-    
-        $arquivo = $_FILES['foto'];
-
-        $caminho_destino = str_replace('\\', '/', __DIR__ . './imagensBancoParceria/');
-        move_uploaded_file($_FILES['foto']['tmp_name'], $caminho_destino . $arquivo['name']);
-        $userRepositorio->salvarDecoracoes($parcerio);
-
-    header("Location: ./adicionarParcerias.php");
-    }
+include __DIR__ . "/LogicaPhp/adicionarParcerias.php"
 
 ?>
 
@@ -51,7 +24,7 @@ require __DIR__ . "../../src/repository/repositorioParceria.php";
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./styles-admin/global.css">
-    <link rel="stylesheet" href="./styles-admin/adicionarAdmin.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 
     <link rel="shortcut icon" href="../ImagensSite-LuzeCor/Luz e cor.png" type="image/x-icon" />
     <title>Adicionar Parcerias - Admin</title>
@@ -61,13 +34,17 @@ require __DIR__ . "../../src/repository/repositorioParceria.php";
     
     <header>
         <div class="categorias">
-                     <a href="./adicionarInformacao.php"><strong>Informações de contato</strong></a>
-                    <a href="./adicionarDecoracoes.php"><strong>Adicionar Decorações</strong></a>
-                    <a href="./adicionarParcerias.php"><strong>Adicionar Parcerias</strong></a>
-                    <a href="./verDecoracoes.php"><strong>Editar Decoraçoes</strong></a>
-                    <a href="./verParcerias.php"><strong>Editar Parcerias</strong></a>
-                    <a href="?logout"><strong>LogOut</strong></a>
-
+        <a href="./adicionarInformacao.php">INFORMAÇÕES DE CONTATO </a>
+                    <p class="separadorMenu">|</p>
+                    <a href="./adicionarDecoracoes.php">ADICIONAR DECORAÇÕES  </a>
+                    <p class="separadorMenu">|</p>
+                    <a href="./adicionarParcerias.php">ADICIONAR PARCERIAS </a>
+                    <p class="separadorMenu">|</p>
+                    <a href="./verDecoracoes.php">EDITAR DECORACÇÕES</a>
+                    <p class="separadorMenu">|</p>
+                    <a href="./verParcerias.php">EDITAR PARCERIAS</a>
+                    <p class="separadorMenu">|</p>
+                    <a href="?logout"><i class="bi bi-box-arrow-left"></i></a>
         </div>
     </header>
     
@@ -77,38 +54,38 @@ require __DIR__ . "../../src/repository/repositorioParceria.php";
 
         <form method="POST" enctype="multipart/form-data">
             <h2>ADICIONAR PARCERIAS</h2>
-
+        <div class="inputs_container">
             <div class="inputs">
                 <br>
-                <label for="Nome">Nome: </label>
+                <label class="labels" for="Nome">Nome </label>
                 <input class="input-item" name="Nome" type="text">
             </div>
 
             <div class="inputs">
             <br>
-                <label for="Local">Local: </label>
+                <label class="labels" for="Local">Local</label>
                 <input class="input-item" name="Local" type="text">
             </div>
 
             <div class="inputs">
             <br>
-                <label for="horario">Horário Aberto: </label>
+                <label class="labels" for="horario">Horário</label>
                 <input class="input-item" name="horario" type="text">
             </div>
 
             <div class="inputs">
             <br>
-                <label for="Whatsapp">Whatsapp: </label>
+                <label class="labels" for="Whatsapp">Whatsapp </label>
                 <input class="input-item" name="Whatsapp" type="number">
             </div>
 
             <div class="input_foto">
             <br>
-                <label for="foto">Adicionar foto: </label>
-                <input class="input-item" name="foto" type="file">
+                <label  class="label-arquivo" for="foto"> <strong> Adicionar foto </strong></label>
+                <input class="input-item arquivo" name="foto" type="file" required>
             </div>
-
-            <div class="input_foto_adicionadas">
+        </div>
+          
         
                
         <div class="button">

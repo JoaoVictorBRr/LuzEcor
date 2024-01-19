@@ -22,7 +22,7 @@ function AddImg() {
 
   const input = document.createElement("input");
   input.type = "file";
-  input.className = "input-item";
+  input.className = "input-item arquivo";
   input.name = `foto-${id}`;
   input.id = `foto-${id}`;
 

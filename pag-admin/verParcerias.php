@@ -11,13 +11,8 @@ if(!isset($_SESSION['login'])){
     header('Location: login.php');
 }
 
-require __DIR__ . "../../src/conection.php";
 
-require __DIR__ . "../../src/Model/parceria.php";
-require __DIR__ . "../../src/repository/repositorioParceria.php";
-
-$parceriaRepositorio = new parceriaRepositorio($pdo);
-$dadosParceria = $parceriaRepositorio->listaParceria();
+include __DIR__ . "/LogicaPhp/verParcerias.php";
 
 
 ?>
@@ -29,8 +24,8 @@ $dadosParceria = $parceriaRepositorio->listaParceria();
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./styles-admin/global.css">
-    <link rel="stylesheet" href="./styles-admin/adicionarAdmin.css">
     <link rel="stylesheet" href="./styles-admin/verParceria.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 
     <link rel="shortcut icon" href="../ImagensSite-LuzeCor/Luz e cor.png" type="image/x-icon" />
     <title>Ver Parcerias - Admin</title>
@@ -40,12 +35,17 @@ $dadosParceria = $parceriaRepositorio->listaParceria();
     
     <header>
         <div class="categorias">
-        <a href="./adicionarInformacao.php"><strong>Informações de contato</strong></a>
-                    <a href="./adicionarDecoracoes.php"><strong>Adicionar Decorações</strong></a>
-                    <a href="./adicionarParcerias.php"><strong>Adicionar Parcerias</strong></a>
-                    <a href="./verDecoracoes.php"><strong>Editar Decoraçoes</strong></a>
-                    <a href="./verParcerias.php"><strong>Editar Parcerias</strong></a>
-                    <a href="?logout"><strong>LogOut</strong></a>
+        <a href="./adicionarInformacao.php">INFORMAÇÕES DE CONTATO </a>
+                    <p class="separadorMenu">|</p>
+                    <a href="./adicionarDecoracoes.php">ADICIONAR DECORAÇÕES  </a>
+                    <p class="separadorMenu">|</p>
+                    <a href="./adicionarParcerias.php">ADICIONAR PARCERIAS </a>
+                    <p class="separadorMenu">|</p>
+                    <a href="./verDecoracoes.php">EDITAR DECORACÇÕES</a>
+                    <p class="separadorMenu">|</p>
+                    <a href="./verParcerias.php">EDITAR PARCERIAS</a>
+                    <p class="separadorMenu">|</p>
+                    <a href="?logout"><i class="bi bi-box-arrow-left"></i></a>
         </div>
     </header>
 
@@ -61,7 +61,7 @@ $dadosParceria = $parceriaRepositorio->listaParceria();
                             <p>Celular: <?php echo $parceria->getCelular() ?></p>
                             <p>Horário: <?php echo $parceria->getHorario() ?></p>
                         </div>
-                        <a class="button_contact" href="./EditarParcerias.php?<?php echo $parceria->getId() ?>">Editar contato</a>
+                        <a class="button_contact" href="./EditarParcerias.php?id=<?php echo $parceria->getId() ?>">Editar contato</a>
                     </div>
                 
             <div>

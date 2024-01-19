@@ -1,0 +1,17 @@
+.capaProduto{
+    width: 150px;
+}
+.imagens{
+    display: flex;
+    gap: 25px;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(241, 241, 241);
+
+    padding: 15px;
+    border-radius: 20px;
+}
+p{
+    font-family: Inter;
+    font-size: 20px;
+}

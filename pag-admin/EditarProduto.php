@@ -12,75 +12,8 @@ if(!isset($_SESSION['login'])){
  }
 
 
- require __DIR__ . "../../src/conection.php";
-
- require __DIR__ . "../../src/model/decoracao.php";
- require __DIR__ . "../../src/repository/repositorioDecoracao.php";
+include __DIR__ . "/LogicaPhp/editarProduto.php";
  
- require __DIR__ . "../../src/model/imagem.php";
- require __DIR__ . "../../src/repository/repositorioImagem.php";
-
- $id = $_GET['id'];
- 
- $decoracaoRepositorio = new DecoracaoRepositorio($pdo);
- $imagemRepositorio = new ImagemRepositorio($pdo);
-
- $listaImagem = $imagemRepositorio->listaImagem($id);
-
-
- 
- if(isset($_POST['atualizar'])){
- 
-     $fav = ($_POST['favoritar'] == "Sim") ? 1 : 0;
-     $imagens = [];
-
-     $img = ($_FILES['capa']['name']) ? $_FILES['capa']['name'] : $decoracaoRepositorio->getFotoCapa($id);
-     $decoracao = new Decoracao(
-         null,
-         $_POST['Tema'], 
-         $_POST['Descricao'], 
-         $img,
-         $fav, 
-         null
-     );
- 
-     $decoracaoRepositorio->atualiarDecoracoes($decoracao, $id);
-
-     $contagemImagens = 0;
-
-     while($_FILES['foto-'. $contagemImagens]['name']){
-        $contagemImagens += 1;
-     }
- 
-     for($i = 0; $i < $contagemImagens; $i += 1){
- 
-         if($_FILES['foto-'. $i]['name']){
-             $imagem = new Imagem(
-                 null,
-                 null,
-                 $_FILES['foto-'. $i]['name'],
-                 null
-             );
-         }else{
-             continue;
-         }
-     
-         $arquivo = $_FILES['foto-'. $i];
- 
-         $caminho_destino = str_replace('\\', '/', __DIR__ . './imagensBanco/');
-         move_uploaded_file($_FILES['foto-'. $i]['tmp_name'], $caminho_destino . $arquivo['name']);
-         
-         $imagemRepositorio->salvarImagem($imagem, $id);
-     }   
-        
-    header("Location: ./EditarProduto.php?id=$id");
- 
- 
- }
- 
-
-
-
 ?>
 
 
@@ -90,8 +23,10 @@ if(!isset($_SESSION['login'])){
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./styles-admin/global.css">
-    <link rel="stylesheet" href="./styles-admin/adicionarAdmin.css">
+    <link rel="stylesheet" href="./styles-admin/editarDecoracao.css">
+    
     <script src="./script/adicionarFoto.js" defer></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 
     <link rel="shortcut icon" href="../ImagensSite-LuzeCor/Luz e cor.png" type="image/x-icon" />
     <title>Editar Produto - Admin</title>
@@ -101,20 +36,25 @@ if(!isset($_SESSION['login'])){
     
     <header>
         <div class="categorias">
-                    <a href="./adicionarInformacao.php"><strong>Informações de contato</strong></a>
-                    <a href="./adicionarDecoracoes.php"><strong>Adicionar Decorações</strong></a>
-                    <a href="./adicionarParcerias.php"><strong>Adicionar Parcerias</strong></a>
-                    <a href="./verDecoracoes.php"><strong>Editar Decoraçoes</strong></a>
-                    <a href="./verParcerias.php"><strong>Editar Parcerias</strong></a>
-                    <a href="?logout"><strong>LogOut</strong></a>
+        <a href="./adicionarInformacao.php">INFORMAÇÕES DE CONTATO </a>
+                    <p class="separadorMenu">|</p>
+                    <a href="./adicionarDecoracoes.php">ADICIONAR DECORAÇÕES  </a>
+                    <p class="separadorMenu">|</p>
+                    <a href="./adicionarParcerias.php">ADICIONAR PARCERIAS </a>
+                    <p class="separadorMenu">|</p>
+                    <a href="./verDecoracoes.php">EDITAR DECORACÇÕES</a>
+                    <p class="separadorMenu">|</p>
+                    <a href="./verParcerias.php">EDITAR PARCERIAS</a>
+                    <p class="separadorMenu">|</p>
+                    <a href="?logout"><i class="bi bi-box-arrow-left"></i></a>
         </div>
     </header>
     
     <section class="form">
     <h2>EDITAR PRODUTO</h2>
 
-    <form action="excluirProduto.php?id=<?php echo $id; ?>" method="POST">
-        <button type="submit" name="excluirProduto">X</button>
+    <form action="./LogicaPhp/excluirProduto.php?id=<?php echo $id; ?>" method="POST">
+        <button class="excluirProduto" type="submit" name="excluirProduto">Excluir Decoração</button>
     </form>
 
     <button onclick="AddImg()" id="addImg">Adicionar Mais Fotos</button>
@@ -124,52 +64,62 @@ if(!isset($_SESSION['login'])){
 
         <form method="POST" enctype="multipart/form-data">
 
-        <div class="input_capa">
+        
+        <div class="arquivos">
+            <div class="input_capa">
 
-                <label for="capa">Adicionar capa: </label>
-                <input id="capa" class="input-item" name="capa" type="file" >
+                    <label class="label-arquivo" for="capa"><strong> Adicionar capa </strong></label>
+                    <input id="capa" class="input-item arquivo" name="capa" type="file" >
 
+                </div>
+
+                <div class="input_foto">
+
+                    <label class="label-arquivo" for="foto-0"><strong> Adicionar fotos</strong> </label>
+                    <input id="foto-0" class="input-item arquivo" name="foto-0" type="file" >
+
+                </div>
             </div>
-
-            <div class="input_foto">
-
-                <label for="foto-0">Adicionar fotos: </label>
-                <input id="foto-0" class="input-item" name="foto-0" type="file" >
-
-            </div>
+            <div class="inputs_container">
 
             <div class="inputs">
             <br>
-                <label for="Tema">Tema: </label>
+                <label class="labels" for="Tema">Tema: </label>
                 <input class="input-item" name="Tema" type="text" value="<?php echo $decoracaoRepositorio->getTitle($id) ?>">
             </div>
 
             <div class="inputs">
                 <br>
-                <label for="Descricao">Descrição: </label>
+                <label class="labels" for="Descricao">Descrição: </label>
                 <input class="input-item" name="Descricao" type="text" value="<?php echo $decoracaoRepositorio->getDescription($id) ?>">
             </div>
 
           
             <div class="inputs_favoritar">
 
-                    <br>
-                    <p>Favoritar:</p>
-                    <br>
+                    <p>Favoritar</p>
+                   
                     <?php if( $decoracaoRepositorio->getFavorito($id) == 1):?>
-                        <input type="radio" id="fav_sim" name="favoritar" value="Sim" checked>
-                        <label for="fav_sim">Sim</label>
-                        <br>
-                        <input type="radio" id="fav_nao" name="favoritar" value="Nao">
-                        <label for="fav_nao">Não</label>
+                        <div>
+                            <input class="btn-radio" type="radio" id="fav_sim" name="favoritar" value="Sim" checked>
+                            <label class="label-radio" for="fav_sim">Sim</label>
+                        </div>
+                        <div>
+                            <input class="btn-radio" type="radio" id="fav_nao" name="favoritar" value="Nao">
+                            <label class="label-radio" for="fav_nao">Não</label>
+                        </div>
                     <?php else: ?>
-                        <input type="radio" id="fav_sim" name="favoritar" value="Sim">
-                        <label for="fav_sim">Sim</label>
-                        <br>
-                        <input type="radio" id="fav_nao" name="favoritar" value="Nao" checked>
-                        <label for="fav_nao">Não</label>   
+                        <div>
+                            <input class="btn-radio" type="radio" id="fav_sim" name="favoritar" value="Sim">
+                            <label class="label-radio" for="fav_sim">Sim</label>
+                        </div>
+                        <div>
+                            <input class="btn-radio" type="radio" id="fav_nao" name="favoritar" value="Nao" checked>
+                            <label class="label-radio" for="fav_nao">Não</label>   
+                        </div>
                     <?php endif; ?>
                 </div>
+             </div>
                
         <div class="button">
             <input class="button-item" class="button" name="atualizar" type="submit" value="Atualizar">
@@ -177,16 +127,18 @@ if(!isset($_SESSION['login'])){
 
         </form>
 
-        <br>
-
-           
                 <p>Foto de capa: </p>
               
 
-                <form action="excluirCapa.php" method="POST">
-                    <p> <?php echo  $decoracaoRepositorio->getFotoCapa($id); ?></p>
+                <form class="imagens" action="./LogicaPhp/excluirCapa.php" method="POST">
+                    <img class="capaProduto" src=" <?php echo "./imagensBancoParceria/" .  $decoracaoRepositorio->getFotoCapa($id)?>" alt="<?php echo  $decoracaoRepositorio->getFotoCapa($id)?>">
+               
                     <input type="hidden" name="id" value="<?php echo  $id ?>">
-                    <button type="submit">X</button>
+                    <?php if($decoracaoRepositorio->getFotoCapa($id))
+                        {
+                            echo '<button class="removeBtn" name="excluirCapa" type="submit"> X </button>';
+                        }
+                    ?>
                 </form>
 
                 <p>Fotos adicionadas: </p>
@@ -194,11 +146,12 @@ if(!isset($_SESSION['login'])){
 
                 <?php foreach($listaImagem as $imagem):?>
          
-                <form action="excluirFoto.php" method="POST">
-                    <p> <?php echo $imagem->getArquivo(); ?></p>
+                <form action="./LogicaPhp/excluirFoto.php" method="POST">
+                    <img class="capaProduto" src="<?php echo "./imagensBanco/" .  $imagem->getArquivo(); ?>" alt="<?php $imagem->getArquivo()?>">
+                 
                     <input type="hidden" name="id" value="<?php echo $imagem->getId() ?>">
 
-                    <button type="submit">X</button>
+                    <button class="removeBtn" name="excluirFoto" type="submit">X</button>
                 </form>
             
                 <?php endforeach;?>   

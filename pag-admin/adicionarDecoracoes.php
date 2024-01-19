@@ -12,74 +12,7 @@ if(!isset($_SESSION['login'])){
  }
 
 
-require __DIR__ . "../../src/conection.php";
-
-require __DIR__ . "../../src/model/decoracao.php";
-require __DIR__ . "../../src/repository/repositorioDecoracao.php";
-
-require __DIR__ . "../../src/model/imagem.php";
-require __DIR__ . "../../src/repository/repositorioImagem.php";
-
-$decoracaoRepositorio = new DecoracaoRepositorio($pdo);
-$imagemRepositorio = new ImagemRepositorio($pdo);
-
-if(isset($_POST['cadastro'])){
-
-    $fav = ($_POST['favoritar'] == "Sim") ? 1 : 0;
-    $imagens = [];
-
-    $decoracao = new Decoracao(
-        null,
-        $_POST['Tema'], 
-        $_POST['Descricao'], 
-        $_FILES['capa']['name'],
-        $fav, 
-        null
-    );
-
-    $lastId = $decoracaoRepositorio->salvarDecoracoes($decoracao);
-
-    $contagemImagens = 0;
-
-    while($_FILES['foto-'. $contagemImagens]['name']){
-       $contagemImagens += 0;
-    }
-
-    for($i = 0; $i < $contagemImagens; $i += 1){
-
-
-        if($_FILES['foto-'. $i]['name'])
-        {
-            $imagem = new Imagem(
-                null,
-                null,
-                $_FILES['foto-'. $i]['name'],
-                null
-            );
-
-            $arquivo = $_FILES['foto-'. $i];
-
-            $caminho_destino = str_replace('\\', '/', __DIR__ . './imagensBanco/');
-            move_uploaded_file($_FILES['foto-'. $i]['tmp_name'], $caminho_destino . $arquivo['name']);
-            $imagemRepositorio->salvarImagem($imagem, $lastId);
-        }
-        else
-        {
-            continue;
-        }
-    
-      
-    }   
-       
-  
-
-    header("Location: ./adicionarDecoracoes.php");
-
-
-}
-
-
-
+include __DIR__ . "/LogicaPhp/adicionarDecoracoes.php";
   
 
 ?>
@@ -91,9 +24,8 @@ if(isset($_POST['cadastro'])){
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./styles-admin/global.css">
-    <link rel="stylesheet" href="./styles-admin/adicionarAdmin.css">
     <script src="./script/adicionarFoto.js" defer></script>
-
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <link rel="shortcut icon" href="../ImagensSite-LuzeCor/Luz e cor.png" type="image/x-icon" />
     <title>Adicionar Decorações - Admin</title>
 </head>
@@ -102,12 +34,17 @@ if(isset($_POST['cadastro'])){
     
     <header>
         <div class="categorias">
-                    <a href="./adicionarInformacao.php"><strong>Informações de contato</strong></a>
-                    <a href="./adicionarDecoracoes.php"><strong>Adicionar Decorações</strong></a>
-                    <a href="./adicionarParcerias.php"><strong>Adicionar Parcerias</strong></a>
-                    <a href="./verDecoracoes.php"><strong>Editar Decoraçoes</strong></a>
-                    <a href="./verParcerias.php"><strong>Editar Parcerias</strong></a>
-                    <a href="?logout"><strong>LogOut</strong></a>
+                    <a href="./adicionarInformacao.php">INFORMAÇÕES DE CONTATO </a>
+                    <p class="separadorMenu">|</p>
+                    <a href="./adicionarDecoracoes.php">ADICIONAR DECORAÇÕES  </a>
+                    <p class="separadorMenu">|</p>
+                    <a href="./adicionarParcerias.php">ADICIONAR PARCERIAS </a>
+                    <p class="separadorMenu">|</p>
+                    <a href="./verDecoracoes.php">EDITAR DECORACÇÕES</a>
+                    <p class="separadorMenu">|</p>
+                    <a href="./verParcerias.php">EDITAR PARCERIAS</a>
+                    <p class="separadorMenu">|</p>
+                    <a href="?logout"><i class="bi bi-box-arrow-left"></i></a>
         </div>
     </header>
     
@@ -120,44 +57,53 @@ if(isset($_POST['cadastro'])){
 
         <form method="POST" enctype="multipart/form-data">
 
-        <div class="input_capa">  
+        <div class="arquivos">
 
-            <label for="capa">Adicionar capa: </label>
-            <input id="capa" class="input-item" name="capa" type="file" required>
-            <br>
-<br>
-        </div>
+            <div class="input_capa">  
 
-        <div class="input_foto">
-   
-            <label for="foto-0">Adicionar foto: </label>
-            <input id="foto-0" class="input-item" name="foto-0" type="file">
-        </div>
+                <label class="label-arquivo" for="capa"> <strong> Adicionar capa: </strong></label>
+                <input id="capa" class="input-item arquivo" name="capa" type="file" required>
 
-            <div class="inputs">
-            <br>
-                <label for="Tema">Tema: </label>
-                <input class="input-item" name="Tema" type="text" required>
             </div>
 
-            <div class="inputs">
-                <br>
-                <label for="Descricao">Descrição: </label>
-                <input class="input-item" name="Descricao" type="text">
+            <div class="input_foto">
+    
+                <label class="label-arquivo" for="foto-0"><strong>Adicionar foto: </strong></label>
+                <input id="foto-0" class="input-item arquivo" name="foto-0" type="file">
             </div>
 
-          
+        </div>
+            <div class="inputs_container">
+
+                <div class="inputs">
+    
+                    <label class="labels" for="Tema">Tema</label>
+                    <input class="input-item" name="Tema" type="text" placeholder="Digite aqui..." required>
+            
+                </div>
+
+                <div class="inputs">
+                
+                    <label class="labels" for="Descricao">Descrição </label>
+                    <input class="input-item" name="Descricao" placeholder="Digite aqui..." type="text">
+                </div>
+
+            
 
 
-            <div class="inputs_favoritar">
-                    <br>
-                    <p>Favoritar:</p>
-                    <br>
-                    <input type="radio" id="fav_sim" name="favoritar" value="Sim">
-                    <label for="fav_sim">Sim</label>
-                    <br>
-                    <input type="radio" id="fav_nao" name="favoritar" value="Nao">
-                    <label for="fav_nao">Não</label>
+                <div class="inputs_favoritar">
+                 
+                        <p>Favoritar</p>
+                        <div>
+                            <input type="radio" id="fav_sim" name="favoritar" value="Sim" class="btn-radio">
+                            <label class="label-radio" for="fav_sim">Sim</label>
+                        </div>
+                        <div>
+                            <input type="radio" id="fav_nao" name="favoritar" value="Nao" class="btn-radio">
+                            <label class="label-radio" for="fav_nao">Não</label>
+                        </div>
+                    </div>
+
                 </div>
                
         <div class="button">
