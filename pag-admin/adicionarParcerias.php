@@ -25,8 +25,9 @@ include __DIR__ . "/LogicaPhp/adicionarParcerias.php"
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./styles-admin/global.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-
     <link rel="shortcut icon" href="../ImagensSite-LuzeCor/Luz e cor.png" type="image/x-icon" />
+    <script src="https://maps.googleapis.com/maps/api/js?key=SUA_CHAVE_API&callback=initMap" async defer></script>
+    <script src="./script/maps.js" defer></script>
     <title>Adicionar Parcerias - Admin</title>
 </head>
 <body>
@@ -64,7 +65,7 @@ include __DIR__ . "/LogicaPhp/adicionarParcerias.php"
             <div class="inputs">
             <br>
                 <label class="labels" for="Local">Local</label>
-                <input class="input-item" name="Local" type="text">
+                <input id="local" class="input-item" name="Local" type="text">
             </div>
 
             <div class="inputs">
