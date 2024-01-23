@@ -76,12 +76,12 @@ include __DIR__ . "/LogicaPhp/editarParcerias.php"
             <div class="inputs">
             
                 <label class="labels"  for="horario">Horário</label>
-                <input class="input-item" name="horario" type="text" value="<?php echo $parceriaRepositorio->getHorario($id) ?>">
+                <input id="hora" class="input-item" name="horario" type="text" value="<?php echo $parceriaRepositorio->getHorario($id) ?>">
             </div>
 
             <div class="inputs">
                 <label class="labels" for="Whatsapp">Whatsapp</label>
-                <input class="input-item" name="Whatsapp" type="number" value="<?php echo $parceriaRepositorio->getCelular($id) ?>">
+                <input id="phone" class="input-item" name="Whatsapp" type="text" value="<?php echo $parceriaRepositorio->getCelular($id) ?>">
             </div>
         </div>
 
@@ -106,6 +106,18 @@ include __DIR__ . "/LogicaPhp/editarParcerias.php"
 
     </section>
 
+    <script src="../../node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="../../node_modules/jquery-mask-plugin/dist/jquery.mask.js"></script>
+    <script src="../../node_modules/jquery-mask-plugin/dist/jquery.mask.min.js"></script>
+
+    <script >
+
+        $(document).ready(function(){
+            $('#phone').mask('(00) 00000-0000');
+            $('#hora').mask('00:00 até 00:00');
+
+        })
+    </script>
 
 </body>
 </html>

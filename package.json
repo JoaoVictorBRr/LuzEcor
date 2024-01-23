@@ -1,0 +1,15 @@
+{
+  "dependencies": {
+    "jquery": "^3.7.1",
+    "jquery-mask-plugin": "^1.14.16"
+  },
+  "name": "siteluzdecor",
+  "version": "1.0.0",
+  "main": "",
+  "scripts": {
+    "site": "php -S localhost:8080"
+  },
+  "author": "João Victor",
+  "license": "ISC",
+  "description": "Projeto para empresa de decorações"
+}

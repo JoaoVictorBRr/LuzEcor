@@ -8,9 +8,10 @@ $informacaoRepositorio = new InformacaoRepositorio($pdo);
 
 if(isset($_POST['cadastro'])){
 
+
     $informacao = new InformacaoEmpresa(
         null,
-        $_POST['Telefone'], 
+        $_POST['Telefone'],
         $_POST['Instagram'], 
         $_POST['Facebook'], 
         null

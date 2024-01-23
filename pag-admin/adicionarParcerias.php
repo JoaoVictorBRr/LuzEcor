@@ -26,8 +26,6 @@ include __DIR__ . "/LogicaPhp/adicionarParcerias.php"
     <link rel="stylesheet" href="./styles-admin/global.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <link rel="shortcut icon" href="../ImagensSite-LuzeCor/Luz e cor.png" type="image/x-icon" />
-    <script src="https://maps.googleapis.com/maps/api/js?key=SUA_CHAVE_API&callback=initMap" async defer></script>
-    <script src="./script/maps.js" defer></script>
     <title>Adicionar Parcerias - Admin</title>
 </head>
 <body>
@@ -71,13 +69,13 @@ include __DIR__ . "/LogicaPhp/adicionarParcerias.php"
             <div class="inputs">
             <br>
                 <label class="labels" for="horario">Horário</label>
-                <input class="input-item" name="horario" type="text">
+                <input id="hora" class="input-item" name="horario" type="text">
             </div>
 
             <div class="inputs">
             <br>
                 <label class="labels" for="Whatsapp">Whatsapp </label>
-                <input class="input-item" name="Whatsapp" type="number">
+                <input id="phone" class="input-item" name="Whatsapp" type="text">
             </div>
 
             <div class="input_foto">
@@ -98,6 +96,19 @@ include __DIR__ . "/LogicaPhp/adicionarParcerias.php"
 
     </section>
 
+    <script src="../../node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="../../node_modules/jquery-mask-plugin/dist/jquery.mask.js"></script>
+    <script src="../../node_modules/jquery-mask-plugin/dist/jquery.mask.min.js"></script>
+
+    <script >
+
+        $(document).ready(function(){
+            $('#phone').mask('(00) 00000-0000');
+            $('#hora').mask('00:00 até 00:00');
+
+        })
+
+    </script>
 
 </body>
 </html>

@@ -24,7 +24,6 @@ if(!isset($_SESSION['login'])){
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./styles-admin/global.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-
     <link rel="shortcut icon" href="../ImagensSite-LuzeCor/Luz e cor.png" type="image/x-icon" />
     <title>Editar Informações de contato - Admin</title>
 </head>
@@ -57,7 +56,7 @@ if(!isset($_SESSION['login'])){
                 <div class="inputs">
                     <br>
                     <label class="labels" for="Telefone">Telefone </label>
-                    <input class="input-item" name="Telefone" type="number" value="<?php echo $informacaoRepositorio->getTelefone() ?>">
+                    <input id="phone" class="input-item" name="Telefone" type="text" value="<?php echo $informacaoRepositorio->getTelefone() ?>">
                 </div>
 
                 <div class="inputs">
@@ -82,7 +81,17 @@ if(!isset($_SESSION['login'])){
 
     </section>
 
-   
+    <script src="../../node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="../../node_modules/jquery-mask-plugin/dist/jquery.mask.js"></script>
+
+    <script >
+
+        $(document).ready(function(){
+            $('#phone').mask("(00) 00000-0000");
+        })
+
+
+    </script>
 
 </body>
 </html>

@@ -39,7 +39,7 @@ class InformacaoRepositorio
     {
         $sql = "UPDATE contato SET telefone = ?, instagram = ?, facebook = ?, data_update = NOW() WHERE id = 1";
         $statement = $this->pdo->prepare($sql);
-       
+        
         $statement->bindValue(1, $informacao->getTel());
         $statement->bindValue(2, $informacao->getInsta());
         $statement->bindValue(3, $informacao->getFace());

@@ -115,12 +115,10 @@
                         <p>Celular: <?php echo $parceria->getCelular() ?></p>
                         <p>Horário: <?php echo $parceria->getHorario() ?></p>
                     </div>
-                    <a class="button_contact" href="">Entrar em contato</a>
+                    <a class="button_contact" href="https://wa.me/<?php echo $parceria->getCelular() ?>?text=Olá,%20gostaria%20de%20uma%20festa!!">Entrar em contato</a>
                 </div>
                
-        <div>
-        <iframe class="map" src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d14723.269476910966!2d-47.64496762320311!3d-22.697841630701475!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1spt-BR!2sbr!4v1700010459675!5m2!1spt-BR!2sbr" width="350" height="250" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-        </div>
+
         </div>
     <?php endforeach; ?>
 </section>
