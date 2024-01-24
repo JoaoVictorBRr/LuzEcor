@@ -12,7 +12,7 @@ if(isset($_POST['excluirFoto'])){
     $idProduto = $imagemRepositorio->idProduto($_POST['id']);
     $imagemRepositorio->deletar($_POST['id']);
 
-    header("Location: EditarProduto.php?id=$idProduto");
+    header("Location: ../EditarProduto.php?id=$idProduto");
 
 }
 

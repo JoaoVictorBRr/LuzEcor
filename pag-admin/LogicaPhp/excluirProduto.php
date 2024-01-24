@@ -11,7 +11,7 @@ if(isset($_POST['excluirProduto'])){
 
 
     $repositorioDecoracoes->deletarProduto($_GET['id']);
-    header("Location: verDecoracoes.php");
+    header("Location: ../verDecoracoes.php");
 }
 
 

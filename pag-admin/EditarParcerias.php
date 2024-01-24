@@ -26,7 +26,7 @@ include __DIR__ . "/LogicaPhp/editarParcerias.php"
     <link rel="stylesheet" href="./styles-admin/global.css">
     <link rel="stylesheet" href="./styles-admin/editarParceria.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-
+    <script src="./script/menuLateral.js" defer></script>
     <link rel="shortcut icon" href="../ImagensSite-LuzeCor/Luz e cor.png" type="image/x-icon" />
     <title>Editar Parcerias - Admin</title>
 </head>
@@ -36,19 +36,32 @@ include __DIR__ . "/LogicaPhp/editarParcerias.php"
     <header>
         <div class="categorias">
         <a href="./adicionarInformacao.php">INFORMAÇÕES DE CONTATO </a>
-                    <p class="separadorMenu">|</p>
                     <a href="./adicionarDecoracoes.php">ADICIONAR DECORAÇÕES  </a>
-                    <p class="separadorMenu">|</p>
                     <a href="./adicionarParcerias.php">ADICIONAR PARCERIAS </a>
-                    <p class="separadorMenu">|</p>
                     <a href="./verDecoracoes.php">EDITAR DECORACÇÕES</a>
-                    <p class="separadorMenu">|</p>
                     <a href="./verParcerias.php">EDITAR PARCERIAS</a>
-                    <p class="separadorMenu">|</p>
                     <a href="?logout"><i class="bi bi-box-arrow-left"></i></a>
 
         </div>
     </header>
+
+     <nav>
+
+        <div class="btn_ativa_menu_lateral"><i class="btn-lateral bi bi-list" onclick="abrirMenu()"></i></div>
+
+        <div class="categorias_barra_lateral" id="categorias_barra_lateral">
+
+                        <i class="bi bi-arrow-left" onclick="fecharMenu()"></i>
+                        <a href="./adicionarInformacao.php"><i class="bi bi-person"></i> INFORMAÇÕES DE CONTATO </a>
+                        <a href="./adicionarDecoracoes.php"><i class="bi bi-balloon-heart"></i> ADICIONAR DECORAÇÕES  </a>
+                        <a href="./adicionarParcerias.php"><i class="bi bi-people-fill"></i> ADICIONAR PARCERIAS </a>
+                        <a href="./verDecoracoes.php"><i class="bi bi-pen"></i> EDITAR DECORACÇÕES</a>
+                        <a href="./verParcerias.php"><i class="bi bi-pen"></i> EDITAR PARCERIAS</a>
+                        <a href="?logout"><i class="bi bi-box-arrow-left"></i></a>
+                        
+        </div>
+
+    </nav>
     
     <section class="form">
 

@@ -12,7 +12,7 @@ if(isset($_POST['excluirCapa'])){
     $decoracaoRepositorio->deletar($_POST['id']);
     $id = $_POST['id'];
 
-    header("Location: EditarProduto.php?id=$id");
+    header("Location: ../EditarProduto.php?id=$id");
 
 }
 

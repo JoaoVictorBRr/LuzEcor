@@ -30,6 +30,7 @@ header{
     display: flex;
     gap: 35px;
     margin-bottom: 40px;
+    flex-wrap: wrap;
     
 }
 .categorias a{
@@ -42,7 +43,9 @@ header{
     transform: scale(1.1);
 }
 
-
+nav{
+    display: none;
+}
 section{
     display: flex;
     align-items: center;
@@ -165,10 +168,10 @@ section{
     gap: 15px;
 }
 .input_capa{
+    
     font-family: Inter;
     color: #3F3F3F; 
-    
-    
+
 }
 
 .input_foto{
@@ -277,7 +280,57 @@ h2{
 }
 
 
+@media screen and (max-width: 1000px){
+    nav{
+        display: flex;
 
+   
+    }
+    .categorias{
+        display: none;
+    }
+    .btn_ativa_menu_lateral{
+        position: fixed;
+        overflow: hidden;
+        z-index: 1;
+
+        margin-right: 20px;
+
+        font-size: 30px;
+
+        right: 0;
+    }
+    .categorias_barra_lateral{
+        display: flex;
+        gap: 20px;
+
+        flex-direction: column;
+
+        position: fixed;
+        overflow: hidden;
+        z-index: 1;
+
+        right: 0;
+
+        width: 0px;
+
+        background-color: #ffffff;
+        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+
+        height: 100%;
+        padding: 40px 0 40px;
+        
+        margin-top: -20px;
+
+      
+    }
+    .categorias_barra_lateral a{
+        font-family: Inter;
+
+        text-decoration: none;
+        color: black;
+    }
+}
 
  @media screen and (max-width: 632px){
 
@@ -293,6 +346,35 @@ h2{
     }
 
  }
+
+@media screen and (max-width: 528px){
+    .form{
+        width: 400px;
+    }
+    .excluirProduto{
+        width: 200px;
+        height: 80px;
+        font-size: 20px;
+    }
+    .labels{
+        height: 80px;
+    }
+    .input-item{
+        height: 80px;
+        font-size: 18px;
+    }
+    .label-arquivo{
+        font-size: 20px;
+        display: flex;
+        justify-content: center;
+       align-items: center;
+    }
+    .button-item{
+        width: 200px;
+        height: 80px;
+    }
+}
+
  @media screen and (max-width: 450px){
 
     footer{

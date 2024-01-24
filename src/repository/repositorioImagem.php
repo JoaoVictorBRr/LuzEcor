@@ -9,8 +9,13 @@ class ImagemRepositorio
     }
     public function listaImagem($id): array
     {
-        $sql = "SELECT * FROM imagens WHERE produto = $id";
-        $statement = $this->pdo->query($sql);
+        try{
+        $sql = "SELECT * FROM imagens WHERE produto = ?";
+        $statement = $this->pdo->prepare($sql);
+
+        $statement->bindValue(1, $id);
+        $statement->execute();
+
         $imagem =  $statement->fetchAll(PDO::FETCH_ASSOC);
 
         $dadosImagem = array_map(function ($imagem){
@@ -23,10 +28,18 @@ class ImagemRepositorio
             );
         },  $imagem);
         return $dadosImagem;
+        }catch (PDOException $e) {
+
+            echo "Erro de banco de dados: " . $e->getMessage();
+        } catch (Exception $e) {
+    
+            echo "Erro: " . $e->getMessage();
+        }
     }
 
     public function listaImagemGeral(): array
     {
+        try{
         $sql = "SELECT * FROM imagens";
         $statement = $this->pdo->query($sql);
         $imagem =  $statement->fetchAll(PDO::FETCH_ASSOC);
@@ -41,10 +54,18 @@ class ImagemRepositorio
             );
         },  $imagem);
         return $dadosImagem;
+    }catch (PDOException $e) {
+
+        echo "Erro de banco de dados: " . $e->getMessage();
+    } catch (Exception $e) {
+
+        echo "Erro: " . $e->getMessage();
+    }
     }
 
     public function salvarImagem(Imagem $imagem, int $id)
-    {
+    {   
+        try{
         $sql = "INSERT INTO imagens (produto, arquivo, data_update) VALUES (?, ?, NOW())";
         $statement = $this->pdo->prepare($sql);
        
@@ -52,27 +73,52 @@ class ImagemRepositorio
         $statement->bindValue(2, $imagem->getArquivo());
 
         $statement->execute();
+        }catch (PDOException $e) {
+
+            echo "Erro de banco de dados: " . $e->getMessage();
+        } catch (Exception $e) {
+    
+            echo "Erro: " . $e->getMessage();
+        }
     }
 
     public function deletar(int $id)
     {
+        try{
         $sql = "DELETE FROM imagens WHERE id = ?";
         $statement = $this->pdo->prepare($sql);
        
         $statement->bindValue(1, $id);
-
         $statement->execute();
+        }catch (PDOException $e) {
+
+            echo "Erro de banco de dados: " . $e->getMessage();
+        } catch (Exception $e) {
+    
+            echo "Erro: " . $e->getMessage();
+        }
     }
 
     public function idProduto($idImagem): int
     {
-        $sql = "SELECT produto FROM imagens WHERE id = $idImagem";
-        $statement = $this->pdo->query($sql);
+        try{
+        $sql = "SELECT produto FROM imagens WHERE id = ?";
+
+        $statement = $this->pdo->prepare($sql);
+
+        $statement->bindValue(1, $idImagem);
+        $statement->execute();
+
         $idProduto = $statement->fetch(PDO::FETCH_ASSOC);
 
         return $idProduto['produto'];
+        }catch (PDOException $e) {
 
-
+            echo "Erro de banco de dados: " . $e->getMessage();
+        } catch (Exception $e) {
+    
+            echo "Erro: " . $e->getMessage();
+        }
 
     }
     

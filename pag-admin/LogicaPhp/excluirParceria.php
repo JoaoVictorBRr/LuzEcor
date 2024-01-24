@@ -11,6 +11,6 @@ if(isset($_POST['excluirParceria'])){
 
     $dadosParceria->deletarParceria($_GET['id']);
 
-    header("Location: verParcerias.php");
+    header("Location: ../verParcerias.php");
 
 }
