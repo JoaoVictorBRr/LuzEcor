@@ -7,7 +7,9 @@ require __DIR__ . "../../src-admin/repository-admin/repositorioUser.php";
 
 $usuarioRepositorio = new UsuarioRepositorio($pdo);
 
+if (session_status() == PHP_SESSION_NONE){
 session_start();
+}
 
 if(isset($_POST['cadastro'])){ 
     if($usuarioRepositorio->getUsuario() == $_POST['user'] && $usuarioRepositorio->getSenha() == $_POST['senha'] ){

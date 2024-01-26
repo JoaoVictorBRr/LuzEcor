@@ -18,20 +18,22 @@ if(isset($_POST['cadastro'])){
     $fav = ($_POST['favoritar'] == "Sim") ? 1 : 0;
     $imagens = [];
 
+    $indiceAleatorio = rand(0, 1000);
+
     $decoracao = new Decoracao(
         null,
         $_POST['Tema'], 
         $_POST['Descricao'], 
-        $_FILES['capa']['name'],
+        $indiceAleatorio . "-" .$_FILES['capa']['name'],
         $fav, 
         null
     );
 
 
-    $fotoCapa = $_FILES['capa'];
+    $fotoCapa = $indiceAleatorio . "-" . $_FILES['capa']['name'];
     
     $caminho_destino = str_replace('\\', '/', __DIR__ . '../../imagensBanco/');
-    move_uploaded_file($_FILES['capa']['tmp_name'], $caminho_destino . $fotoCapa['name']);
+    move_uploaded_file($_FILES['capa']['tmp_name'], $caminho_destino . $fotoCapa);
 
     $lastId = $decoracaoRepositorio->salvarDecoracoes($decoracao);
 
@@ -44,19 +46,18 @@ if(isset($_POST['cadastro'])){
 
     for($i = 0; $i < $contagemImagens; $i += 1){
 
+        $arquivo = $i . "-" . $_FILES['foto-'. $i]['name'];
 
         if($_FILES['foto-'. $i]['name'])
         {
             $imagem = new Imagem(
                 null,
                 null,
-                $_FILES['foto-'. $i]['name'],
+                $arquivo,
                 null
             );
 
-            $arquivo = $_FILES['foto-'. $i];
-
-            move_uploaded_file($_FILES['foto-'. $i]['tmp_name'], $caminho_destino . $arquivo['name']);
+            move_uploaded_file($_FILES['foto-'. $i]['tmp_name'], $caminho_destino . $arquivo);
             $imagemRepositorio->salvarImagem($imagem, $lastId);
         }
         else

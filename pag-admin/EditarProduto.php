@@ -55,7 +55,7 @@ include __DIR__ . "/LogicaPhp/editarProduto.php";
                         <a href="./adicionarInformacao.php"><i class="bi bi-person"></i> INFORMAÇÕES DE CONTATO </a>
                         <a href="./adicionarDecoracoes.php"><i class="bi bi-balloon-heart"></i> ADICIONAR DECORAÇÕES  </a>
                         <a href="./adicionarParcerias.php"><i class="bi bi-people-fill"></i> ADICIONAR PARCERIAS </a>
-                        <a href="./verDecoracoes.php"><i class="bi bi-pen"></i> EDITAR DECORACÇÕES</a>
+                        <a href="./verDecoracoes.php"><i class="bi bi-pen"></i> EDITAR DECORAÇÕES</a>
                         <a href="./verParcerias.php"><i class="bi bi-pen"></i> EDITAR PARCERIAS</a>
                         <a href="?logout"><i class="bi bi-box-arrow-left"></i></a>
                         
@@ -144,14 +144,10 @@ include __DIR__ . "/LogicaPhp/editarProduto.php";
               
 
                 <form class="imagens" action="./LogicaPhp/excluirCapa.php" method="POST">
-                    <img class="capaProduto" src=" <?php echo "./imagensBancoParceria/" .  $decoracaoRepositorio->getFotoCapa($id)?>" alt="<?php echo  $decoracaoRepositorio->getFotoCapa($id)?>">
+                    <img class="capaProduto" src=" <?php echo "./imagensBanco/" .  $decoracaoRepositorio->getFotoCapa($id)?>" alt="<?php echo  $decoracaoRepositorio->getFotoCapa($id)?>">
                
                     <input type="hidden" name="id" value="<?php echo  $id ?>">
-                    <?php if($decoracaoRepositorio->getFotoCapa($id))
-                        {
-                            echo '<button class="removeBtn" name="excluirCapa" type="submit"> X </button>';
-                        }
-                    ?>
+                  
                 </form>
 
                 <p>Fotos adicionadas: </p>
@@ -159,12 +155,12 @@ include __DIR__ . "/LogicaPhp/editarProduto.php";
 
                 <?php foreach($listaImagem as $imagem):?>
          
-                <form action="./LogicaPhp/excluirFoto.php" method="POST">
+                <form class="fotos_adicionadas_editar" action="./LogicaPhp/excluirFoto.php" method="POST">
                     <img class="capaProduto" src="<?php echo "./imagensBanco/" .  $imagem->getArquivo(); ?>" alt="<?php $imagem->getArquivo()?>">
                  
                     <input type="hidden" name="id" value="<?php echo $imagem->getId() ?>">
 
-                    <button class="removeBtn" name="excluirFoto" type="submit">X</button>
+                    <button class="removeBtn" name="excluirFoto" type="submit">Remover</button>
                 </form>
             
                 <?php endforeach;?>   

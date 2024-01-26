@@ -1,5 +1,6 @@
 .capaProduto{
-    width: 150px;
+    width: 250px;
+    border-radius: 10px;
 }
 .imagens{
     display: flex;
@@ -14,4 +15,10 @@
 p{
     font-family: Inter;
     font-size: 20px;
+}
+
+@media screen and (max-width: 442px){
+.capaProduto{
+    width: 150px;
+}
 }

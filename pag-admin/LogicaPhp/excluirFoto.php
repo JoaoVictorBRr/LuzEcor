@@ -10,9 +10,30 @@ if(isset($_POST['excluirFoto'])){
     $imagemRepositorio = new ImagemRepositorio($pdo);
 
     $idProduto = $imagemRepositorio->idProduto($_POST['id']);
-    $imagemRepositorio->deletar($_POST['id']);
 
-    header("Location: ../EditarProduto.php?id=$idProduto");
+    $imagem = $imagemRepositorio->imagemUnicaProduto($_POST['id']);
+
+    $caminhoAtual = __DIR__;
+    $umNivelAcima = dirname($caminhoAtual);
+    $destinoArquivo = $umNivelAcima . "./imagensBanco/" . $imagem;
+    
+    if (file_exists("$destinoArquivo"))
+    {
+        if (unlink("$destinoArquivo")) {
+            $imagemRepositorio->deletar($_POST['id']);
+            header("Location: ../EditarProduto.php?id=$idProduto");
+            echo "Arquivo removido com sucesso.";
+
+        } else {
+            echo "Erro ao remover o arquivo. Verifique as permissões de arquivo.";
+        }
+
+    }else {
+        
+        echo "O arquivo não existe.";
+    }
+    
+
 
 }
 

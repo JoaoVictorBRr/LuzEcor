@@ -26,8 +26,10 @@ if(isset($_POST['Atualizar'])){
 
     $dadosParceria = new parceriaRepositorio($pdo);
 
+    $indiceAleatorio = rand(0, 1000);
 
-    $foto = ($_FILES['Foto']['name']) ? $_FILES['Foto']['name'] : $dadosParceria->getFoto($_GET['id']);
+
+    $foto = ($_FILES['Foto']['name']) ? $indiceAleatorio . "-" . $_FILES['Foto']['name'] : $dadosParceria->getFoto($_GET['id']);
 
     $parceiro = new Parceria(
         null,
@@ -39,16 +41,22 @@ if(isset($_POST['Atualizar'])){
         null
     );
 
-    $dadosParceria->atualizarParceria($parceiro, $_GET['id']);
-
     if($_FILES['Foto']['name']){
 
+        $caminhoAtual = __DIR__;
+        $umNivelAcima = dirname($caminhoAtual);
+        $destinoArquivoCapa = $umNivelAcima . "./imagensBancoParceria/" . $dadosParceria->getFoto($_GET['id']);
 
-        $caminho_destino = str_replace('\\', '/', __DIR__ . '../../imagensBancoParceria/');
-        move_uploaded_file($_FILES['Foto']['tmp_name'], $caminho_destino . $_FILES['Foto']['name']);
+        unlink($destinoArquivoCapa);
+
+        $foto = $indiceAleatorio . "-" . $_FILES['Foto']['name'];
+
+        $caminho_destino = str_replace('\\', '/', $caminhoAtual . '../../imagensBancoParceria/');
+        move_uploaded_file($_FILES['Foto']['tmp_name'], $caminho_destino . $foto);
     
-
     }
+
+    $dadosParceria->atualizarParceria($parceiro, $_GET['id']);
 
     header("Location: ../verParcerias.php");
 }

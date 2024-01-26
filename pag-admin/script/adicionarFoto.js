@@ -28,7 +28,7 @@ function AddImg() {
 
   const btnRemove = document.createElement("button");
   btnRemove.name = `removeBtn`;
-  btnRemove.className = `removeBtn`;
+  btnRemove.className = `removeFoto`;
   btnRemove.textContent = "X";
 
   btnRemove.addEventListener('click', ()=>{

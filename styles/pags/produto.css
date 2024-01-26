@@ -204,6 +204,13 @@ textarea{
     transform: scale(1.1);
 }
 
+@media screen and (max-width: 1329px){
+   
+    .texto_banner_02{
+        font-size: 20px;
+    }
+}
+
 @media screen and (max-width: 1154px){
    
     .texto_banner_02{
@@ -218,7 +225,7 @@ textarea{
     }
     .criancaMenino{
         width: 400px;
-        top: -50px;
+        top: -85px;
     }
 }
 
@@ -235,8 +242,14 @@ textarea{
   
 }
 
+@media screen and (max-width: 646px){
 
+    .comentarios_container{
+        gap: 50px;
+        margin-top: 55px;
+    }
 
+}
 @media screen and (max-width: 680px){
    
     .texto_banner_02{
@@ -250,7 +263,7 @@ textarea{
     }
     .criancaMenino{
         width: 350px;
-        top: -10px;
+        top: -28px;
     
     
     }
@@ -277,6 +290,25 @@ textarea{
         align-items: center;
         justify-content: center;
         gap: 0;
+    }
+  
+}
+
+@media screen and (max-width: 445px){
+    
+    .imagem_produto{
+        width: 300px;
+        height: 200px;
+    }
+  
+}
+
+
+@media screen and (max-width: 335px){
+    
+    .imagem_produto{
+        width: 250px;
+        height: 150px;
     }
   
 }

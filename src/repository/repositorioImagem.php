@@ -112,6 +112,7 @@ class ImagemRepositorio
         $idProduto = $statement->fetch(PDO::FETCH_ASSOC);
 
         return $idProduto['produto'];
+
         }catch (PDOException $e) {
 
             echo "Erro de banco de dados: " . $e->getMessage();
@@ -119,8 +120,27 @@ class ImagemRepositorio
     
             echo "Erro: " . $e->getMessage();
         }
-
     }
-    
 
+    public function imagemUnicaProduto($id): string
+    {
+        try{
+            $sql = "SELECT arquivo FROM imagens WHERE id = ?";
+            $statement = $this->pdo->prepare($sql);
+
+            $statement->bindValue(1, $id);
+            $statement->execute();
+
+            $imagem = $statement->fetch(PDO::FETCH_ASSOC);
+
+            return $imagem['arquivo'];
+
+        }catch (PDOException $e) {
+
+            echo "Erro de banco de dados: " . $e->getMessage();
+        } catch (Exception $e) {
+    
+            echo "Erro: " . $e->getMessage();
+        }
+    }
 }

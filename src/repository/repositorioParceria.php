@@ -137,7 +137,8 @@ class parceriaRepositorio
         }
     }
 
-    public function getFoto(int $id){
+    public function getFoto(int $id): string
+    {
         try{
         $sql = "SELECT file_path FROM parcerias WHERE id = ?";
 
@@ -149,6 +150,7 @@ class parceriaRepositorio
         $parceria  =  $statement->fetch(PDO::FETCH_ASSOC);
 
         return $parceria['file_path'];
+        
         }catch (PDOException $e) {
 
             echo "Erro de banco de dados: " . $e->getMessage();

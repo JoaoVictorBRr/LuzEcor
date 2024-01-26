@@ -24,7 +24,12 @@ require __DIR__ . "../../../src/conection.php";
      $fav = ($_POST['favoritar'] == "Sim") ? 1 : 0;
      $imagens = [];
 
-     $img = ($_FILES['capa']['name']) ? $_FILES['capa']['name'] : $decoracaoRepositorio->getFotoCapa($id);
+     $caminhoAtual = __DIR__;
+     $umNivelAcima = dirname($caminhoAtual);
+
+     $indiceAleatorio = rand(0, 1000);
+
+     $img = ($_FILES['capa']['name']) ?  $indiceAleatorio . "-" . $_FILES['capa']['name'] : $decoracaoRepositorio->getFotoCapa($id);
      $decoracao = new Decoracao(
          null,
          $_POST['Tema'], 
@@ -33,6 +38,21 @@ require __DIR__ . "../../../src/conection.php";
          $fav, 
          null
      );
+
+     if($_FILES['capa']['name']){
+
+        $destinoArquivoCapa = $umNivelAcima . "./imagensBanco/" . $decoracaoRepositorio->getFotoCapa($id);
+        unlink($destinoArquivoCapa);
+
+        $capa = $indiceAleatorio . "-" . $_FILES['capa']['name'];
+
+        $caminho_destino_capa = str_replace('\\', '/', __DIR__ . '../../imagensBanco/');
+        move_uploaded_file($_FILES['capa']['tmp_name'], $caminho_destino_capa . $capa);
+
+     }
+
+  
+
  
      $decoracaoRepositorio->atualiarDecoracoes($decoracao, $id);
 
@@ -44,22 +64,43 @@ require __DIR__ . "../../../src/conection.php";
  
      for($i = 0; $i < $contagemImagens; $i += 1){
  
-         if($_FILES['foto-'. $i]['name']){
-             $imagem = new Imagem(
-                 null,
-                 null,
-                 $_FILES['foto-'. $i]['name'],
-                 null
-             );
-         }else{
-             continue;
-         }
-     
-         $arquivo = $_FILES['foto-'. $i];
- 
-         $caminho_destino = str_replace('\\', '/', __DIR__ . '../../imagensBanco/');
-         move_uploaded_file($_FILES['foto-'. $i]['tmp_name'], $caminho_destino . $arquivo['name']);
+       
+         $contadorDeImagensRepetidas = 0;
+
+         $arquivo = $i . "-" . $_FILES['foto-'. $i]['name'];
          
+  
+         $destinoArquivo = $umNivelAcima . "./imagensBanco/" . $arquivo;
+
+         for($j = 0; $j < 10; $j += 1){
+            //Se tiver imagens repetidas adicionar um contador no nome +1
+
+            if (file_exists("$destinoArquivo")){
+                $arquivo = $j + 1 . "-" . $_FILES['foto-'. $i]['name'];
+                $destinoArquivo = $umNivelAcima . "./imagensBanco/" . $arquivo;
+
+                $contadorDeImagensRepetidas = $j;
+                
+             }
+    
+         }
+
+         if($_FILES['foto-'. $i]['name']){
+            $imagem = new Imagem(
+                null,
+                null,
+                $arquivo,
+                null
+            );
+        }else{
+            continue;
+        }
+
+
+         
+         $caminho_destino = str_replace('\\', '/', __DIR__ . '../../imagensBanco/');
+         move_uploaded_file($_FILES['foto-'. $i]['tmp_name'], $caminho_destino . $arquivo);
+                  
          $imagemRepositorio->salvarImagem($imagem, $id);
      }   
         

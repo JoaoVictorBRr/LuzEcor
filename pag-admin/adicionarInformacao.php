@@ -36,7 +36,7 @@ if(!isset($_SESSION['login'])){
                     <a href="./adicionarInformacao.php">INFORMAÇÕES DE CONTATO </a>
                     <a href="./adicionarDecoracoes.php">ADICIONAR DECORAÇÕES  </a>
                     <a href="./adicionarParcerias.php">ADICIONAR PARCERIAS </a>
-                    <a href="./verDecoracoes.php">EDITAR DECORACÇÕES</a>
+                    <a href="./verDecoracoes.php">EDITAR DECORAÇÕES</a>
                     <a href="./verParcerias.php">EDITAR PARCERIAS</a>
                     <a href="?logout"><i class="bi bi-box-arrow-left"></i></a>
         </div>

@@ -10,6 +10,8 @@ require __DIR__ . "../../../src/repository/repositorioParceria.php";
 
     if(isset($_POST['cadastro'])){
 
+        $indiceAleatorio = rand(0, 1000);
+
         //Só cria se existir uma imagem na parceria
 
         if($_FILES['foto']['name']){
@@ -18,16 +20,16 @@ require __DIR__ . "../../../src/repository/repositorioParceria.php";
                 $_POST['Nome'],
                 $_POST['Local'],
                 $_POST['horario'],
-                intval($_POST['Whatsapp']),
-                $_FILES['foto']['name'],
+                $_POST['Whatsapp'],
+                $indiceAleatorio . "-" . $_FILES['foto']['name'],
                 null
             );
         }
     
-        $arquivo = $_FILES['foto'];
+        $arquivo = $indiceAleatorio . "-" . $_FILES['foto']['name'];
 
         $caminho_destino = str_replace('\\', '/', __DIR__ . '../../imagensBancoParceria/');
-        move_uploaded_file($_FILES['foto']['tmp_name'], $caminho_destino . $arquivo['name']);
+        move_uploaded_file($_FILES['foto']['tmp_name'], $caminho_destino . $arquivo);
         $userRepositorio->salvarDecoracoes($parcerio);
 
     header("Location: ./adicionarParcerias.php");

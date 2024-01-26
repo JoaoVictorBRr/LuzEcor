@@ -55,7 +55,7 @@ include __DIR__ . "/LogicaPhp/editarParcerias.php"
                         <a href="./adicionarInformacao.php"><i class="bi bi-person"></i> INFORMAÇÕES DE CONTATO </a>
                         <a href="./adicionarDecoracoes.php"><i class="bi bi-balloon-heart"></i> ADICIONAR DECORAÇÕES  </a>
                         <a href="./adicionarParcerias.php"><i class="bi bi-people-fill"></i> ADICIONAR PARCERIAS </a>
-                        <a href="./verDecoracoes.php"><i class="bi bi-pen"></i> EDITAR DECORACÇÕES</a>
+                        <a href="./verDecoracoes.php"><i class="bi bi-pen"></i> EDITAR DECORAÇÕES</a>
                         <a href="./verParcerias.php"><i class="bi bi-pen"></i> EDITAR PARCERIAS</a>
                         <a href="?logout"><i class="bi bi-box-arrow-left"></i></a>
                         
