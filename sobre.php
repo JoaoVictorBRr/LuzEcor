@@ -9,23 +9,19 @@ $informacaoRepositorio = new InformacaoRepositorio($pdo);
 
 ?>
 
-
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Luz e Cor - Contato</title>
+    <title>Luz e Cor - Parceria</title>
     <link rel="stylesheet" href="./styles/global.css">
-    <link rel="stylesheet" href="./styles/pags/contato.css">
-    <link rel="shortcut icon" href="./ImagensSite-LuzeCor/Luz e cor.png" type="image/x-icon" />
+    <link rel="stylesheet" href="./styles/pags/sobre.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="shortcut icon" href="./ImagensSite-LuzeCor/Luz e cor.png" type="image/x-icon" />
     <script src="script.js"></script>
 </head>
 <body>
-
-
-
 <header>
     <a href="/">  <img class="logo_LuzECor" src="./ImagensSite-LuzeCor/Luz e cor.png" alt="Logo"> </a>
     <a class="menu" href="/">HOME</a>
@@ -34,7 +30,6 @@ $informacaoRepositorio = new InformacaoRepositorio($pdo);
     <a class="menu" href="/contato.php">CONTATO</a>
     <a class="menu" href="/sobre.php">SOBRE</a>
     <a href="https://wa.me/5519996017447?text=Olá,%20gostaria%20de%20uma%20festa!!">  <img class="logo_Whats" src="./ImagensSite-LuzeCor/Fotos/Whats.png" alt="LogoWhats" > </a>
- 
 </header>
 
 <nav class="menu-lateral-container" >
@@ -101,75 +96,81 @@ $informacaoRepositorio = new InformacaoRepositorio($pdo);
     </div>
 
 </nav>
-
 <div class="botao_whatsapp">
         <a href="https://wa.me/5519996017447?text=Olá,%20gostaria%20de%20uma%20festa!!"><img src="./ImagensSite-LuzeCor/WhatsApp-Logo.png" alt="WhatsApp Logo"></a>
 </div>
 
-<section class="banner_01">
-    <div class="main_content_banner_01">
-        <div class="text_banner_01">
-            <h1>Vamos começar a planejar?</h1>
-            <div>
-            <p>Entre em contato por</p>
-            <p>Whatsapp ou Instagram!</p>
-            </div>
+<section class="luzecor_descricao">
+    <div class="luzecor_descricao_textoGeral_div">
+        <div>
+            <h1>Luz e Cor:</h1> 
+            <h2>Fazemos decorações Mágicas </h2> 
         </div>
-        <div class="buttons_redesSocias">  
-         
-            <a class="button" href="https://wa.me/5519996017447?text=Olá,%20gostaria%20de%20uma%20festa!!"><img class="imgRedeSocial" src="./ImagensSite-LuzeCor/Fotos/WhatsWhite.png" alt="" >19-996017447</a>
-        
-            <a class="button" href="https://www.instagram.com/luz_e_cor_festas/"><img class="imgRedeSocial" src="./ImagensSite-LuzeCor/Fotos/InstaWhite.png" alt="" >luz_e_cor_festas</a>
-        </div>
+        <div class="luzecor_descricao_descricao_div">
+            <p>Desde 2013, somos apaixonados em criar festas decorativas e dedicamos nossos esforços em transformar suas ideias em realidade.</p>
+            <p>Com uma equipe talentosa e criativa, trazemos à vida os conceitos mais imaginativos e os transformamos em experiências visuais deslumbrantes.</p>
+        </div>    
     </div>
-    <img class="criancaMenina" src="./ImagensSite-LuzeCor/Fotos/Criança4.png" align="right" alt="">
+    <img  class="img_decoracao" src="./ImagensSite-LuzeCor/Fotos/img_decoracao.jpg" alt="">
 </section>
 
-<h3 class="text_comments">Veja o que os clientes falam sobre nós!!!</h3>
+<section class="container_diretoras">
 
-<section class="card_container">
-
-        <div class="card_Content">
-
-            <div class="people_card">
-                <img  src="./ImagensSite-LuzeCor/Fotos/pessoas/1.png " alt="">
-                <h3>Julia</h3>
-            </div>
-            <div>
-                <img  class="estrelas" src="./ImagensSite-LuzeCor/Fotos/Estrelas/4.png" alt="">
-            </div>
-            <div class="description">
-                <p>Gostei muito da decoração que a empresa fez para o aniversário da minha filha, as crianças também adoraram. No próximo aniversário dela, já sei com quem falar.</p>
-            </div>
+    <div class="div_diretora">
+        <img class="img_diretoras" src="./ImagensSite-LuzeCor/diretoras/sandra.png" alt="">
+        <div>
+            <p class="nome">Sandra Gonçalves</p>
+            <p class="descricao">Uma pessoa extremamente comunicativa, empreendedora e observadora.</p>
         </div>
+    </div>
+
+    <div class="div_diretora">
+       
+        <img class="img_diretoras" src="./ImagensSite-LuzeCor/diretoras/denise.png" alt="">
+        <div>
+            <p class="nome">Denise Tavares</p>
+            <p class="descricao">Detalhista, com grande aptidão e conhecimento artístico.</p>
+        </div>
+    </div>
+
+</section>
+
+<section class="container_topicos">
+
+    <div>
+        <img class="img_sobre" src="./ImagensSite-LuzeCor/Fotos/sobre_1.png" alt="">
+        <p>Trabalhamos com decorações desde 2013</p>
+    </div>
+
+    <div>
+        <img class="img_sobre" src="./ImagensSite-LuzeCor/Fotos/sobre_2.png" alt="">
+        <p>Somos dedicadas a criar momentos inesquecíveis para nossos clientes.</p>
+    </div>
+
+    <div>
+        <img class="img_sobre" src="./ImagensSite-LuzeCor/Fotos/sobre_3.png" alt="">
+        <p>Temos uma variedade de temas e projetos personalizados para você escolher</p>
+    </div>
+</section>
 
 
-            <div class="card_Content">
 
-                <div class="people_card">
-                <img  src="./ImagensSite-LuzeCor/Fotos/pessoas/2.png " alt="">
-                <h3>Ricardo</h3>
-                </div>
-                <div>
-                <img  class="estrelas" src="./ImagensSite-LuzeCor/Fotos/Estrelas/4.png" alt="">
-                </div>
-                <div class="description">
-                    <p>Estava procurando alguém para fazer a decoração da festa do meu casamento. Entrei em contato com a empresa, e eles garantiram que conseguiriam fazer. A decoração ficou incrível, a empresa está de parabéns!</p>
-                </div>
+
+<section class="banner_02">
+    <div class="main_content_banner_02"> 
+        <div class="criancaMeninaApontando_div">
+            <img class="criancaMeninaApontando" src="./ImagensSite-LuzeCor/Fotos/Criança7_Nuvem.png" alt="Criança3_Nuvem">
+        </div>
+        <div class="texto_banner_02">
+            <h2>Ficou encantado(a) com o que viu? 😍</h2>
+            <div>
+            <p> Por que não entrar em contato</p>
+            <p> agora e começar a</p>
+            <p>planejar a festa dos sonhos?</p>
             </div>
-            <div class="card_Content">
-
-                <div class="people_card">
-                    <img  src="./ImagensSite-LuzeCor/Fotos/pessoas/3.png " alt="">
-                    <h3>Simone</h3>
-                </div>
-                <div>
-                    <img  class="estrelas" src="./ImagensSite-LuzeCor/Fotos/Estrelas/5.png" alt="">
-                </div>
-                <div class="description">
-                    <p>O atendimento foi excelente, e a decoração ficou incrível! Fiquei apaixonada pela decoração do Batman que ela fez para o meu filho. Super recomendo que entrem em contato com a empresa!</p>
-                </div>
-            </div>
+            <a class="button_contact" href="/contato.php"><strong>ENTRE EM CONTATO AGORA!</strong></a>
+        </div>
+    </div>
 </section>
 
 <footer>
@@ -190,7 +191,7 @@ $informacaoRepositorio = new InformacaoRepositorio($pdo);
     </div>
 </div>
 </footer>
-
-
+    
+    
 </body>
 </html>

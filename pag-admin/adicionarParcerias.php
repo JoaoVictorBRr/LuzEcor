@@ -117,7 +117,7 @@ include __DIR__ . "/LogicaPhp/adicionarParcerias.php"
     <script >
 
         $(document).ready(function(){
-            $('#phone').mask('(00) 00000-0000');
+            $('#phone').mask('00 00000 0000');
             $('#hora').mask('00:00 até 00:00');
 
         })

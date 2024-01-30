@@ -45,6 +45,7 @@
     <a class="menu" href="/decoracoes.php">DECORAÇÕES</a>
     <a class="menu" href="/parceria.php">PARCERIA</a>
     <a class="menu" href="/contato.php">CONTATO</a>
+    <a class="menu" href="/sobre.php">SOBRE</a>
     <a href="https://wa.me/5519996017447?text=Olá,%20gostaria%20de%20uma%20festa!!">  <img class="logo_Whats" src="./ImagensSite-LuzeCor/Fotos/Whats.png" alt="LogoWhats" > </a> 
 </header>
 
@@ -99,6 +100,13 @@
                 <a class="menu" href="https://wa.me/5519996017447?text=Olá,%20gostaria%20de%20uma%20festa!!">
                 <span class="icon"><i class="bi bi-whatsapp"></i></span>
                 <span class="txt-link">WHATSAPP</span>
+                </a> 
+            </div>
+
+            <div class="item-menu">
+                <a class="menu" href="/sobre.php">
+                <span class="icon"><i class="bi bi-person-heart"></i></span>
+                <span class="txt-link">SOBRE</span>
                 </a> 
             </div>
         </ul>

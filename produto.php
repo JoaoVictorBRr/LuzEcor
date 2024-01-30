@@ -63,6 +63,8 @@
     <link rel="stylesheet" href="./styles/global.css">
     <link rel="stylesheet" href="./styles/pags/produto.css">
     <link rel="shortcut icon" href="./ImagensSite-LuzeCor/Luz e cor.png" type="image/x-icon" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <script src="script.js"></script>
 </head>
 <body>
 <header>
@@ -71,12 +73,79 @@
     <a class="menu" href="/decoracoes.php">DECORAÇÕES</a>
     <a class="menu" href="/parceria.php">PARCERIA</a>
     <a class="menu" href="/contato.php">CONTATO</a>
+    <a class="menu" href="/sobre.php">SOBRE</a>
     <a href="https://wa.me/5519996017447?text=Olá,%20gostaria%20de%20uma%20festa!!">  <img class="logo_Whats" src="./ImagensSite-LuzeCor/Fotos/Whats.png" alt="LogoWhats" > </a> 
 </header>
 
 <div class="botao_whatsapp">
         <a href="https://wa.me/5519996017447?text=Olá,%20gostaria%20de%20uma%20festa!!"><img src="./ImagensSite-LuzeCor/WhatsApp-Logo.png" alt="WhatsApp Logo"></a>
 </div>
+
+<nav class="menu-lateral-container" >
+
+    <div class="menu-botao">
+        <a href="/">  <img class="logo_LuzECor" src="./ImagensSite-LuzeCor/Luz e cor.png" alt="Logo"> </a> 
+
+        <div class="btn-lateral">
+                <i class="btn-lateral bi bi-list" onclick="abrirMenu()"></i>
+        </div>
+    </div>
+
+    <div class="menu-lateral-itens" id="menu-lateral">
+
+        <ul>
+
+            <div class="item-menu">
+                 <i class="bi bi-arrow-left" onclick="fecharMenu()"></i>
+            </div>
+
+            <div class="item-menu">
+                <a class="menu" href="/">
+                <span class="icon"><i class="bi bi-house"></i></span>
+                <span class="txt-link">HOME</span>
+                </a>
+            </div>
+
+            <div class="item-menu">
+                <a class="menu" href="/decoracoes.php">
+                <span class="icon"><i class="bi bi-balloon-heart"></i></span>
+                <span class="txt-link">DECORAÇÕES</span>
+                </a>
+            </div>
+
+            <div class="item-menu">
+                <a class="menu" href="/parceria.php">
+                <span class="icon"><i class="bi bi-people-fill"></i></span>
+                <span class="txt-link">PARCERIA</span>
+                </a>
+            </div>
+
+            <div class="item-menu">
+                <a class="menu" href="/contato.php">
+                <span class="icon"><i class="bi bi-envelope"></i></span>
+                <span class="txt-link">CONTATO</span>
+                </a>
+            </div>
+
+            <div class="item-menu">
+                <a class="menu" href="https://wa.me/5519996017447?text=Olá,%20gostaria%20de%20uma%20festa!!">
+                <span class="icon"><i class="bi bi-whatsapp"></i></span>
+                <span class="txt-link">WHATSAPP</span>
+                </a> 
+            </div>
+
+            <div class="item-menu">
+                <a class="menu" href="/sobre.php">
+                <span class="icon"><i class="bi bi-person-heart"></i></span>
+                <span class="txt-link">SOBRE</span>
+                </a> 
+            </div>
+        </ul>
+
+    </div>
+
+</nav>
+
 
 
 <section class="Produto_container">

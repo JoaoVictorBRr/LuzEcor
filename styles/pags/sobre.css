@@ -1,0 +1,376 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;800&display=swap');
+
+
+
+.luzecor_descricao{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    margin: 70px 0px 0px 250px;
+
+    gap: 100px;
+
+}
+
+.luzecor_descricao_textoGeral_div{
+   font-family: Inter; 
+   font-size: 20px;
+   font-weight: 500;
+
+   display: flex;
+   flex-direction: column;
+
+   gap: 35px;
+}
+h1{
+    color: rgb(163, 1, 238);
+}
+.luzecor_descricao_descricao_div{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.img_decoracao{
+    width: 750px;
+    border-radius: 40px;
+
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 0px;
+
+    position: relative;
+   
+}
+
+
+.container_diretoras{
+    display: flex;
+
+    flex-wrap: wrap;
+
+    align-items: center;
+    justify-content: center;
+
+    margin-top: 60px;
+    padding: 80px;
+
+    gap: 50px;
+
+    font-family: Inter;
+
+    background-color: rgb(255, 255, 255);
+}
+
+.div_diretora{
+    gap: 50px;
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+}
+.div_diretora div {
+    display: flex;
+    flex-direction: column;
+
+    gap: 15px;
+
+    width: 410px;
+    text-align: center;
+
+    font-weight: 500;
+}
+.nome{
+    font-weight: 800;
+    font-size: 25px;
+}
+.descricao{
+    font-size: 20px;
+}
+
+.img_diretoras{
+    border-radius: 30px;
+    width: 250px;
+    box-shadow: rgba(0, 0, 0, 0.645) 2px 3px 12px;
+
+}
+.container_topicos{
+    display: flex;
+    flex-wrap: wrap;
+
+    justify-content: center;
+    align-items: center;
+
+    gap: 100px;
+
+    margin-top: 60px;
+}
+.container_topicos div{
+    display: flex;
+    flex-direction: column;
+
+    justify-content: center;
+    align-items: center;
+}
+.container_topicos div p{
+    width: 300px;
+
+    text-align: center;
+    font-family: Inter;
+    font-weight: 500;
+    font-size: 20px;
+
+    margin-top: 30px;
+}
+
+.img_sobre{
+    width: 250px;
+    border-radius: 100%;
+}
+
+.banner_02{
+    background: linear-gradient(180deg, rgba(255, 1, 169, 0.54) 0%, rgba(48, 0, 239, 0.54) 100%);
+    height: 360px;
+    position: relative;
+}
+.main_content_banner_02{
+  
+    margin-top: 120px;
+    justify-content: center;
+    display: flex;
+    flex-direction: row;
+    gap: 35%;
+
+}
+.criancaMeninaApontando{
+    width: 450px;
+    position: absolute;
+    top: -70px;
+
+
+}
+.texto_banner_02{
+   margin-top: 10px;
+   font-family: Inter;
+   margin-right: 10rem;
+   color: white;
+   display: flex;
+   flex-direction: column;
+   gap: 50px;
+   align-items: center;
+   justify-content: center;
+   font-size: 25px;
+    text-align: center;
+}
+
+.texto_banner_02 div p{
+    font-size: 30px;
+    font-weight: 400;
+    text-align: center;
+}
+.button_contact{
+    border-radius: 18px;
+    background: linear-gradient(180deg, #70FF98 0%, #4AFF7D 100%);;
+    padding: 20px;
+    color: white;
+    text-decoration: none;
+    transition: 0.2s;
+}
+.button_contact:hover{
+  transform: scale(1.1);
+}
+.botao_whatsapp a img{
+    width: 110px;
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    margin-right: 30px;
+    margin-bottom: 160px;
+    z-index: 999
+}
+
+@media screen and (max-width: 1488px){
+
+    .img_decoracao{
+        width: 600px;
+    }
+
+}
+
+@media screen and (max-width: 1321px){
+
+    .texto_banner_02{
+        font-size: 20px;
+    }
+    .img_decoracao{
+        width: 550px;
+    }
+
+    .luzecor_descricao{
+      
+    
+        margin: 70px 0px 0px 150px;
+    
+    
+    }
+    
+    .luzecor_descricao_textoGeral_div{
+       
+    
+       gap: 15px;
+    }
+
+}
+
+@media screen and (max-width: 1154px){
+   
+    .texto_banner_02{
+        font-size: 20px;
+        align-items: end;
+        text-align: end;
+        margin-right: 20px;
+    }
+    .texto_banner_02 div p {
+        font-size: 25px;
+        text-align: end;
+    }
+    .criancaMeninaApontando{
+        width: 400px;
+        top: -50px;
+    }
+    .luzecor_descricao{
+      
+        margin: 70px 0px 0px 100px;
+
+    }
+    
+    .luzecor_descricao_textoGeral_div{
+       gap: 15px;
+
+       font-size: 18px;
+    }
+}
+
+@media screen and (max-width: 1084px){
+   
+  .img_decoracao{
+    width: 450px;
+  }
+  
+}
+
+@media screen and (max-width: 972px){
+    .img_decoracao{
+        width: 350px;
+      }
+   
+    .luzecor_descricao_textoGeral_div{
+ 
+        font-size: 16px;
+     }
+    
+  }
+
+@media screen and (max-width: 861px){
+   
+    .texto_banner_02{
+        font-size: 15px;
+        width: 450px;
+    }
+    .texto_banner_02 div p {
+        font-size: 20px;
+    
+    }
+  
+  
+}
+
+@media screen and (max-width: 844px){
+    .luzecor_descricao{
+        margin: 40px;
+    }
+
+  
+   
+    .img_decoracao{
+        display: none;
+    }
+  
+  
+}
+
+@media screen and (max-width: 680px){
+   
+    .texto_banner_02{
+        margin-top: 50px;
+        font-size: 12px;
+       
+    }
+    .texto_banner_02 div p{
+        font-size: 18px;
+     
+    }
+    .criancaMeninaApontando{
+        width: 350px;
+        top: -10px;
+    
+    
+    }
+  
+}
+
+@media screen and (max-width: 598px){
+    
+    .criancaMeninaApontando_div{
+       display: none;
+    
+    
+    }
+    .texto_banner_02{
+        text-align: center;
+       align-items: center;
+       margin-top: 50px;
+       margin-right: 0;
+    }
+    .texto_banner_02 div p{
+       text-align: center;
+        
+    }
+    .main_content_banner_02{
+        align-items: center;
+        justify-content: center;
+        gap: 0;
+    }
+  
+}
+
+@media screen and (max-width: 434px){
+    
+    .img_diretoras{
+        width: 200px;
+    }
+    .div_diretora div {
+        
+    
+        width: 310px;
+       
+    }
+    .img_sobre{
+        width: 200px;
+    }
+  
+}
+
+@media screen and (max-width: 300px){
+    
+    .img_diretoras{
+        width: 200px;
+    }
+    .div_diretora div {
+        
+    
+        width: 210px;
+       
+    }
+  
+}
